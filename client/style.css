@@ -1,3 +1,15 @@
+.navbar-nav {
+    position: relative;
+    float: right
+}
+.navbar {
+    height: 70px;
+}
+
+
+
+
+
 .top-box {
     position: absolute;
     width: 100%;
