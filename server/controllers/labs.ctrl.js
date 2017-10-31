@@ -27,13 +27,24 @@ router.route('/')
     });
 
 router.route('/:id')
-    .delete(function(req, res){
+    .delete(function (req, res) {
         procedures.destroy(req.params.id)
-        .then(function(id){
-            res.sendStatus(201);
-        }).catch(function(err) {
-            console.log(err);
-            res.sendStatus(500);
-        })
+            .then(function (id) {
+                res.sendStatus(201);
+            }).catch(function (err) {
+                console.log(err);
+                res.sendStatus(500);
+            })
+    })
+
+    .put(function (req, res) {
+        var l = req.body;
+        procedures.update(req.params.id, l.week, l.dayid, l.title, l.description, l.readmeURL)
+            .then(function () {
+                res.sendStatus(204);
+            }).catch(function (err) {
+                console.log(err);
+                res.sendStatus(500);
+            })
     })
 module.exports = router;
