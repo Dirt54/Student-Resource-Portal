@@ -26,5 +26,14 @@ router.route('/')
             });
     });
 
-
+router.route('/:id')
+    .delete(function(req, res){
+        procedures.destroy(req.params.id)
+        .then(function(id){
+            res.sendStatus(201);
+        }).catch(function(err) {
+            console.log(err);
+            res.sendStatus(500);
+        })
+    })
 module.exports = router;

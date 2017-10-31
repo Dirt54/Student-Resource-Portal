@@ -8,3 +8,8 @@ exports.fetch = function(week) {
 exports.create = function(dayid, title, description, readmeURL, week) {
     return db.row('insertLab', [dayid, title, description, readmeURL, week]);
 }
+
+
+exports.destroy = function(id) {
+    return db.empty('deleteLab', [id]);
+}
