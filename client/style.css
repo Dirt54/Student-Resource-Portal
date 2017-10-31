@@ -1,44 +1,52 @@
-.top-box {
-    position: absolute;
-    width: 100%;
+
+
+
+
+
+
+/* ----------------------------start of nav bar  */
+body {
+    height: 100%;
+    /* background-color: #CFCFCF; */
+}
+.nav-item {
+    font-size: 17px;
+}
+.navbar {
+    background-color: white;
     height: 70px;
-    margin: 0px;
-    z-index: 1;
-    background-color: #F6F6F6;
-      /* border-bottom: 5px; */
-    border-bottom-style: solid;
-    border-bottom-color: #3C848B;
-  }
-  .top-box-text {
-      position: relative;
-      z-index: 1;
-      float: left;
-      left: 50px;
-    /* text-align: center; */
+}
+
+
+/* ---------------------------------end of nav bar  */
+ 
+
+
+/* start of footer --------------- */
+
+
+.py-5 {
+    padding-bottom: 3rem!important;
+}
+.py-5 {
+    padding-top: 3rem!important;
+}
+.bg-dark {
+    background-color: #373f47!important;
+}
+
+
+footer .logo .logo-mark {
+    height: auto;
+    width: 4em;
+    margin-bottom: 2em;
+}
+
+
+img {
     vertical-align: middle;
-    line-height: 70px;
-  }
+    border-style: none;
+}
 
-  .top-box-text span {
-    text-decoration: bold;
-    position: relative;
-    color: #4F4F4F;
-    font-family: "Courier New";
-    margin-left: 35px;
-    margin-right: 35px;
-    font-size: 35px;
-    cursor: pointer;
-    border: solid;
-    border-width: 3px;
-    border-color: rgba(255, 255, 0, 0.00);
-    
-  }
-  a {
-      text-decoration: none;
-  }
 
- .top-box-text span:hover {
-        border-bottom-style: solid;
-        border-bottom-color: #707070;
-        border-width: 3px;
-  }
+/* --------------------end of footer */ 
