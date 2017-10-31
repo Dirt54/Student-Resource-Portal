@@ -1,4 +1,4 @@
-angular.module('store.controllers', [])
+angular.module('portal.controllers', [])
 
     .controller('loginController', ['$scope', '$location', '$routeParams', 'SEOService', function ($scope, $location, $routeparams, SEOService) {
 
