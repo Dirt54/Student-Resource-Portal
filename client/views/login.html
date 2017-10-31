@@ -1,9 +1,11 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#"><img src="images/covalence-text-logo.svg" height="105" width="210"></a>
+    <a class="navbar-brand" href="#">
+        <img src="images/covalence-text-logo.svg" height="105" width="210">
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
         aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <span class="navbar-toggler-icon"></span>
+    </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="nav navbar-nav navbar-right">
             <a class="nav-item nav-link" href="#">Fullstack</a>
@@ -14,9 +16,37 @@
     </div>
 </nav>
 
+<!-- ///////////////////The start of the login and sign up -->
+<div class="container">
+    <div class="row">
+        <h1 style="text-align: center">Login</h1>
+        <div style="width: 30%; margin: 25px auto;">
+            <form>
+                <div class="form-group">
+                    <input class="form-control" type="name" ng-model="firstname" id="name" placeholder="firstname">
+                </div>
+
+                <div class="form-group">
+                    <input class="form-control" type="text" name="lastname" ng-model="lastname" id="name" placeholder="lastname">
+                </div>
+                <div class="form-group">
+                    <input type="email" ng-model="email" id="email" placeholder="email"></input>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="password" name="password" placeholder="password">
+                </div>
 
 
-<form id="login-box">
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Login</button>
+                    <button class="btn btn-lg btn-primary btn-block">Sign Up!</button>
+                </div>
+            </form>
+            <a href="https://covalence.io/">Go Back</a>
+        </div>
+    </div>
+</div>
+<!-- <form >
     <div>
     <label for="name"></label>
     <input type="text" placeholder="Firstname" ng-model="firstname" id="name"></input>
@@ -36,8 +66,9 @@
     <button ng-click="login()">Login</button>
     <button ng-click="signup()">Sign Up</button>
 </form>
+</div> -->
 
-
+<!-- ///////////////////////////sthe end of login and start up  -->
 
 <!--- Top of footer-->
 <div id="footer">
@@ -46,9 +77,9 @@
         <div class="container">
             <div class="row">
                 <a class="col-sm-4 col-lg-2" href="/covalance.io">
-        
-                        <img class="logo mark" src="https://covalence.io/static/img/logos/covalence-mark.svg" alt="Covalence Logo Mark">
-                    </a>
+
+                    <img class="logo mark" src="https://covalence.io/static/img/logos/covalence-mark.svg" alt="Covalence Logo Mark">
+                </a>
 
             </div>
 
@@ -57,16 +88,16 @@
             <div class="row">
                 <div class="col-md-4 align-self-end text-center text-md-left mb-2">
                     <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/covalence.io/" class="d-inline mx-1">
-                            <img class="social-icon" src="/static/img/social/instagram.svg" alt="Instagram Logo"> </a>
+                        <img class="social-icon" src="/static/img/social/instagram.svg" alt="Instagram Logo"> </a>
                     <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/covalence_io/" class="d-inline mx-1">
-                            <img class="social-icon" src="/static/img/social/twitter.svg" alt="Twitter Logo"> </a>
+                        <img class="social-icon" src="/static/img/social/twitter.svg" alt="Twitter Logo"> </a>
                     <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/covalence.io/" class="d-inline mx-1">
-                            <img class="social-icon" src="/static/img/social/facebook.svg" alt="Facebook Logo"> </a>
+                        <img class="social-icon" src="/static/img/social/facebook.svg" alt="Facebook Logo"> </a>
                     <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/covalence---coding-bootcamp/" class="d-inline mx-1">
-                            <img class="social-icon" src="/static/img/social/linkedin.svg" alt="Linkedin Logo"> </a>
+                        <img class="social-icon" src="/static/img/social/linkedin.svg" alt="Linkedin Logo"> </a>
                     <a target="_blank" rel="noopener noreferrer" href="https://www.coursereport.com/schools/covalence" class="d-inline mx-1">
-                            <img class="social-icon" src="/static/img/social/coursereport.svg" alt="Course Report Logo">
-                        </a>
+                        <img class="social-icon" src="/static/img/social/coursereport.svg" alt="Course Report Logo">
+                    </a>
                 </div>
                 <div class="contact col-md-6 align-self-end text-center text-md-right my-2">
                     <span class="text-warning px-2">General Admissions Contact:</span>
@@ -78,7 +109,7 @@
             <div class="row">
                 <div class="col text-center text-md-left">
                     <span class="px-2 br text-gray text-nowrap">
-                            <span style="font-size:80%">©</span> 2017 Covalence. All Rights Reserved</span>
+                        <span style="font-size:80%">©</span> 2017 Covalence. All Rights Reserved</span>
                     <a href="/privacy-policy/" class="px-2 text-info br text-nowrap">Privacy Policy</a>
                     <a href="/terms-of-service/" class="px-2 text-info text-nowrap">Terms of Service</a>
                 </div>
