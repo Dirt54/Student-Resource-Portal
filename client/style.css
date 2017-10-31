@@ -47,6 +47,15 @@
 
 /* start of footer --------------- */
 
+#footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:60px;   /* Height of the footer */
+    background:#373f47;
+    box-sizing: border-box;
+    text-align:center;
+ }
 
 .py-5 {
     padding-bottom: 3rem!important;
@@ -69,7 +78,28 @@ footer .logo .logo-mark {
 img {
     vertical-align: middle;
     border-style: none;
+    text-align: center;
+}
+div {
+
+    letter-spacing: .01em;
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 
+.col-lg-2, 
+.col-sm-4 {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
 /* --------------------end of footer */ 
