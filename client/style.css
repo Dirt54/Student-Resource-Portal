@@ -10,6 +10,7 @@
 
 
 
+/* ----------------------------start of nav bar  */
 .top-box {
     position: absolute;
     width: 100%;
@@ -52,3 +53,35 @@
   body {
       background-color: #D2D2D2;
   }
+/* ---------------------------------end of nav bar  */
+ 
+
+
+/* start of footer --------------- */
+
+
+.py-5 {
+    padding-bottom: 3rem!important;
+}
+.py-5 {
+    padding-top: 3rem!important;
+}
+.bg-dark {
+    background-color: #373f47!important;
+}
+
+
+footer .logo .logo-mark {
+    height: auto;
+    width: 4em;
+    margin-bottom: 2em;
+}
+
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+
+/* --------------------end of footer */ 
