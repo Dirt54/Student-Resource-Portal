@@ -11,3 +11,11 @@ exports.readByEmail = function(email) {
 exports.read = function(id) {
     return db.row('getUser', [id]);
 }
+
+exports.allNonActiveUsers = function() {
+    return db.rows('getNonActiveUsers');
+}
+
+exports.allActiveUsers = function() {
+    return db.rows('getActiveUsers');
+}
