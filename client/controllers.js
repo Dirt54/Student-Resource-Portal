@@ -60,4 +60,8 @@ angular.module('portal.controllers', [])
 
 
 
-    }]);
+    }])
+
+    .controller('LecturesController', ['$scope', 'LectureByWeek', function($scope, LectureByWeek) {
+        $scope.lecures = LectureByWeek.query();
+    }])
