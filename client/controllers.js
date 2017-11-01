@@ -1,7 +1,7 @@
 angular.module('portal.controllers', [])
 
     .controller('loginController', ['$scope', 'CreateUsers', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope, CreateUsers, $location, $routeParams, UserService, SEOService) {
-        
+
         UserService.me().then(function (success) {
             redirect();
         });
@@ -21,8 +21,8 @@ angular.module('portal.controllers', [])
                     console.log(err);
                 });
         }
+    
 
-       
         $scope.signup = function () {
             var payload = {
                 firstname: $scope.firstname,
@@ -43,13 +43,13 @@ angular.module('portal.controllers', [])
             });
         }
 
-      
 
-        SEOService.setSEO({        
-            title: 'Login',        
-            image: 'http://'+$location.host() +'/images/',        
-            url: $location.url(),        
-            description: 'Please Login'    
+
+        SEOService.setSEO({
+            title: 'Login',
+            image: 'http://' + $location.host() + '/images/',
+            url: $location.url(),
+            description: 'Please Login'
         });
     }])
 
@@ -58,10 +58,15 @@ angular.module('portal.controllers', [])
 
 
 
-
+        $scope.logout = function(){
+            //Just clear values from scope
+            $location.path('/api/users/logout');
+        }
+    
 
     }])
 
+<<<<<<< HEAD
     .controller('LecturesController', ['$scope', 'LectureByWeek', function($scope, LectureByWeek) {
         $scope.week1 = LectureByWeek.query({ week: 1 });
         $scope.week2 = LectureByWeek.query({ week: 2 });
@@ -82,3 +87,14 @@ angular.module('portal.controllers', [])
     .controller('ResourcesController', ['$scope', 'Resource', function($scope, Resource) {
         $scope.resources = Resource.query();
     }])
+=======
+    .controller('LecturesController', ['$scope', 'Lecture', function($scope, Lecture) {
+        $scope.lectures = Lecture.query();
+    }])
+
+    .controller('usersController', ['$scope', 'NonActiveUsers', 'ActiveUsers', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope, NonActiveUsers, ActiveUsers, $location, $routeParams, UserService, SEOService) {
+        $scope.nonactiveuser = NonActiveUsers.query();
+        $scope.activeuser = ActiveUsers.query();
+           
+    }]);
+>>>>>>> 352718a61d6702e4018305fdd8c69cb8ad05022c
