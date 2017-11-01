@@ -23,10 +23,7 @@ angular.module('portal.controllers', [])
         }
     
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 5dcc142d15cea9aac38792199e0b0372b1474abd
         $scope.signup = function () {
             var payload = {
                 firstname: $scope.firstname,
