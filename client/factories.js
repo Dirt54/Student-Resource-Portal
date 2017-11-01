@@ -24,10 +24,10 @@ angular.module('portal.factories', [])
     return $resource('/api/lectures/week/:week');
 }])
 
-// .factory('Lecture', ['$resource', function($resource) {
-//     return $resource('/api/lectures');
-// }])
+.factory('ResourceByCategory', ['$resource', function($resource) {
+    return $resource('/api/resources/:categoryid');
+}])
 
-.factory('Resource', ['$resource', function($resource) {
-    return $resource('/api/resources');
+.factory('LabsByWeek', ['$resource', function($resource) {
+    return $resource('/api/labs/week/:week');
 }])

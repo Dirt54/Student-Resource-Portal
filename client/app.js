@@ -26,7 +26,7 @@ angular.module('studentportal', ['ngRoute', 'ngResource', 'portal.controllers', 
     })
    
     .when('/resources', {
-        templateUrl: 'resources.html',
+        templateUrl: 'views/resources.html',
         controller: 'resourcesController'
     })
     
