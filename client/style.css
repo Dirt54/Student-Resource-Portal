@@ -16,16 +16,22 @@ body {
     background-color: white;
     height: 70px;
 }
-#login-box {
+
+
+/* ---------------------------------end of nav bar  */
+ /* the start of login form  */
+#login{
+   text-align: center;
+    margin: auto;
+    width: 50%;
+    border: 3px solid #373f47;
+    padding: 10px;
     position: absolute;
     top: 30%;
     left: 30%;
 }
-
-
-
-/* ---------------------------------end of nav bar  */
  
+ /* the end of login an sign up form  */
 
 
 /* start of footer --------------- */
@@ -39,50 +45,20 @@ body {
     box-sizing: border-box;
     text-align:center;
  }
-
-.py-5 {
-    padding-bottom: 3rem!important;
-}
-.py-5 {
-    padding-top: 3rem!important;
-}
-.bg-dark {
-    background-color: #373f47!important;
-}
-
-
-footer .logo .logo-mark {
+ 
+.logo-mark {
     height: auto;
     width: 4em;
     margin-bottom: 2em;
-}
-
-
-img {
-    vertical-align: middle;
-    border-style: none;
-    text-align: center;
-}
-div {
-
-    letter-spacing: .01em;
-}
-
-.container {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
+    display: block;
     margin-left: auto;
+    margin-right: auto }
+
+
+footer .social-icon {
+    height: auto;
+    width: 2em;
 }
 
 
-.col-lg-2, 
-.col-sm-4 {
-    position: relative;
-    width: 100%;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
-}
 /* --------------------end of footer */ 
