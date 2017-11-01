@@ -4,6 +4,14 @@ angular.module('portal.factories', [])
     return $resource('/api/users/:id');
 }])
 
+.factory('NonActiveUsers', ['$resource', function ($resource) {
+    return $resource('/api/users/nonactive/:id');
+}])
+
+.factory('ActiveUsers', ['$resource', function ($resource) {
+    return $resource('/api/users/active/:id');
+}])
+
 .factory('CreateUsers', ['$resource', function ($resource) {
     return $resource('/api/users/createusers/:id', { id: '@id' }, {
         update: {
