@@ -21,7 +21,7 @@
     <div class="row">
         <h1 style="text-align: center">Login</h1>
         <div style="width: 30%; margin: 25px auto;">
-            <form ng-submit="login()">
+            <form>
                 <div class="form-group">
                     <input class="form-control" type="name" ng-model="firstname" id="name" placeholder="firstname">
                 </div>
@@ -36,11 +36,11 @@
                     <input class="form-control" type="password" name="password" ng-model="password" placeholder="password">
                 </div>
 
-                    <button class="btn btn-lg btn-primary btn-block" ng-click="login()">Login</button>
-                    <button class="btn btn-lg btn-primary btn-block" ng-click="signup()">Sign Up!</button>
-                    <input class="btn btn-info" type="submit" value="Log In">
+                
+                   
                 <div class="form-group">
-                    
+                        <button class="btn btn-lg btn-primary btn-block" ng-click="login()">Login</button>
+                    <button class="btn btn-lg btn-primary btn-block" ng-click="signup()">Sign Up!</button>
                 </div>
             </form>
             <a href="https://covalence.io/">Go Back</a>

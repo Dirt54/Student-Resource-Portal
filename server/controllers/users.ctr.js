@@ -35,7 +35,7 @@ router.route('/createusers')
     var newPost = req.body;
     utils.encryptPassword(newPost.password)
         .then(function(hash) {
-            return procedures.makeUser(newPost.firstname, newPost.lastname, newPost.email, hash, newPost.role, newPost.status)
+            return procedures.makeUser(newPost.firstname, newPost.lastname, newPost.email, hash, newPost.role, newPost.classStatus)
         }).then(function(user) {
             res.status(201).send(user);
         })
