@@ -26,13 +26,13 @@ angular.module('studentportal', ['ngRoute', 'ngResource', 'portal.controllers', 
     })
    
     .when('/resources', {
-        templateUrl: 'resources.html',
+        templateUrl: 'views/resources.html',
         controller: 'resourcesController'
     })
     
     .when('/syllabus', {
         templateUrl: 'views/syllabus.html',
-        controller: 'syallabusController'
+        controller: 'syllabusController'
     })
     .when('/lectures', {
         templateUrl: 'views/lectures.html',
