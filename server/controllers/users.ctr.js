@@ -75,14 +75,14 @@ router.get('/logout', function (req, res) {
     });
 });
 
-// router.get('/:id', function (req, res) {
-//     procedures.read(req.params.id)
-//         .then(function (user) {
-//             res.send(user);
-//         }, function (err) {
-//             res.status(500).send(err);
-//         });
-// });
+router.get('/:id', auth.isAdmin, auth.isActive, function (req, res) {
+    procedures.read(req.params.id)
+        .then(function (user) {
+            res.send(user);
+        }, function (err) {
+            res.status(500).send(err);
+        });
+});
 
 
 module.exports = router;
