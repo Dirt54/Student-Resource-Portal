@@ -30,7 +30,7 @@ angular.module('portal.controllers', [])
                 email: $scope.email,
                 password: $scope.password,
                 role: "user",
-                status: "nonactive"
+                classStatus: "nonactive"
             };
             var c = new CreateUsers(payload);
             c.$save(function (success) {
