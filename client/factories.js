@@ -12,10 +12,15 @@ angular.module('portal.factories', [])
     });
 }])
 
-
-
-
+// .factory('LectureByWeek', ['$resource', function($resource) {
+//     return $resource('/api/lectures/week/:week' , { week : '@week' }, {
+//         query: {
+//             method: 'GET',
+//             url: '/api/lectures/week'
+//         }
+//     })
+// }])
 
 .factory('Lecture', ['$resource', function($resource) {
-    
+    return $resource('/api/lectures');
 }])

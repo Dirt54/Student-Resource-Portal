@@ -15,3 +15,7 @@ exports.destroy = function (id) {
 exports.update = function (id, week, dayid, title, description, url) {
     return db.empty('updateWeek', [id, week, dayid, title, description, url]);
 }
+
+exports.all = function() {
+    return db.rows('getLectures');
+}

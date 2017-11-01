@@ -62,6 +62,6 @@ angular.module('portal.controllers', [])
 
     }])
 
-    .controller('LecturesController', ['$scope', 'LectureByWeek', function($scope, LectureByWeek) {
-        $scope.lecures = LectureByWeek.query();
+    .controller('LecturesController', ['$scope', 'Lecture', function($scope, Lecture) {
+        $scope.lectures = Lecture.query();
     }])
