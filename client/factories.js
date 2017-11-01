@@ -10,4 +10,12 @@ angular.module('portal.factories', [])
             method: 'PUT'
         }
     });
-}]);
+}])
+
+.factory('LectureByWeek', ['$resource', function($resource) {
+    return $resource('/api/lectures/:week')
+}])
+
+.factory('Lecture', ['$resource', function($resource) {
+    
+}])
