@@ -5,7 +5,5 @@ exports.encryptPassword = function(pw) {
 }
 
 exports.checkPassword = function(pw, hash) {
-    console.log(pw);
-    console.log(hash);
     return bcrypt.compare(pw, hash);
 }

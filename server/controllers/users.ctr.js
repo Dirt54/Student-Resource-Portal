@@ -1,7 +1,6 @@
 var express = require('express');
 
 var procedures = require('../procedures/users.proc');
-// var users = require('../procedures/users.proc')
 var passport = require('passport');
 var utils = require('../utils');
 var auth = require('../middleware/auth.mw');

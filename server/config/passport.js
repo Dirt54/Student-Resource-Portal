@@ -13,7 +13,6 @@ function configurePassport(app) {
         passwordField: 'password'
     },
         function (email, password, done) {
-            // var loginError = "password wrong"
             userProc.readByEmail(email).then(function(user) {
                 if (!user) {
                     return done(null, false, { message: "error1"});
