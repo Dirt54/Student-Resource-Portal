@@ -24,15 +24,14 @@ angular.module('portal.factories', [])
     });
 }])
 
-// .factory('LectureByWeek', ['$resource', function($resource) {
-//     return $resource('/api/lectures/week/:week' , { week : '@week' }, {
-//         query: {
-//             method: 'GET',
-//             url: '/api/lectures/week'
-//         }
-//     })
-// }])
+.factory('LectureByWeek', ['$resource', function($resource) {
+    return $resource('/api/lectures/week/:week');
+}])
 
-.factory('Lecture', ['$resource', function($resource) {
-    return $resource('/api/lectures');
+.factory('ResourceByCategory', ['$resource', function($resource) {
+    return $resource('/api/resources/:categoryid');
+}])
+
+.factory('LabsByWeek', ['$resource', function($resource) {
+    return $resource('/api/labs/week/:week');
 }])
