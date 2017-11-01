@@ -8,7 +8,45 @@ var auth = require('../middleware/auth.mw');
 var router = express.Router();
 
 
+router.route('/createusers')
+.post(function (req, res) {
+    var newPost = req.body;
+    utils.encryptPassword(newPost.password)
+        .then(function(hash) {
+            return procedures.makeUser(newPost.firstname, newPost.lastname, newPost.email, hash, newPost.role, newPost.classStatus)
+        }).then(function(user) {
+            res.status(201).send(user);
+        })
+        .catch(function (err) {
+            console.log(err);
+            res.sendStatus(500);
+        });
+});
 
+
+router.route('/nonactive')
+    .get(function(req, res) {
+        procedures.allNonActiveUsers()
+        .then(function(users) {
+            res.send(users);
+        })
+        .catch(function (err) {
+            console.log(err);
+            res.sendStatus(500);
+        });
+    });
+
+    router.route('/active')
+    .get(function(req, res) {
+        procedures.allActiveUsers()
+        .then(function(users) {
+            res.send(users);
+        })
+        .catch(function (err) {
+            console.log(err);
+            res.sendStatus(500);
+        });
+    });
 
 router.post('/login', function (req, res, next) {
     passport.authenticate('local', function (err, user, info) {
@@ -28,26 +66,6 @@ router.post('/login', function (req, res, next) {
         });
     })(req, res, next);
 });
-
-router.route('/createusers')
-.post(function (req, res) {
-    var newPost = req.body;
-    utils.encryptPassword(newPost.password)
-        .then(function(hash) {
-            return procedures.makeUser(newPost.firstname, newPost.lastname, newPost.email, hash, newPost.role, newPost.classStatus)
-        }).then(function(user) {
-            res.status(201).send(user);
-        })
-        .catch(function (err) {
-            console.log(err);
-            res.sendStatus(500);
-        });
-});
-
-
-
-
-
 
 
 

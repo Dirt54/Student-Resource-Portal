@@ -65,3 +65,9 @@ angular.module('portal.controllers', [])
     .controller('LecturesController', ['$scope', 'Lecture', function($scope, Lecture) {
         $scope.lectures = Lecture.query();
     }])
+
+    .controller('usersController', ['$scope', 'NonActiveUsers', 'ActiveUsers', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope, NonActiveUsers, ActiveUsers, $location, $routeParams, UserService, SEOService) {
+        $scope.nonactiveuser = NonActiveUsers.query();
+        $scope.activeuser = ActiveUsers.query();
+           
+    }]);

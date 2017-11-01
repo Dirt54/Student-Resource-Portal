@@ -14,4 +14,8 @@ angular.module('studentportal', ['ngRoute', 'ngResource', 'portal.controllers', 
         templateUrl: 'views/lectures.html',
         controller: 'LecturesController'
     })
+    .when('/users', {
+        templateUrl: 'views/users.html',
+        controller: 'usersController'
+    })
 }]);
