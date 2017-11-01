@@ -19,3 +19,7 @@ exports.allNonActiveUsers = function() {
 exports.allActiveUsers = function() {
     return db.rows('getActiveUsers');
 }
+
+exports.editUser = function(id) {
+    return db.empty('activateUser', [id]);
+}

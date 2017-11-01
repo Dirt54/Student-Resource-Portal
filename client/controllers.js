@@ -1,7 +1,7 @@
 angular.module('portal.controllers', [])
 
     .controller('loginController', ['$scope', 'CreateUsers', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope, CreateUsers, $location, $routeParams, UserService, SEOService) {
-        
+
         UserService.me().then(function (success) {
             redirect();
         });
@@ -22,7 +22,7 @@ angular.module('portal.controllers', [])
                 });
         }
 
-       
+
         $scope.signup = function () {
             var payload = {
                 firstname: $scope.firstname,
@@ -43,13 +43,13 @@ angular.module('portal.controllers', [])
             });
         }
 
-      
 
-        SEOService.setSEO({        
-            title: 'Login',        
-            image: 'http://'+$location.host() +'/images/',        
-            url: $location.url(),        
-            description: 'Please Login'    
+
+        SEOService.setSEO({
+            title: 'Login',
+            image: 'http://' + $location.host() + '/images/',
+            url: $location.url(),
+            description: 'Please Login'
         });
     }])
 
@@ -62,12 +62,24 @@ angular.module('portal.controllers', [])
 
     }])
 
-    .controller('LecturesController', ['$scope', 'Lecture', function($scope, Lecture) {
+    .controller('LecturesController', ['$scope', 'Lecture', function ($scope, Lecture) {
         $scope.lectures = Lecture.query();
     }])
 
-    .controller('usersController', ['$scope', 'NonActiveUsers', 'ActiveUsers', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope, NonActiveUsers, ActiveUsers, $location, $routeParams, UserService, SEOService) {
+    .controller('usersController', ['$scope', 'NonActiveUsers', 'ActiveUsers', 'Users', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope, NonActiveUsers, ActiveUsers, Users, $location, $routeParams, UserService, SEOService) {
         $scope.nonactiveuser = NonActiveUsers.query();
         $scope.activeuser = ActiveUsers.query();
-           
+        $scope.user = Users.get({ id: $routeParams.someId });
+
+
+
+        $scope.activate = function () {
+            $scope.user.$update(function() {
+                $location.replace().path('/users');
+            }, function(err) {
+                console.log(err);
+            });
+        }
+
+
     }]);
