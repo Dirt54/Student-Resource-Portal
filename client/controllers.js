@@ -1,7 +1,7 @@
 angular.module('portal.controllers', [])
 
     .controller('loginController', ['$scope', 'CreateUsers', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope, CreateUsers, $location, $routeParams, UserService, SEOService) {
-        
+
         UserService.me().then(function (success) {
             redirect();
         });
@@ -21,8 +21,8 @@ angular.module('portal.controllers', [])
                     console.log(err);
                 });
         }
+    
 
-       
         $scope.signup = function () {
             var payload = {
                 firstname: $scope.firstname,
@@ -43,13 +43,13 @@ angular.module('portal.controllers', [])
             });
         }
 
-      
 
-        SEOService.setSEO({        
-            title: 'Login',        
-            image: 'http://'+$location.host() +'/images/',        
-            url: $location.url(),        
-            description: 'Please Login'    
+
+        SEOService.setSEO({
+            title: 'Login',
+            image: 'http://' + $location.host() + '/images/',
+            url: $location.url(),
+            description: 'Please Login'
         });
     }])
 
@@ -58,6 +58,10 @@ angular.module('portal.controllers', [])
 
 
 
-
+        $scope.logout = function(){
+            //Just clear values from scope
+            $location.path('/api/users/logout');
+        }
+    
 
     }]);
