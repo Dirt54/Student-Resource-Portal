@@ -79,6 +79,7 @@ angular.module('portal.controllers', [])
         $scope.week10 = LectureByWeek.query({ week: 10 });
     }])
 
+<<<<<<< HEAD
     .controller('resourcesController', ['$scope', 'ResourceByCategory', function($scope, ResourceByCategory) {
         $scope.videos = ResourceByCategory.query({ categoryid: 1 });
         $scope.portfolio = ResourceByCategory.query({ categoryid: 2 });
@@ -96,4 +97,8 @@ angular.module('portal.controllers', [])
         $scope.week8 = LabsByWeek.query({ week: 8 });
         $scope.week9 = LabsByWeek.query({ week: 9 });
         $scope.week10 = LabsByWeek.query({ week: 10 });        
+=======
+    .controller('ResourcesController', ['$scope', 'Resource', function($scope, Resource) {
+        $scope.resources = Resource.query();
+>>>>>>> 3ce82aad4b043bd37253a3fcf145f0cfdccf9184
     }])

@@ -32,7 +32,7 @@ angular.module('studentportal', ['ngRoute', 'ngResource', 'portal.controllers', 
     
     .when('/syllabus', {
         templateUrl: 'views/syllabus.html',
-        controller: 'syallabusController'
+        controller: 'syllabusController'
     })
     .when('/lectures', {
         templateUrl: 'views/lectures.html',
