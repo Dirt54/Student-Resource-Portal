@@ -13,9 +13,10 @@ function configurePassport(app) {
         passwordField: 'password'
     },
         function (email, password, done) {
+            // var loginError = "password wrong"
             userProc.readByEmail(email).then(function (user) {
                 if (!user) {
-                    return done(null, false);
+                    return done(null, false, { message: "error1"});
                 }
                 return utils.checkPassword(password, user.password)
                     .then(function (matches) {
@@ -23,7 +24,9 @@ function configurePassport(app) {
                             delete user.password;
                             return done(null, user);
                         } else {
-                            return done(null, false, { message: loginError });
+                            console.log(password);
+                            console.log(user.password);
+                            return done(null, false, { message: "error2" });
                         }
                     });
             }).catch(function (err) {
