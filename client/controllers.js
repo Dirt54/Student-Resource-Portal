@@ -62,6 +62,23 @@ angular.module('portal.controllers', [])
 
     }])
 
-    .controller('LecturesController', ['$scope', 'Lecture', function($scope, Lecture) {
-        $scope.lectures = Lecture.query();
+    .controller('LecturesController', ['$scope', 'LectureByWeek', function($scope, LectureByWeek) {
+        $scope.week1 = LectureByWeek.query({ week: 1 });
+        $scope.week2 = LectureByWeek.query({ week: 2 });
+        $scope.week3 = LectureByWeek.query({ week: 3 });
+        $scope.week4 = LectureByWeek.query({ week: 4 });
+        $scope.week5 = LectureByWeek.query({ week: 5 });
+        $scope.week6 = LectureByWeek.query({ week: 6 });
+        $scope.week7 = LectureByWeek.query({ week: 7 });
+        $scope.week8 = LectureByWeek.query({ week: 8 });
+        $scope.week9 = LectureByWeek.query({ week: 9 });
+        $scope.week10 = LectureByWeek.query({ week: 10 });
+
+
+
+        
+    }])
+
+    .controller('ResourcesController', ['$scope', 'Resource', function($scope, Resource) {
+        $scope.resources = Resource.query();
     }])
