@@ -7,4 +7,15 @@ angular.module('studentportal', ['ngRoute', 'ngResource', 'portal.controllers', 
         controller: 'loginController'
     })
   
+    .when('/loginredirect'{
+templateUrl: ' views/loginfail.html'
+
+    })  
+    .when ('/studentportal'{
+templateUrl: 'views/welcome.html',
+controller:''
+})
+
+
+
 }]);
