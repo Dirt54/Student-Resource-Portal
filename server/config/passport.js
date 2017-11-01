@@ -13,17 +13,22 @@ function configurePassport(app) {
         passwordField: 'password'
     },
         function (email, password, done) {
-            userProc.readByEmail(email).then(function (user) {
+            // var loginError = "password wrong"
+            userProc.readByEmail(email).then(function(user) {
+                console.log(user);
                 if (!user) {
-                    return done(null, false);
+                    return done(null, false, { message: "error1"});
                 }
                 return utils.checkPassword(password, user.password)
-                    .then(function (matches) {
+                    .then(function(matches) {
+                        console.log(matches);
                         if (matches) {
                             delete user.password;
                             return done(null, user);
                         } else {
-                            return done(null, false, { message: loginError });
+                            console.log(password);
+                            console.log(user.password);
+                            return done(null, false, { message: "error2" });
                         }
                     });
             }).catch(function (err) {
