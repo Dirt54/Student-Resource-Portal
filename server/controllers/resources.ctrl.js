@@ -37,4 +37,15 @@ router.route('/:id')
             })
     });
 
+router.route('/:categoryid')
+    .get(function(req, res) {
+        procedures.fetch(req.params.categoryid)
+        .then(function(categories) {
+            res.send(categories);
+        }).catch(function(err) {
+            console.log(err);
+            res.sendStatus(500);
+        })
+    })
+
 module.exports = router;

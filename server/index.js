@@ -7,7 +7,7 @@ var mysql = require('mysql');
 
 var api = require('./api');
 var cookieParser = require('cookie-parser');
-
+var configurePassport = require('./config/passport')
 
 // var prerender = require('prerender-node');
 // prerender.set('prerenderToken', process.env.PRERENDER_KEY);
@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 
 app.use(cookieParser());
 
-
+configurePassport(app);
 
 app.use('/api', api);
 

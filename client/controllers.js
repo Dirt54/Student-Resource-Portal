@@ -1,7 +1,27 @@
 angular.module('portal.controllers', [])
 
-    .controller('loginController', ['$scope', 'CreateUsers', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope, CreateUsers, $location, $routeparams, UserService, SEOService) {
-        $scope.createuser = CreateUsers.query();
+    .controller('loginController', ['$scope', 'CreateUsers', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope, CreateUsers, $location, $routeParams, UserService, SEOService) {
+        
+        UserService.me().then(function (success) {
+            redirect();
+        });
+        function redirect() {
+            var dest = $location.search().dest;
+            if (!dest) {
+                dest = '/welcome';
+            }
+            $location.replace().path(dest).search('dest', null);
+        }
+
+        $scope.login = function () {
+            UserService.login($scope.email, $scope.password)
+                .then(function () {
+                    redirect();
+                }, function (err) {
+                    console.log(err);
+                });
+        }
+
        
         $scope.signup = function () {
             var payload = {
@@ -32,3 +52,12 @@ angular.module('portal.controllers', [])
             description: 'Please Login'    
         });
     }])
+
+
+    .controller('welcomeController', ['$scope', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope, $location, $routeParams, UserService, SEOService) {
+
+
+
+
+
+    }]);

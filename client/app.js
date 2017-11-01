@@ -6,5 +6,8 @@ angular.module('studentportal', ['ngRoute', 'ngResource', 'portal.controllers', 
         templateUrl: 'views/login.html',
         controller: 'loginController'
     })
-  
+    .when('/welcome', {
+        templateUrl: 'views/welcome.html',
+        controller: 'welcomeController'
+    })
 }]);
