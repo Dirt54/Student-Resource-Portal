@@ -77,21 +77,30 @@ angular.module('portal.controllers', [])
 
 
 
+        $scope.logout = function () {
+            //Just clear values from scope
+            $location.path('/api/users/logout');
+        }
 
 
     }])
+
+
+   
+   
 
     .controller('LecturesController', ['$scope', 'Lecture', function($scope, Lecture) {
         $scope.hidden= true;
 
 
 
-        $scope.show= function() {
-           if (this.hidden===true) {
-               this.hidden = false;
-           }else {
-               this.hidden = true;
-           }
+
+        $scope.show = function () {
+            if (this.hidden === true) {
+                this.hidden = false;
+            } else {
+                this.hidden = true;
+            }
         }
         $scope.lectures = Lecture.query();
     }])
@@ -100,59 +109,72 @@ angular.module('portal.controllers', [])
     .controller('usersController', ['$scope', 'NonActiveUsers', 'ActiveUsers', 'Users', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope, NonActiveUsers, ActiveUsers, Users, $location, $routeParams, UserService, SEOService) {
         $scope.nonactiveuser = NonActiveUsers.query();
         $scope.activeuser = ActiveUsers.query();
- 
+     
         $scope.activate = function () {
             $scope.thatguy = NonActiveUsers.get({ id: this.n.id });
-            $scope.thatguy.$update({ id: this.n.id}, function() {
+            $scope.thatguy.$update({ id: this.n.id }, function () {
                 $scope.nonactiveuser = NonActiveUsers.query();
-                }, function (err) {
-                    console.log(err);
+
+            }, function (err) {
+                console.log(err);
             });
         }
 
+        
+
+        $scope.deleteNon = function () {
+            $scope.eliminateNonActive = Users.get({ id: this.n.id })
+            $scope.eliminateNonActive.$delete({ id: this.n.id }, function () {
+                $scope.nonactiveuser = NonActiveUsers.query();
+            }, function (err) {
+                console.log(err);
+            });
+        }
+
+        $scope.deleteAct = function () {
+            $scope.eliminateActive = Users.get({ id: this.a.id })
+            $scope.eliminateActive.$delete({ id: this.a.id }, function () {
+                $scope.activeuser = ActiveUsers.query();
+            }, function (err) {
+                console.log(err);
+
+                }, function (err) {
+                    console.log(err);
+
+            });
+        }
+
+
     }])
 
-    .controller('resourcesController', ['$scope', 'ResourceByCategory', function ($scope, ResourceByCategory) {
-        $scope.videos = ResourceByCategory.query({ categoryid: 1 });
-        $scope.portfolio = ResourceByCategory.query({ categoryid: 2 });
-        $scope.misc = ResourceByCategory.query({ categoryid: 3 });
-    }])
+  
 
-    .controller('labsController', ['$scope', 'LabsByWeek', function ($scope, LabsByWeek) {
-        $scope.week1 = LabsByWeek.query({ week: 1 });
-        $scope.week2 = LabsByWeek.query({ week: 2 });
-        $scope.week3 = LabsByWeek.query({ week: 3 });
-        $scope.week4 = LabsByWeek.query({ week: 4 });
-        $scope.week5 = LabsByWeek.query({ week: 5 });
-        $scope.week6 = LabsByWeek.query({ week: 6 });
-        $scope.week7 = LabsByWeek.query({ week: 7 });
-        $scope.week8 = LabsByWeek.query({ week: 8 });
-        $scope.week9 = LabsByWeek.query({ week: 9 });
-        $scope.week10 = LabsByWeek.query({ week: 10 });
-    }])
-    .controller('resourcesController', ['$scope', 'Resource', function($scope, Resource) {
+    
+    .controller('resourcesController', ['$scope', 'Resource', function ($scope, Resource) {
         $scope.hidden = true;
         $scope.resources = Resource.query();
 
-        $scope.show= function() {
-            if (this.hidden===true) {
+        $scope.show = function () {
+            if (this.hidden === true) {
                 this.hidden = false;
-            }else {
+            } else {
                 this.hidden = true;
             }
-         }
+        }
     }])
 
-    .controller('labsController', ['$scope', 'Lab', function($scope, Lab) {
-        $scope.hidden= true;
-        $scope.labs = Lab.query();  
-        
-        $scope.show= function() {
-            if (this.hidden===true) {
+    .controller('labsController', ['$scope', 'Lab', function ($scope, Lab) {
+        $scope.hidden = true;
+        $scope.labs = Lab.query();
+
+        $scope.show = function () {
+            if (this.hidden === true) {
                 this.hidden = false;
-            }else {
+            } else {
                 this.hidden = true;
             }
-         }      
-    }]);
+
+        }
+
+         }]);
 

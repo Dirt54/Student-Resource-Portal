@@ -7,17 +7,18 @@ var auth = require('../middleware/auth.mw');
 
 var router = express.Router();
 
-// router.route('/')
-// .put(function(req, res) {
-//     procedures.editUser(req.body.id)
-//     .then(function() {
-//         res.sendStatus(204);
-//     })
-//     .catch(function(err) {
-//         console.log(err);
-//         res.sendStatus(500);
-//     });
-// })
+router.route('/:id')
+.delete(function(req, res) {
+    procedures.deleteUser(req.params.id)
+    .then(function() {
+        res.sendStatus(204);
+    })
+    .catch(function(err) {
+        console.log(err);
+        res.sendStatus(500);
+    });
+});
+
 
 router.route('/createusers')
 .post(function (req, res) {
