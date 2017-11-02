@@ -115,6 +115,7 @@ angular.module('portal.controllers', [])
         $scope.week8 = LabsByWeek.query({ week: 8 });
         $scope.week9 = LabsByWeek.query({ week: 9 });
         $scope.week10 = LabsByWeek.query({ week: 10 });
+    }])
     .controller('resourcesController', ['$scope', 'Resource', function($scope, Resource) {
         $scope.hidden = true;
         $scope.resources = Resource.query();
