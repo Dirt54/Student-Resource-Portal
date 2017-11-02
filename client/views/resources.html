@@ -54,10 +54,8 @@
         <h1>{{ r.categoryname }}</h1>
     </div>
     <div ng-hide="hidden" ng-repeat="i in resources | filter: { categoryname : r.categoryname }">
-        <h3>{{ i.title }}</h3>
-        <a ng-href="{{ i.url }}">
+        <h3>  <a ng-href="{{ i.url }}">{{ i.title }}</a></h3>
             <p>{{ i.description }}</p>
-        </a>
     </div>
 </div>
 

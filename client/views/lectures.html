@@ -58,10 +58,7 @@
     <div ng-hide="hidden" ng-repeat="i in lectures | filter: { week : l.week }">
 
             <h3>Day: {{ i.dayid }} </h3>
-            <h5>{{ i.title }}</h5>
-            <a ng-href="{{ i.url }}">
-                <p>{{ i.description }}</p>
-            </a>
+            <a>{{ i.title }}<a ng-href="{{ i.url }}"target="blank">&nbsp{{ i.description }}</a>
         </div>
     </div>
 

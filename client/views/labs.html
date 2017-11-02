@@ -53,10 +53,8 @@
         <h1>Week {{ l.week }}</h1>
     </div>
     <div ng-hide="hidden" ng-repeat="i in labs | filter: { week : l.week }">
-        <h5>Day {{ i.dayid }}</h5>
-        <a ng-href="{{ i.readmeURL }}">
-            <p>{{ i.description }}</p>
-        </a>
+        <a>Day {{ i.dayid }}</a>
+        <p>{{ i.title }}<a ng-href="{{ i.readmeURL }}"target="blank">&nbsp{{ i.description }}</a></p>
     </div>
 </div>
 
