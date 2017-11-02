@@ -23,3 +23,7 @@ exports.allActiveUsers = function() {
 exports.editUser = function(id) {
     return db.empty('activateUser', [id]);
 }
+
+exports.deleteUser = function(id) {
+    return db.empty('deleteUser', [id]);
+}

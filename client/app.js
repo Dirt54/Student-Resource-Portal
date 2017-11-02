@@ -9,15 +9,11 @@ angular.module('studentportal', ['ngRoute', 'ngResource', 'portal.controllers', 
     .when('/loginfail', {
         templateUrl: 'loginfail.html'
     })
-    // .when('/signout', {
-    //     templateUrl: '/api/users/logout',
-    //     controller: 'logoutController',
-
-    // })
     
     .when('/welcome', {
         templateUrl: 'views/welcome.html',
-        controller: 'welcomeController'
+        controller: 'logoutController'
+
     })
    
     .when('/users', {
