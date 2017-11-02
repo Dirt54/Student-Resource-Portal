@@ -1,30 +1,60 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">
-        <img src="images/covalence-text-logo.svg" height="105" width="210">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <!-- <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="nav navbar-nav navbar-right">
-                    <a class="nav-item nav-link" href="#">Fullstack</a>
-                    <a class="nav-item nav-link" href="#">ReactJS</a>
-                    <a class="nav-item nav-link" href="#">Front End Fundamentals</a>
-                    <a class="nav-item nav-link" href="#">Blog</a>
-                </div>
-            </div> -->
-</nav>
+        <a class="navbar-brand" href="/">
+                <img src="images/covalence-text-logo.svg" height="105" width="210">
+            </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+            aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="nav navbar-nav navbar-right">
+    
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">Fullstack</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/lectures">Lectures</a>
+                                <a class="dropdown-item" href="/labs">Labs</a>
+                                <a class="dropdown-item" href="/syllabus">Syllabus</a>
+                                <a class="dropdown-item" href="/resources">Resources</a>
+                                <a class="dropdown-item" href="/users">Users</a>
+                              </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">ReactJS</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Lectures</a>
+                                <a class="dropdown-item" href="#">Labs</a>
+                                <a class="dropdown-item" href="#">Syllabus</a>
+                                <a class="dropdown-item" href="#">Resources</a>
+                              </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">Front End Fundamentals</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Lectures</a>
+                                <a class="dropdown-item" href="#">Labs</a>
+                                <a class="dropdown-item" href="#">Syllabus</a>
+                                <a class="dropdown-item" href="#">Resources</a>
+                              </div>
+                </li>
+                <li>
+                     <a class="nav-item nav-link" href="#">Blog</a>
+                </li>
+            </div>
+        </div>
+    
+    </nav>
 
 <div ng-repeat="l in sorted_labs = (labs | orderBy: 'week')" ng-click="show()">
     <div ng-hide="l.week === sorted_labs[$index - 1].week">
         <h1>Week {{ l.week }}</h1>
     </div>
     <div ng-hide="hidden" ng-repeat="i in labs | filter: { week : l.week }">
-        <h5>Day {{ i.dayid }}</h5>
-        <a ng-href="{{ i.readmeURL }}">
-            <p>{{ i.description }}</p>
-        </a>
+        <a>Day {{ i.dayid }}</a>
+        <p>{{ i.title }}<a ng-href="{{ i.readmeURL }}"target="blank">&nbsp{{ i.description }}</a></p>
     </div>
 </div>
 
