@@ -77,21 +77,10 @@ angular.module('portal.controllers', [])
 
 
 
-<<<<<<< HEAD
-
-=======
-        $scope.logout = function () {
-            //Just clear values from scope
-            $location.path('/api/users/logout');
-        }
->>>>>>> 99c330f5e1fb6a9e88e7adfc1c7afb80d2607c63
 
 
     }])
 
-<<<<<<< HEAD
-    .controller('LecturesController', ['$scope', 'LectureByWeek', function ($scope, LectureByWeek) {
-=======
     .controller('LecturesController', ['$scope', 'Lecture', function($scope, Lecture) {
         $scope.hidden= true;
 
@@ -104,7 +93,6 @@ angular.module('portal.controllers', [])
                this.hidden = true;
            }
         }
->>>>>>> 99c330f5e1fb6a9e88e7adfc1c7afb80d2607c63
         $scope.lectures = Lecture.query();
     }])
 
@@ -114,18 +102,11 @@ angular.module('portal.controllers', [])
         $scope.activeuser = ActiveUsers.query();
  
         $scope.activate = function () {
-<<<<<<< HEAD
-            $scope.user.$update(function () {
-                $location.replace().path('/users');
-            }, function (err) {
-                console.log(err);
-=======
             $scope.thatguy = NonActiveUsers.get({ id: this.n.id });
             $scope.thatguy.$update({ id: this.n.id}, function() {
                 $scope.nonactiveuser = NonActiveUsers.query();
                 }, function (err) {
                     console.log(err);
->>>>>>> 99c330f5e1fb6a9e88e7adfc1c7afb80d2607c63
             });
         }
 
@@ -148,8 +129,6 @@ angular.module('portal.controllers', [])
         $scope.week8 = LabsByWeek.query({ week: 8 });
         $scope.week9 = LabsByWeek.query({ week: 9 });
         $scope.week10 = LabsByWeek.query({ week: 10 });
-<<<<<<< HEAD
-=======
     }])
     .controller('resourcesController', ['$scope', 'Resource', function($scope, Resource) {
         $scope.hidden = true;
@@ -175,6 +154,5 @@ angular.module('portal.controllers', [])
                 this.hidden = true;
             }
          }      
->>>>>>> 99c330f5e1fb6a9e88e7adfc1c7afb80d2607c63
     }]);
 
