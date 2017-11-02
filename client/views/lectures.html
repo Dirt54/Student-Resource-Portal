@@ -16,160 +16,65 @@
         </div> -->
 </nav>
 
-<div ng-repeat="w in week1">
-    <h1>Week {{ w.week }}</h1>
-    <div ng-repeat="w in week1">
-        <h3>Day: {{ w.dayid }} </h3>
-        <h5>{{ w.title }}</h5>
-        <p>{{ w.description }}</p>
-        <a ng-href="{{ w.url }}">
-            <p>{{ w.url }}</p>
-        </a>
-    </div>
-</div>
-<div>
-    <h1>Week 2</h1>
-    <div ng-repeat="w in week2">
-        <h3>Day: {{ w.dayid }} </h3>
-        <h5>{{ w.title }}</h5>
-        <p>{{ w.description }}</p>
-        <a ng-href="{{ w.url }}">
-            <p>{{ w.url }}</p>
-        </a>
-    </div>
-</div>
-<div>
-    <h1>Week 3</h1>
-    <div ng-repeat="w in week3">
-        <h3>Day: {{ w.dayid }} </h3>
-        <h5>{{ w.title }}</h5>
-        <p>{{ w.description }}</p>
-        <a ng-href="{{ w.url }}">
-            <p>{{ w.url }}</p>
-        </a>
-    </div>
-</div>
 
-<div>
-    <h1>Week 4</h1>
-    <div ng-repeat="w in week4">
-        <h3>Day: {{ w.dayid }} </h3>
-        <h5>{{ w.title }}</h5>
-        <p>{{ w.description }}</p>
-        <a ng-href="{{ w.url }}">
-            <p>{{ w.url }}</p>
+
+<div ng-repeat="l in sorted_lectures = (lectures | orderBy: 'week')" ng-click="show()">
+    <div ng-hide="l.week === sorted_lectures[$index - 1].week">
+        <h1>Week {{l.week }}</h1>
+    </div>
+    <div ng-hide="hidden">
+        <h3>Day: {{ l.dayid }} </h3>
+        <h5>{{ l.title }}</h5>
+        <a ng-href="{{ l.url }}">
+            <p>{{ l.description }}</p>
         </a>
     </div>
-</div>
-<div>
-    <h1>Week 5</h1>
-    <div ng-repeat="w in week5">
-        <h3>Day: {{ w.dayid }} </h3>
-        <h5>{{ w.title }}</h5>
-        <p>{{ w.description }}</p>
-        <a ng-href="{{ w.url }}">
-            <p>{{ w.url }}</p>
-        </a>
-    </div>
-</div>
-<div>
-    <h1>Week 6</h1>
-    <div ng-repeat="w in week6">
-        <h3>Day: {{ w.dayid }} </h3>
-        <h5>{{ w.title }}</h5>
-        <p>{{ w.description }}</p>
-        <a ng-href="{{ w.url }}">
-            <p>{{ w.url }}</p>
-        </a>
-    </div>
-</div>
-<div>
-    <h1>Week 7</h1>
-    <div ng-repeat="w in week7">
-        <h3>Day: {{ w.dayid }} </h3>
-        <h5>{{ w.title }}</h5>
-        <p>{{ w.description }}</p>
-        <a ng-href="{{ w.url }}">
-            <p>{{ w.url }}</p>
-        </a>
-    </div>
-</div>
-<div>
-    <h1>Week 8</h1>
-    <div ng-repeat="w in week8">
-        <h3>Day: {{ w.dayid }} </h3>
-        <h5>{{ w.title }}</h5>
-        <p>{{ w.description }}</p>
-        <a ng-href="{{ w.url }}">
-            <p>{{ w.url }}</p>
-        </a>
-    </div>
-</div>
-<div>
-    <h1>Week 9</h1>
-    <div ng-repeat="w in week9">
-        <h3>Day: {{ w.dayid }} </h3>
-        <h5>{{ w.title }}</h5>
-        <p>{{ w.description }}</p>
-        <a ng-href="{{ w.url }}">
-            <p>{{ w.url }}</p>
-        </a>
-    </div>
-</div>
-<div>
-    <h1>Week 10</h1>
-    <div ng-repeat="w in week10">
-        <h3>Day: {{ w.dayid }} </h3>
-        <h5>{{ w.title }}</h5>
-        <p>{{ w.description }}</p>
-        <a ng-href="{{ w.url }}">
-            <p>{{ w.url }}</p>
-        </a>
-    </div>
+
 </div>
 
 <div id="footer">
-
-    <footer class="bg-dark py-5">
-        <div class="logo">
-            <div class="row">
-                <a class="col-sm-4 col-lg-2" href="/">
+    
+        <footer class="bg-dark py-5">
+            <div class="logo">
+                <div class="row">
+                    <div class="col-lg-12 col-lg-offset-6">
                     <img class="logo-mark" src="https://covalence.io/static/img/logos/covalence-mark.svg" alt="Covalence Logo Mark">
-                </a>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="container pt-5">
-            <div class="row">
-                <div class="col-md-4 align-self-end text-center text-md-left mb-2">
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/covalence.io/" class="d-inline mx-1">
+            <div class="container pt-5">
+                <div class="row">
+                    <div class="col-md-4 align-self-end text-center text-md-left mb-2">
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/covalence.io/" class="d-inline mx-1">
                         <img class="social-icon" src="https://covalence.io/static/img/social/instagram.svg" alt="Instagram Logo"> </a>
-                    <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/covalence_io/" class="d-inline mx-1">
+                        <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/covalence_io/" class="d-inline mx-1">
                         <img class="social-icon" src="https://covalence.io/static/img/social/twitter.svg" alt="Twitter Logo"> </a>
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/covalence.io/" class="d-inline mx-1">
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/covalence.io/" class="d-inline mx-1">
                         <img class="social-icon" src="https://covalence.io/static/img/social/facebook.svg" alt="Facebook Logo"> </a>
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/covalence---coding-bootcamp/" class="d-inline mx-1">
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/covalence---coding-bootcamp/" class="d-inline mx-1">
                         <img class="social-icon" src="https://covalence.io/static/img/social/linkedin.svg" alt="Linkedin Logo"> </a>
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.coursereport.com/schools/covalence" class="d-inline mx-1">
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.coursereport.com/schools/covalence" class="d-inline mx-1">
                         <img class="social-icon" src="https://covalence.io/static/img/social/coursereport.svg" alt="Course Report Logo">
                     </a>
+                    </div>
+                    <div class="contact col-md-6 align-self-end text-center text-md-right my-2">
+                        <span class="text-warning px-2">General Admissions Contact:</span>
+                        <a href="mailto:admissions@covalence.io" class="text-white br px-2">admissions@covalence.io</a>
+                        <a href="tel:+12055884232" class="text-white px-2">205.588.4232</a>
+                    </div>
                 </div>
-                <div class="contact col-md-6 align-self-end text-center text-md-right my-2">
-                    <span class="text-warning px-2">General Admissions Contact:</span>
-                    <a href="mailto:admissions@covalence.io" class="text-white br px-2">admissions@covalence.io</a>
-                    <a href="tel:+12055884232" class="text-white px-2">205.588.4232</a>
-                </div>
-            </div>
-            <hr class="bg-gray mb-2">
-            <div class="row">
-                <div class="col text-center text-md-left">
-                    <span class="px-2 br text-gray text-nowrap">
+                <hr class="bg-gray mb-2">
+                <div class="row">
+                    <div class="col text-center text-md-left">
+                        <span class="px-2 br text-gray text-nowrap">
                         <span style="font-size:80%">©</span> 2017 Covalence. All Rights Reserved</span>
-                    <a href="/privacy-policy/" class="px-2 text-info br text-nowrap">Privacy Policy</a>
-                    <a href="/terms-of-service/" class="px-2 text-info text-nowrap">Terms of Service</a>
+                        <a href="/privacy-policy/" class="px-2 text-info br text-nowrap">Privacy Policy</a>
+                        <a href="/terms-of-service/" class="px-2 text-info text-nowrap">Terms of Service</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
-
-
-</div>
+        </footer>
+    
+    
+    </div>
+    
