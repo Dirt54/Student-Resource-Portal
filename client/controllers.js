@@ -23,6 +23,7 @@ angular.module('portal.controllers', [])
         }
     
 
+
         $scope.signup = function () {
             var payload = {
                 firstname: $scope.firstname,
@@ -67,6 +68,7 @@ angular.module('portal.controllers', [])
     }])
 
     .controller('LecturesController', ['$scope', 'LectureByWeek', function($scope, LectureByWeek) {
+        $scope.lectures = Lecture.query();
         $scope.week1 = LectureByWeek.query({ week: 1 });
         $scope.week2 = LectureByWeek.query({ week: 2 });
         $scope.week3 = LectureByWeek.query({ week: 3 });
@@ -77,6 +79,25 @@ angular.module('portal.controllers', [])
         $scope.week8 = LectureByWeek.query({ week: 8 });
         $scope.week9 = LectureByWeek.query({ week: 9 });
         $scope.week10 = LectureByWeek.query({ week: 10 });
+    }])
+
+
+    .controller('usersController', ['$scope', 'NonActiveUsers', 'ActiveUsers', 'Users', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope, NonActiveUsers, ActiveUsers, Users, $location, $routeParams, UserService, SEOService) {
+        $scope.nonactiveuser = NonActiveUsers.query();
+        $scope.activeuser = ActiveUsers.query();
+        $scope.user = Users.get({ id: $routeParams.someId });
+
+
+
+        $scope.activate = function () {
+            $scope.user.$update(function() {
+                $location.replace().path('/users');
+            }, function(err) {
+                console.log(err);
+            });
+        }
+
+
     }])
 
     .controller('resourcesController', ['$scope', 'ResourceByCategory', function($scope, ResourceByCategory) {
@@ -96,4 +117,5 @@ angular.module('portal.controllers', [])
         $scope.week8 = LabsByWeek.query({ week: 8 });
         $scope.week9 = LabsByWeek.query({ week: 9 });
         $scope.week10 = LabsByWeek.query({ week: 10 });        
-    }])
+    }]);
+
