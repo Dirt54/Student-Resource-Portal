@@ -56,9 +56,9 @@ angular.module('portal.controllers', [])
 
 
     .controller('logoutController', ['$scope', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope, $location, $routeParams, UserService, SEOService) {
-            
-        
-      
+
+
+
 
     }])
 
@@ -106,19 +106,16 @@ angular.module('portal.controllers', [])
     .controller('usersController', ['$scope', 'NonActiveUsers', 'ActiveUsers', 'Users', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope, NonActiveUsers, ActiveUsers, Users, $location, $routeParams, UserService, SEOService) {
         $scope.nonactiveuser = NonActiveUsers.query();
         $scope.activeuser = ActiveUsers.query();
-        // $scope.user = Users.query();
+
 
         $scope.activate = function () {
-
             $scope.thatguy = NonActiveUsers.get({ id: this.n.id });
             $scope.thatguy.$update({ id: this.n.id }, function () {
-
+                $scope.nonactiveuser = NonActiveUsers.query();
             }, function (err) {
                 console.log(err);
             });
         }
-
-        
 
         $scope.deleteNon = function () {
             $scope.eliminateNonActive = Users.get({ id: this.n.id })
