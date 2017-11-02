@@ -67,17 +67,17 @@ angular.module('portal.controllers', [])
 
     }])
 
-    .controller('LecturesController', ['$scope', 'Lecture', function($scope, Lecture) {
-        $scope.hidden= true;
+    .controller('LecturesController', ['$scope', 'Lecture', function ($scope, Lecture) {
+        $scope.hidden = true;
 
 
 
-        $scope.show= function() {
-           if (this.hidden===true) {
-               this.hidden = false;
-           }else {
-               this.hidden = true;
-           }
+        $scope.show = function () {
+            if (this.hidden === true) {
+                this.hidden = false;
+            } else {
+                this.hidden = true;
+            }
         }
         $scope.lectures = Lecture.query();
     }])
@@ -86,15 +86,37 @@ angular.module('portal.controllers', [])
     .controller('usersController', ['$scope', 'NonActiveUsers', 'ActiveUsers', 'Users', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope, NonActiveUsers, ActiveUsers, Users, $location, $routeParams, UserService, SEOService) {
         $scope.nonactiveuser = NonActiveUsers.query();
         $scope.activeuser = ActiveUsers.query();
- 
+        // $scope.user = Users.query();
+
         $scope.activate = function () {
             $scope.thatguy = NonActiveUsers.get({ id: this.n.id });
-            $scope.thatguy.$update({ id: this.n.id}, function() {
+            $scope.thatguy.$update({ id: this.n.id }, function () {
                 $scope.nonactiveuser = NonActiveUsers.query();
-                }, function (err) {
-                    console.log(err);
+            }, function (err) {
+                console.log(err);
             });
         }
+
+        
+
+        $scope.deleteNon = function () {
+            $scope.eliminateNonActive = Users.get({ id: this.n.id })
+            $scope.eliminateNonActive.$delete({ id: this.n.id }, function () {
+                $scope.nonactiveuser = NonActiveUsers.query();
+            }, function (err) {
+                console.log(err);
+            });
+        }
+
+        $scope.deleteAct = function () {
+            $scope.eliminateActive = Users.get({ id: this.a.id })
+            $scope.eliminateActive.$delete({ id: this.a.id }, function () {
+                $scope.activeuser = ActiveUsers.query();
+            }, function (err) {
+                console.log(err);
+            });
+        }
+
 
     }])
 
@@ -116,29 +138,29 @@ angular.module('portal.controllers', [])
         $scope.week9 = LabsByWeek.query({ week: 9 });
         $scope.week10 = LabsByWeek.query({ week: 10 });
     }])
-    .controller('resourcesController', ['$scope', 'Resource', function($scope, Resource) {
+    .controller('resourcesController', ['$scope', 'Resource', function ($scope, Resource) {
         $scope.hidden = true;
         $scope.resources = Resource.query();
 
-        $scope.show= function() {
-            if (this.hidden===true) {
+        $scope.show = function () {
+            if (this.hidden === true) {
                 this.hidden = false;
-            }else {
+            } else {
                 this.hidden = true;
             }
-         }
+        }
     }])
 
-    .controller('labsController', ['$scope', 'Lab', function($scope, Lab) {
-        $scope.hidden= true;
-        $scope.labs = Lab.query();  
-        
-        $scope.show= function() {
-            if (this.hidden===true) {
+    .controller('labsController', ['$scope', 'Lab', function ($scope, Lab) {
+        $scope.hidden = true;
+        $scope.labs = Lab.query();
+
+        $scope.show = function () {
+            if (this.hidden === true) {
                 this.hidden = false;
-            }else {
+            } else {
                 this.hidden = true;
             }
-         }      
+        }
     }]);
 
