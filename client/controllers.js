@@ -56,9 +56,9 @@ angular.module('portal.controllers', [])
 
 
     .controller('logoutController', ['$scope', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope, $location, $routeParams, UserService, SEOService) {
-            
-        
-      
+
+
+
 
     }])
 
@@ -85,16 +85,10 @@ angular.module('portal.controllers', [])
 
     }])
 
-<<<<<<< HEAD
+
+
     .controller('LecturesController', ['$scope', 'Lecture', function ($scope, Lecture) {
         $scope.hidden = true;
-=======
-<<<<<<< HEAD
-    .controller('LecturesController', ['$scope', 'LectureByWeek', function ($scope, LectureByWeek) {
-=======
-    .controller('LecturesController', ['$scope', 'Lecture', function($scope, Lecture) {
-        $scope.hidden= true;
->>>>>>> efbf4376381e667f5a960bf45ecca75c03abe6b4
 
 
 
@@ -105,7 +99,7 @@ angular.module('portal.controllers', [])
                 this.hidden = true;
             }
         }
->>>>>>> 99c330f5e1fb6a9e88e7adfc1c7afb80d2607c63
+
         $scope.lectures = Lecture.query();
     }])
 
@@ -113,25 +107,16 @@ angular.module('portal.controllers', [])
     .controller('usersController', ['$scope', 'NonActiveUsers', 'ActiveUsers', 'Users', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope, NonActiveUsers, ActiveUsers, Users, $location, $routeParams, UserService, SEOService) {
         $scope.nonactiveuser = NonActiveUsers.query();
         $scope.activeuser = ActiveUsers.query();
-        // $scope.user = Users.query();
+
 
         $scope.activate = function () {
-<<<<<<< HEAD
-            $scope.user.$update(function () {
-                $location.replace().path('/users');
-            }, function (err) {
-                console.log(err);
-=======
             $scope.thatguy = NonActiveUsers.get({ id: this.n.id });
             $scope.thatguy.$update({ id: this.n.id }, function () {
                 $scope.nonactiveuser = NonActiveUsers.query();
-<<<<<<< HEAD
             }, function (err) {
                 console.log(err);
             });
         }
-
-        
 
         $scope.deleteNon = function () {
             $scope.eliminateNonActive = Users.get({ id: this.n.id })
@@ -148,11 +133,7 @@ angular.module('portal.controllers', [])
                 $scope.activeuser = ActiveUsers.query();
             }, function (err) {
                 console.log(err);
-=======
-                }, function (err) {
-                    console.log(err);
->>>>>>> 99c330f5e1fb6a9e88e7adfc1c7afb80d2607c63
->>>>>>> efbf4376381e667f5a960bf45ecca75c03abe6b4
+
             });
         }
 
@@ -176,8 +157,7 @@ angular.module('portal.controllers', [])
         $scope.week8 = LabsByWeek.query({ week: 8 });
         $scope.week9 = LabsByWeek.query({ week: 9 });
         $scope.week10 = LabsByWeek.query({ week: 10 });
-<<<<<<< HEAD
-=======
+
     }])
     .controller('resourcesController', ['$scope', 'Resource', function ($scope, Resource) {
         $scope.hidden = true;
@@ -202,11 +182,7 @@ angular.module('portal.controllers', [])
             } else {
                 this.hidden = true;
             }
-<<<<<<< HEAD
         }
-=======
-         }      
->>>>>>> 99c330f5e1fb6a9e88e7adfc1c7afb80d2607c63
->>>>>>> efbf4376381e667f5a960bf45ecca75c03abe6b4
+
     }]);
 
