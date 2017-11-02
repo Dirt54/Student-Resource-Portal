@@ -6,8 +6,8 @@
         aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="nav navbar-nav navbar-right">
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+        <ul class="navbar-nav pr-xl-5">
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -43,13 +43,17 @@
             <li>
                  <a class="nav-item nav-link" href="#">Blog</a>
             </li>
-        </div>
+            <li class="nav-item mx-md-1 mx-xl-3">
+                <button type="button" class=" btn btn-danger btn-lg" ng-controller="logoutController" ng-click="logout()">
+                    <span class="glyphicon glyphicon-log-out"></span> Log out
+                  </button>
+            
+            </li>
+        </ul>
     </div>
 
 </nav>
 
-    <button type="button" class="btn btn-default btn-sm" ng-controller="logoutController" ng-click="logout()">
-        <span class="glyphicon glyphicon-log-out"></span> Log out
-      </button>
-
+    
+      
 
