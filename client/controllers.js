@@ -86,8 +86,8 @@ angular.module('portal.controllers', [])
     }])
 
 
-    .controller('LecturesController', ['$scope', 'Lecture', function($scope, Lecture) {
-        $scope.hidden= true;
+    .controller('LecturesController', ['$scope', 'Lecture', function ($scope, Lecture) {
+        $scope.hidden = true;
 
 
 
@@ -112,31 +112,34 @@ angular.module('portal.controllers', [])
             $scope.thatguy = NonActiveUsers.get({ id: this.n.id });
             $scope.thatguy.$update({ id: this.n.id }, function () {
                 $scope.nonactiveuser = NonActiveUsers.query();
+                $scope.activeuser = ActiveUsers.query();
             }, function (err) {
                 console.log(err);
             });
         }
 
         $scope.deleteNon = function () {
-            $scope.eliminateNonActive = Users.get({ id: this.n.id })
-            $scope.eliminateNonActive.$delete({ id: this.n.id }, function () {
-                $scope.nonactiveuser = NonActiveUsers.query();
-            }, function (err) {
-                console.log(err);
-            });
+            if (confirm('Are you sure you want to delete this account?')) {
+                $scope.eliminateNonActive = NonActiveUsers.get({ id: this.n.id })
+                $scope.eliminateNonActive.$delete({ id: this.n.id }, function () {
+                    $scope.nonactiveuser = NonActiveUsers.query();
+                    $scope.activeuser = ActiveUsers.query();
+                }, function (err) {
+                    console.log(err);
+                });
+            }
         }
 
         $scope.deleteAct = function () {
-            $scope.eliminateActive = Users.get({ id: this.a.id })
-            $scope.eliminateActive.$delete({ id: this.a.id }, function () {
-                $scope.activeuser = ActiveUsers.query();
-            }, function (err) {
-                console.log(err);
-
+            if (confirm('Are you sure you want to delete this account?')) {
+                $scope.eliminateActive = ActiveUsers.get({ id: this.a.id })
+                $scope.eliminateActive.$delete({ id: this.a.id }, function () {
+                    $scope.activeuser = ActiveUsers.query();
+                    $scope.nonactiveuser = NonActiveUsers.query();
                 }, function (err) {
                     console.log(err);
-
-            });
+                });
+            }
         }
     }])
 
@@ -164,7 +167,7 @@ angular.module('portal.controllers', [])
             } else {
                 this.hidden = true;
             }
-         }      
+        }
 
     }]);
 
