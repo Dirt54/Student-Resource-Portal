@@ -7,17 +7,17 @@ var auth = require('../middleware/auth.mw');
 
 var router = express.Router();
 
-router.route('/')
-.put(function(req, res) {
-    procedures.editUser(req.params.id)
-    .then(function() {
-        res.sendStatus(204);
-    })
-    .catch(function(err) {
-        console.log(err);
-        res.sendStatus(500);
-    });
-})
+// router.route('/')
+// .put(function(req, res) {
+//     procedures.editUser(req.body.id)
+//     .then(function() {
+//         res.sendStatus(204);
+//     })
+//     .catch(function(err) {
+//         console.log(err);
+//         res.sendStatus(500);
+//     });
+// })
 
 router.route('/createusers')
 .post(function (req, res) {
@@ -45,7 +45,32 @@ router.route('/nonactive')
             console.log(err);
             res.sendStatus(500);
         });
-    });
+    })
+ 
+
+    router.route('/nonactive/:id')
+    .get(function(req, res) {
+        // console.log(req);
+        procedures.read(req.params.id)
+        .then(function(user) {
+            res.send(user)
+        })
+        .catch(function(err) {
+            console.log(err);
+            res.sendStatus(500);
+        })
+    })
+    .put(function(req, res) {
+        // console.log(req);
+        procedures.editUser(req.params.id)
+        .then(function() {
+            res.sendStatus(204);
+        })
+        .catch(function(err) {
+            console.log(err);
+            res.sendStatus(500);
+        });
+    })
 
     router.route('/active')
     .get(function(req, res) {
