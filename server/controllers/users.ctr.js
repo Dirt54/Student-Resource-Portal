@@ -7,18 +7,6 @@ var auth = require('../middleware/auth.mw');
 
 var router = express.Router();
 
-// router.route('/:id')
-// .delete(function(req, res) {
-//     procedures.deleteUser(req.params.id)
-//     .then(function() {
-//         res.sendStatus(204);
-//     })
-//     .catch(function(err) {
-//         console.log(err);
-//         res.sendStatus(500);
-//     });
-// });
-
 
 router.route('/createusers')
 .post(function (req, res) {
@@ -36,7 +24,7 @@ router.route('/createusers')
 });
 
 
-router.route('/nonactive')
+router.route('/nonactive', auth.isLoggedIn, auth.isAdmin, auth.isActive)
     .get(function(req, res) {
         procedures.allNonActiveUsers()
         .then(function(users) {
@@ -49,7 +37,7 @@ router.route('/nonactive')
     })
  
 
-    router.route('/nonactive/:id')
+    router.route('/nonactive/:id', auth.isLoggedIn, auth.isAdmin, auth.isActive)
     .get(function(req, res) {
         // console.log(req);
         procedures.read(req.params.id)
@@ -84,7 +72,7 @@ router.route('/nonactive')
     });
 
 
-    router.route('/active')
+    router.route('/active', auth.isLoggedIn, auth.isAdmin, auth.isActive)
     .get(function(req, res) {
         procedures.allActiveUsers()
         .then(function(users) {
@@ -96,7 +84,7 @@ router.route('/nonactive')
         });
     })
 
-    router.route('/active/:id')
+    router.route('/active/:id', auth.isLoggedIn, auth.isAdmin, auth.isActive)
     .delete(function(req, res) {
         procedures.deleteUser(req.params.id)
         .then(function() {
