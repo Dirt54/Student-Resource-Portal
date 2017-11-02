@@ -24,7 +24,17 @@ router.route('/')
                 console.log(err);
                 res.sendStatus(500);
             });
-    });
+    })
+
+    .get(function(req, res) {
+        procedures.all()
+        .then(function(labs){
+            res.send(labs);
+        }).catch(function(err) {
+            console.log(err);
+            res.sendStatus(500);
+        })
+    })
 
 router.route('/:id')
     .delete(function (req, res) {

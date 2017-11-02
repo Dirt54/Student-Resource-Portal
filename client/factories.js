@@ -1,15 +1,15 @@
 angular.module('portal.factories', [])
 
 .factory('Users', ['$resource', function ($resource) {
-    return $resource('/api/users/:id', { id: '@id' }, {
-        update: {
-            method: 'PUT'
-        }
-    });
+    return $resource('/api/users/:id');
 }])
 
 .factory('NonActiveUsers', ['$resource', function ($resource) {
-    return $resource('/api/users/nonactive/:id');
+    return $resource('/api/users/nonactive/:id', { id: '@id' }, {
+    update: {
+        method: 'PUT'
+    }
+    });
 }])
 
 .factory('ActiveUsers', ['$resource', function ($resource) {
@@ -24,14 +24,14 @@ angular.module('portal.factories', [])
     });
 }])
 
-.factory('LectureByWeek', ['$resource', function($resource) {
-    return $resource('/api/lectures/week/:week');
+.factory('Lecture', ['$resource', function($resource){
+    return $resource('api/lectures/');
 }])
 
-.factory('ResourceByCategory', ['$resource', function($resource) {
-    return $resource('/api/resources/:categoryid');
+.factory('Resource', ['$resource', function($resource) {
+    return $resource('/api/resources/');
 }])
 
-.factory('LabsByWeek', ['$resource', function($resource) {
-    return $resource('/api/labs/week/:week');
+.factory('Lab', ['$resource', function($resource) {
+    return $resource('/api/labs/');
 }])

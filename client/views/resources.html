@@ -16,34 +16,14 @@
         </div> -->
 </nav>
 
-
-<div>
-    <h1>Videos</h1>
-    <div ng-repeat="r in videos">
-        <h3>{{ r.title }}</h3>
-        <h5>{{ r.description }}</h5>
-        <a ng-href="{{ r.url }}">
-            <p>{{ r.url }}</p>
-        </a>
+<div ng-repeat="r in sorted_resources = (resources | orderBy:'categoryid')" ng-click="show()">
+    <div ng-hide="r.categoryname === sorted_resources[$index - 1].categoryname">
+        <h1>{{ r.categoryname }}</h1>
     </div>
-</div>
-<div>
-    <h1>Portfolio Building Projects</h1>
-    <div ng-repeat="r in portfolio">
-        <h3>{{ r.title }}</h3>
-        <h5>{{ r.description }}</h5>
-        <a ng-href="{{ r.url }}">
-            <p>{{ r.url }}</p>
-        </a>
-    </div>
-</div>
-<div>
-    <h1>Miscellaneous</h1>
-    <div ng-repeat="r in misc">
-        <h3>{{ r.title }}</h3>
-        <h5>{{ r.description }}</h5>
-        <a ng-href="{{ r.url }}">
-            <p>{{ r.url }}</p>
+    <div ng-hide="hidden" ng-repeat="i in resources | filter: { categoryname : r.categoryname }">
+        <h3>{{ i.title }}</h3>
+        <a ng-href="{{ i.url }}">
+            <p>{{ i.description }}</p>
         </a>
     </div>
 </div>

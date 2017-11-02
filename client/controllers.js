@@ -77,41 +77,57 @@ angular.module('portal.controllers', [])
 
 
 
+<<<<<<< HEAD
 
+=======
+        $scope.logout = function () {
+            //Just clear values from scope
+            $location.path('/api/users/logout');
+        }
+>>>>>>> 99c330f5e1fb6a9e88e7adfc1c7afb80d2607c63
 
 
     }])
 
+<<<<<<< HEAD
     .controller('LecturesController', ['$scope', 'LectureByWeek', function ($scope, LectureByWeek) {
+=======
+    .controller('LecturesController', ['$scope', 'Lecture', function($scope, Lecture) {
+        $scope.hidden= true;
+
+
+
+        $scope.show= function() {
+           if (this.hidden===true) {
+               this.hidden = false;
+           }else {
+               this.hidden = true;
+           }
+        }
+>>>>>>> 99c330f5e1fb6a9e88e7adfc1c7afb80d2607c63
         $scope.lectures = Lecture.query();
-        $scope.week1 = LectureByWeek.query({ week: 1 });
-        $scope.week2 = LectureByWeek.query({ week: 2 });
-        $scope.week3 = LectureByWeek.query({ week: 3 });
-        $scope.week4 = LectureByWeek.query({ week: 4 });
-        $scope.week5 = LectureByWeek.query({ week: 5 });
-        $scope.week6 = LectureByWeek.query({ week: 6 });
-        $scope.week7 = LectureByWeek.query({ week: 7 });
-        $scope.week8 = LectureByWeek.query({ week: 8 });
-        $scope.week9 = LectureByWeek.query({ week: 9 });
-        $scope.week10 = LectureByWeek.query({ week: 10 });
     }])
 
 
     .controller('usersController', ['$scope', 'NonActiveUsers', 'ActiveUsers', 'Users', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope, NonActiveUsers, ActiveUsers, Users, $location, $routeParams, UserService, SEOService) {
         $scope.nonactiveuser = NonActiveUsers.query();
         $scope.activeuser = ActiveUsers.query();
-        $scope.user = Users.get({ id: $routeParams.someId });
-
-
-
+ 
         $scope.activate = function () {
+<<<<<<< HEAD
             $scope.user.$update(function () {
                 $location.replace().path('/users');
             }, function (err) {
                 console.log(err);
+=======
+            $scope.thatguy = NonActiveUsers.get({ id: this.n.id });
+            $scope.thatguy.$update({ id: this.n.id}, function() {
+                $scope.nonactiveuser = NonActiveUsers.query();
+                }, function (err) {
+                    console.log(err);
+>>>>>>> 99c330f5e1fb6a9e88e7adfc1c7afb80d2607c63
             });
         }
-
 
     }])
 
@@ -132,5 +148,33 @@ angular.module('portal.controllers', [])
         $scope.week8 = LabsByWeek.query({ week: 8 });
         $scope.week9 = LabsByWeek.query({ week: 9 });
         $scope.week10 = LabsByWeek.query({ week: 10 });
+<<<<<<< HEAD
+=======
+    }])
+    .controller('resourcesController', ['$scope', 'Resource', function($scope, Resource) {
+        $scope.hidden = true;
+        $scope.resources = Resource.query();
+
+        $scope.show= function() {
+            if (this.hidden===true) {
+                this.hidden = false;
+            }else {
+                this.hidden = true;
+            }
+         }
+    }])
+
+    .controller('labsController', ['$scope', 'Lab', function($scope, Lab) {
+        $scope.hidden= true;
+        $scope.labs = Lab.query();  
+        
+        $scope.show= function() {
+            if (this.hidden===true) {
+                this.hidden = false;
+            }else {
+                this.hidden = true;
+            }
+         }      
+>>>>>>> 99c330f5e1fb6a9e88e7adfc1c7afb80d2607c63
     }]);
 
