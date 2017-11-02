@@ -21,7 +21,7 @@ angular.module('portal.controllers', [])
                     console.log(err);
                 });
         }
-    
+
 
 
         $scope.signup = function () {
@@ -59,11 +59,11 @@ angular.module('portal.controllers', [])
 
 
 
-        $scope.logout = function(){
+        $scope.logout = function () {
             //Just clear values from scope
             $location.path('/api/users/logout');
         }
-    
+
 
     }])
 
@@ -86,21 +86,36 @@ angular.module('portal.controllers', [])
     .controller('usersController', ['$scope', 'NonActiveUsers', 'ActiveUsers', 'Users', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope, NonActiveUsers, ActiveUsers, Users, $location, $routeParams, UserService, SEOService) {
         $scope.nonactiveuser = NonActiveUsers.query();
         $scope.activeuser = ActiveUsers.query();
-        $scope.user = Users.get({ id: $routeParams.someId });
-
-
-
+ 
         $scope.activate = function () {
-            $scope.user.$update(function() {
-                $location.replace().path('/users');
-            }, function(err) {
-                console.log(err);
+            $scope.thatguy = NonActiveUsers.get({ id: this.n.id });
+            $scope.thatguy.$update({ id: this.n.id}, function() {
+                $scope.nonactiveuser = NonActiveUsers.query();
+                }, function (err) {
+                    console.log(err);
             });
         }
 
-
     }])
 
+    .controller('resourcesController', ['$scope', 'ResourceByCategory', function ($scope, ResourceByCategory) {
+        $scope.videos = ResourceByCategory.query({ categoryid: 1 });
+        $scope.portfolio = ResourceByCategory.query({ categoryid: 2 });
+        $scope.misc = ResourceByCategory.query({ categoryid: 3 });
+    }])
+
+    .controller('labsController', ['$scope', 'LabsByWeek', function ($scope, LabsByWeek) {
+        $scope.week1 = LabsByWeek.query({ week: 1 });
+        $scope.week2 = LabsByWeek.query({ week: 2 });
+        $scope.week3 = LabsByWeek.query({ week: 3 });
+        $scope.week4 = LabsByWeek.query({ week: 4 });
+        $scope.week5 = LabsByWeek.query({ week: 5 });
+        $scope.week6 = LabsByWeek.query({ week: 6 });
+        $scope.week7 = LabsByWeek.query({ week: 7 });
+        $scope.week8 = LabsByWeek.query({ week: 8 });
+        $scope.week9 = LabsByWeek.query({ week: 9 });
+        $scope.week10 = LabsByWeek.query({ week: 10 });
+    }])
     .controller('resourcesController', ['$scope', 'Resource', function($scope, Resource) {
         $scope.hidden = true;
         $scope.resources = Resource.query();
