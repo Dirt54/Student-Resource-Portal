@@ -85,8 +85,12 @@ angular.module('portal.controllers', [])
 
     }])
 
+
     .controller('LecturesController', ['$scope', 'Lecture', function($scope, Lecture) {
         $scope.hidden= true;
+
+
+
 
         $scope.show = function () {
             if (this.hidden === true) {
@@ -105,9 +109,10 @@ angular.module('portal.controllers', [])
         // $scope.user = Users.query();
 
         $scope.activate = function () {
+
             $scope.thatguy = NonActiveUsers.get({ id: this.n.id });
             $scope.thatguy.$update({ id: this.n.id }, function () {
-                $scope.nonactiveuser = NonActiveUsers.query();
+
             }, function (err) {
                 console.log(err);
             });
@@ -130,14 +135,17 @@ angular.module('portal.controllers', [])
                 $scope.activeuser = ActiveUsers.query();
             }, function (err) {
                 console.log(err);
+
                 }, function (err) {
                     console.log(err);
+
             });
         }
     }])
 
 
     .controller('resourcesController', ['$scope', 'Resource', function ($scope, Resource) {
+
         $scope.hidden = true;
         $scope.resources = Resource.query();
 
@@ -160,6 +168,7 @@ angular.module('portal.controllers', [])
             } else {
                 this.hidden = true;
             }
-        }
+         }      
+
     }]);
 
