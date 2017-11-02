@@ -85,18 +85,8 @@ angular.module('portal.controllers', [])
 
     }])
 
-<<<<<<< HEAD
-    .controller('LecturesController', ['$scope', 'Lecture', function ($scope, Lecture) {
-        $scope.hidden = true;
-=======
-<<<<<<< HEAD
-    .controller('LecturesController', ['$scope', 'LectureByWeek', function ($scope, LectureByWeek) {
-=======
     .controller('LecturesController', ['$scope', 'Lecture', function($scope, Lecture) {
         $scope.hidden= true;
->>>>>>> efbf4376381e667f5a960bf45ecca75c03abe6b4
-
-
 
         $scope.show = function () {
             if (this.hidden === true) {
@@ -105,7 +95,6 @@ angular.module('portal.controllers', [])
                 this.hidden = true;
             }
         }
->>>>>>> 99c330f5e1fb6a9e88e7adfc1c7afb80d2607c63
         $scope.lectures = Lecture.query();
     }])
 
@@ -116,16 +105,9 @@ angular.module('portal.controllers', [])
         // $scope.user = Users.query();
 
         $scope.activate = function () {
-<<<<<<< HEAD
-            $scope.user.$update(function () {
-                $location.replace().path('/users');
-            }, function (err) {
-                console.log(err);
-=======
             $scope.thatguy = NonActiveUsers.get({ id: this.n.id });
             $scope.thatguy.$update({ id: this.n.id }, function () {
                 $scope.nonactiveuser = NonActiveUsers.query();
-<<<<<<< HEAD
             }, function (err) {
                 console.log(err);
             });
@@ -148,37 +130,13 @@ angular.module('portal.controllers', [])
                 $scope.activeuser = ActiveUsers.query();
             }, function (err) {
                 console.log(err);
-=======
                 }, function (err) {
                     console.log(err);
->>>>>>> 99c330f5e1fb6a9e88e7adfc1c7afb80d2607c63
->>>>>>> efbf4376381e667f5a960bf45ecca75c03abe6b4
             });
         }
-
-
     }])
 
-    .controller('resourcesController', ['$scope', 'ResourceByCategory', function ($scope, ResourceByCategory) {
-        $scope.videos = ResourceByCategory.query({ categoryid: 1 });
-        $scope.portfolio = ResourceByCategory.query({ categoryid: 2 });
-        $scope.misc = ResourceByCategory.query({ categoryid: 3 });
-    }])
 
-    .controller('labsController', ['$scope', 'LabsByWeek', function ($scope, LabsByWeek) {
-        $scope.week1 = LabsByWeek.query({ week: 1 });
-        $scope.week2 = LabsByWeek.query({ week: 2 });
-        $scope.week3 = LabsByWeek.query({ week: 3 });
-        $scope.week4 = LabsByWeek.query({ week: 4 });
-        $scope.week5 = LabsByWeek.query({ week: 5 });
-        $scope.week6 = LabsByWeek.query({ week: 6 });
-        $scope.week7 = LabsByWeek.query({ week: 7 });
-        $scope.week8 = LabsByWeek.query({ week: 8 });
-        $scope.week9 = LabsByWeek.query({ week: 9 });
-        $scope.week10 = LabsByWeek.query({ week: 10 });
-<<<<<<< HEAD
-=======
-    }])
     .controller('resourcesController', ['$scope', 'Resource', function ($scope, Resource) {
         $scope.hidden = true;
         $scope.resources = Resource.query();
@@ -202,11 +160,6 @@ angular.module('portal.controllers', [])
             } else {
                 this.hidden = true;
             }
-<<<<<<< HEAD
         }
-=======
-         }      
->>>>>>> 99c330f5e1fb6a9e88e7adfc1c7afb80d2607c63
->>>>>>> efbf4376381e667f5a960bf45ecca75c03abe6b4
     }]);
 
