@@ -56,18 +56,16 @@ angular.module('portal.controllers', [])
 
 
     .controller('logoutController', ['$scope', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope, $location, $routeParams, UserService, SEOService) {
-
-
-
-
+        $scope.logout = function () {
+            UserService.logout().then(function (success) {
+                redirect();
+            });
+            function redirect() {
+                
+                    $location.replace().path('/');
+            }
+        }
     }])
-
-
-
-
-
-
-
 
 
 
@@ -75,19 +73,11 @@ angular.module('portal.controllers', [])
 
     .controller('welcomeController', ['$scope', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope, $location, $routeParams, UserService, SEOService) {
 
-
-
-        $scope.logout = function () {
-            //Just clear values from scope
-            $location.path('/api/users/logout');
-        }
-
-
     }])
 
 
-    .controller('LecturesController', ['$scope', 'Lecture', function($scope, Lecture) {
-        $scope.hidden= true;
+    .controller('LecturesController', ['$scope', 'Lecture', function ($scope, Lecture) {
+        $scope.hidden = true;
 
 
 
@@ -133,8 +123,8 @@ angular.module('portal.controllers', [])
             }, function (err) {
                 console.log(err);
 
-                }, function (err) {
-                    console.log(err);
+            }, function (err) {
+                console.log(err);
 
             });
         }
@@ -164,7 +154,7 @@ angular.module('portal.controllers', [])
             } else {
                 this.hidden = true;
             }
-         }      
+        }
 
     }]);
 
