@@ -16,118 +16,18 @@
             </div> -->
 </nav>
 
-<div>
-    <h1>Week 1</h1>
-    <div ng-repeat="l in week1">
-        <h3>Day {{ l.dayid }}</h3>
-        <h4>{{ l.title }}</h4>
-        <p>{{ l.description }}</p>
-        <a ng-href="{{ l.readmeURL }}">
-            <p>ReadMe</p>
-        </a>
+<div ng-repeat="l in sorted_labs = (labs | orderBy: 'week')">
+    <div ng-hide="l.week === sorted_labs[$index - 1].week">
+        <h1>Week {{ l.week }}</h1>
     </div>
-</div>
-<div>
-    <h1>Week 2</h1>
-    <div ng-repeat="l in week2">
-        <h3>Day {{ l.dayid }}</h3>
-        <h4>{{ l.title }}</h4>
+    <h5>Day {{ l.dayid }}</h5>
+    <a ng-href="{{ l.readmeURL }}">
         <p>{{ l.description }}</p>
-        <a ng-href="{{ l.readmeURL }}">
-            <p>ReadMe</p>
-        </a>
-    </div>
-</div>
-<div>
-    <h1>Week 3</h1>
-    <div ng-repeat="l in week3">
-        <h3>Day {{ l.dayid }}</h3>
-        <h4>{{ l.title }}</h4>
-        <p>{{ l.description }}</p>
-        <a ng-href="{{ l.readmeURL }}">
-            <p>ReadMe</p>
-        </a>
-    </div>
-</div>
-<div>
-    <h1>Week 4</h1>
-    <div ng-repeat="l in week4">
-        <h3>Day {{ l.dayid }}</h3>
-        <h4>{{ l.title }}</h4>
-        <p>{{ l.description }}</p>
-        <a ng-href="{{ l.readmeURL }}">
-            <p>ReadMe</p>
-        </a>
-    </div>
-</div>
-<div>
-    <h1>Week 5</h1>
-    <div ng-repeat="l in week5">
-        <h3>Day {{ l.dayid }}</h3>
-        <h4>{{ l.title }}</h4>
-        <p>{{ l.description }}</p>
-        <a ng-href="{{ l.readmeURL }}">
-            <p>ReadMe</p>
-        </a>
-    </div>
-</div>
-<div>
-    <h1>Week 6</h1>
-    <div ng-repeat="l in week6">
-        <h3>Day {{ l.dayid }}</h3>
-        <h4>{{ l.title }}</h4>
-        <p>{{ l.description }}</p>
-        <a ng-href="{{ l.readmeURL }}">
-            <p>ReadMe</p>
-        </a>
-    </div>
-</div>
-<div>
-    <h1>Week 7</h1>
-    <div ng-repeat="l in week7">
-        <h3>Day {{ l.dayid }}</h3>
-        <h4>{{ l.title }}</h4>
-        <p>{{ l.description }}</p>
-        <a ng-href="{{ l.readmeURL }}">
-            <p>ReadMe</p>
-        </a>
-    </div>
-</div>
-<div>
-    <h1>Week 8</h1>
-    <div ng-repeat="l in week8">
-        <h3>Day {{ l.dayid }}</h3>
-        <h4>{{ l.title }}</h4>
-        <p>{{ l.description }}</p>
-        <a ng-href="{{ l.readmeURL }}">
-            <p>ReadMe</p>
-        </a>
-    </div>
-</div>
-<div>
-    <h1>Week 9</h1>
-    <div ng-repeat="l in week9">
-        <h3>Day {{ l.dayid }}</h3>
-        <h4>{{ l.title }}</h4>
-        <p>{{ l.description }}</p>
-        <a ng-href="{{ l.readmeURL }}">
-            <p>ReadMe</p>
-        </a>
-    </div>
-</div>
-<div>
-    <h1>Week 10</h1>
-    <div ng-repeat="l in week10">
-        <h3>Day {{ l.dayid }}</h3>
-        <h4>{{ l.title }}</h4>
-        <p>{{ l.description }}</p>
-        <a ng-href="{{ l.readmeURL }}">
-            <p>ReadMe</p>
-        </a>
-    </div>
+    </a>
 </div>
 
-<div id="footer">
+
+<!-- <div id="footer">
 
     <footer class="bg-dark py-5">
         <div class="logo">
@@ -171,4 +71,4 @@
     </footer>
 
 
-</div>
+</div> -->

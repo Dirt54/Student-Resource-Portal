@@ -67,18 +67,19 @@ angular.module('portal.controllers', [])
 
     }])
 
-    .controller('LecturesController', ['$scope', 'LectureByWeek', function($scope, LectureByWeek) {
+    .controller('LecturesController', ['$scope', 'Lecture', function($scope, Lecture) {
+        $scope.hidden= true;
+
+
+
+        $scope.show= function() {
+           if (this.hidden===true) {
+               this.hidden = false;
+           }else {
+               this.hidden = true;
+           }
+        }
         $scope.lectures = Lecture.query();
-        $scope.week1 = LectureByWeek.query({ week: 1 });
-        $scope.week2 = LectureByWeek.query({ week: 2 });
-        $scope.week3 = LectureByWeek.query({ week: 3 });
-        $scope.week4 = LectureByWeek.query({ week: 4 });
-        $scope.week5 = LectureByWeek.query({ week: 5 });
-        $scope.week6 = LectureByWeek.query({ week: 6 });
-        $scope.week7 = LectureByWeek.query({ week: 7 });
-        $scope.week8 = LectureByWeek.query({ week: 8 });
-        $scope.week9 = LectureByWeek.query({ week: 9 });
-        $scope.week10 = LectureByWeek.query({ week: 10 });
     }])
 
 
@@ -100,22 +101,29 @@ angular.module('portal.controllers', [])
 
     }])
 
-    .controller('resourcesController', ['$scope', 'ResourceByCategory', function($scope, ResourceByCategory) {
-        $scope.videos = ResourceByCategory.query({ categoryid: 1 });
-        $scope.portfolio = ResourceByCategory.query({ categoryid: 2 });
-        $scope.misc = ResourceByCategory.query({ categoryid: 3 });
+    .controller('resourcesController', ['$scope', 'Resource', function($scope, Resource) {
+        $scope.hidden = true;
+        $scope.resources = Resource.query();
+
+        $scope.show= function() {
+            if (this.hidden===true) {
+                this.hidden = false;
+            }else {
+                this.hidden = true;
+            }
+         }
     }])
 
-    .controller('labsController', ['$scope', 'LabsByWeek', function($scope, LabsByWeek) {
-        $scope.week1 = LabsByWeek.query({ week: 1 });
-        $scope.week2 = LabsByWeek.query({ week: 2 });
-        $scope.week3 = LabsByWeek.query({ week: 3 });
-        $scope.week4 = LabsByWeek.query({ week: 4 });
-        $scope.week5 = LabsByWeek.query({ week: 5 });
-        $scope.week6 = LabsByWeek.query({ week: 6 });
-        $scope.week7 = LabsByWeek.query({ week: 7 });
-        $scope.week8 = LabsByWeek.query({ week: 8 });
-        $scope.week9 = LabsByWeek.query({ week: 9 });
-        $scope.week10 = LabsByWeek.query({ week: 10 });        
+    .controller('labsController', ['$scope', 'Lab', function($scope, Lab) {
+        $scope.hidden= true;
+        $scope.labs = Lab.query();  
+        
+        $scope.show= function() {
+            if (this.hidden===true) {
+                this.hidden = false;
+            }else {
+                this.hidden = true;
+            }
+         }      
     }]);
 

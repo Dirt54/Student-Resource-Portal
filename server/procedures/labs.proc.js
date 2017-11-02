@@ -18,3 +18,6 @@ exports.update = function (id, week, dayid, title, description, readmeURL) {
     return db.empty('updateLab', [id, week, dayid, title, description, readmeURL]);
 }
 
+exports.all = function() {
+    return db.rows('getAllLabs');
+}
