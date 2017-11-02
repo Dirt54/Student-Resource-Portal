@@ -24,8 +24,8 @@ router.route('/createusers')
 });
 
 
-router.route('/nonactive', auth.isLoggedIn, auth.isAdmin, auth.isActive)
-    .get(function(req, res) {
+router.route('/nonactive')
+    .get(auth.isLoggedIn, auth.isAdmin, auth.isActive, function(req, res) {
         procedures.allNonActiveUsers()
         .then(function(users) {
             res.send(users);
@@ -37,8 +37,8 @@ router.route('/nonactive', auth.isLoggedIn, auth.isAdmin, auth.isActive)
     })
  
 
-    router.route('/nonactive/:id', auth.isLoggedIn, auth.isAdmin, auth.isActive)
-    .get(function(req, res) {
+    router.route('/nonactive/:id')
+    .get(auth.isLoggedIn, auth.isAdmin, auth.isActive, function(req, res) {
         // console.log(req);
         procedures.read(req.params.id)
         .then(function(user) {
@@ -49,7 +49,7 @@ router.route('/nonactive', auth.isLoggedIn, auth.isAdmin, auth.isActive)
             res.sendStatus(500);
         })
     })
-    .put(function(req, res) {
+    .put(auth.isLoggedIn, auth.isAdmin, auth.isActive, function(req, res) {
         // console.log(req);
         procedures.editUser(req.params.id)
         .then(function() {
@@ -60,7 +60,7 @@ router.route('/nonactive', auth.isLoggedIn, auth.isAdmin, auth.isActive)
             res.sendStatus(500);
         });
     })
-    .delete(function(req, res) {
+    .delete(auth.isLoggedIn, auth.isAdmin, auth.isActive, function(req, res) {
         procedures.deleteUser(req.params.id)
         .then(function() {
             res.sendStatus(204);
@@ -72,8 +72,8 @@ router.route('/nonactive', auth.isLoggedIn, auth.isAdmin, auth.isActive)
     });
 
 
-    router.route('/active', auth.isLoggedIn, auth.isAdmin, auth.isActive)
-    .get(function(req, res) {
+    router.route('/active')
+    .get(auth.isLoggedIn, auth.isAdmin, auth.isActive, function(req, res) {
         procedures.allActiveUsers()
         .then(function(users) {
             res.send(users);
@@ -84,8 +84,8 @@ router.route('/nonactive', auth.isLoggedIn, auth.isAdmin, auth.isActive)
         });
     })
 
-    router.route('/active/:id', auth.isLoggedIn, auth.isAdmin, auth.isActive)
-    .delete(function(req, res) {
+    router.route('/active/:id')
+    .delete(auth.isLoggedIn, auth.isAdmin, auth.isActive, function(req, res) {
         procedures.deleteUser(req.params.id)
         .then(function() {
             res.sendStatus(204);
