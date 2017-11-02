@@ -13,7 +13,17 @@ router.route('/')
                 console.log(err);
                 res.sendStatus(500);
             });
-    });
+    })
+
+    .get(function(req, res){
+        procedures.all()
+        .then(function(resources) {
+            res.send(resources);
+        }).catch(function(err) {
+            console.log(err);
+            res.sendStatus(500);
+        })
+    })
 
 router.route('/:id')
     .delete(function (req, res) {
@@ -36,5 +46,16 @@ router.route('/:id')
                 res.sendStatus(500);
             })
     });
+
+router.route('/:categoryid')
+    .get(function(req, res) {
+        procedures.fetch(req.params.categoryid)
+        .then(function(categories) {
+            res.send(categories);
+        }).catch(function(err) {
+            console.log(err);
+            res.sendStatus(500);
+        })
+    })
 
 module.exports = router;

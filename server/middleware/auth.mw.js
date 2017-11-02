@@ -13,3 +13,11 @@ exports.isAdmin = function(req, res, next) {
         res.sendStatus(403);
     }
 }
+
+exports.isActive = function(req, res, next) {
+    if (req.user.classStatus === "active") {
+        next();
+    } else {
+        res.sendStatus(403);
+    }
+}

@@ -1,0 +1,98 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="images/covalence-text-logo.svg" height="105" width="210">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="nav navbar-nav navbar-right">
+            <a class="nav-item nav-link" href="#">Fullstack</a>
+            <a class="nav-item nav-link" href="#">ReactJS</a>
+            <a class="nav-item nav-link" href="#">Front End Fundamentals</a>
+            <a class="nav-item nav-link" href="#">Blog</a>
+        </div>
+    </div>
+</nav>
+
+ <!-- Bottom of navbar -->
+
+
+<div id="all-users">
+
+    <h1>Pending Users</h1>
+
+    <div ng-repeat="n in nonactiveuser">
+            <p>{{ n.id }}</p>
+            <h2>{{ n.firstname }} {{ n.lastname }}</h2>
+            <h4>{{ n.email }}</h4>
+            <h5>{{ n.role }}</h4>
+            <h5>{{ n.classStatus }}</h5>
+            <button ng-click="activate()">Activate</button>
+            <button ng-click="deleteNon()">Delete Account</button>
+    </div>
+
+    <h1>Active Users</h1>
+
+    <div ng-repeat="a in activeuser">
+            <p>{{ a.id }}</p>
+            <h2>{{ a.firstname }} {{ a.lastname }}</h2>
+            <h4>{{ a.email }}</h4>
+            <h5>{{ a.role }}</h4>
+            <h5>{{ a.classStatus }}</h5>
+            <button ng-click="deleteAct()">Delete Account</button>
+    </div>
+</div>
+
+
+ <!-- Top of footer -->
+
+
+ <div id="footer">
+    
+        <footer class="bg-dark py-5">
+            <div class="logo">
+                <div class="row">
+                    <div class="col-lg-12 col-lg-offset-6">
+                    <img class="logo-mark" src="https://covalence.io/static/img/logos/covalence-mark.svg" alt="Covalence Logo Mark">
+                    </div>
+                </div>
+            </div>
+            <div class="container pt-5">
+                <div class="row">
+                    <div class="col-md-4 align-self-end text-center text-md-left mb-2">
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/covalence.io/" class="d-inline mx-1">
+                        <img class="social-icon" src="https://covalence.io/static/img/social/instagram.svg" alt="Instagram Logo"> </a>
+                        <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/covalence_io/" class="d-inline mx-1">
+                        <img class="social-icon" src="https://covalence.io/static/img/social/twitter.svg" alt="Twitter Logo"> </a>
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/covalence.io/" class="d-inline mx-1">
+                        <img class="social-icon" src="https://covalence.io/static/img/social/facebook.svg" alt="Facebook Logo"> </a>
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/covalence---coding-bootcamp/" class="d-inline mx-1">
+                        <img class="social-icon" src="https://covalence.io/static/img/social/linkedin.svg" alt="Linkedin Logo"> </a>
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.coursereport.com/schools/covalence" class="d-inline mx-1">
+                        <img class="social-icon" src="https://covalence.io/static/img/social/coursereport.svg" alt="Course Report Logo">
+                    </a>
+                    </div>
+                    <div class="contact col-md-6 align-self-end text-center text-md-right my-2">
+                        <span class="text-warning px-2">General Admissions Contact:</span>
+                        <a href="mailto:admissions@covalence.io" class="text-white br px-2">admissions@covalence.io</a>
+                        <a href="tel:+12055884232" class="text-white px-2">205.588.4232</a>
+                    </div>
+                </div>
+                <hr class="bg-gray mb-2">
+                <div class="row">
+                    <div class="col text-center text-md-left">
+                        <span class="px-2 br text-gray text-nowrap">
+                        <span style="font-size:80%">©</span> 2017 Covalence. All Rights Reserved</span>
+                        <a href="/privacy-policy/" class="px-2 text-info br text-nowrap">Privacy Policy</a>
+                        <a href="/terms-of-service/" class="px-2 text-info text-nowrap">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    
+    
+    </div>
+    
+        

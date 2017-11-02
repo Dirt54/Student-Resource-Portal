@@ -6,5 +6,37 @@ angular.module('studentportal', ['ngRoute', 'ngResource', 'portal.controllers', 
         templateUrl: 'views/login.html',
         controller: 'loginController'
     })
-  
+    .when('/loginfail', {
+        templateUrl: 'loginfail.html'
+    })
+    
+    .when('/welcome', {
+        templateUrl: 'views/welcome.html',
+        controller: 'logoutController'
+
+    })
+   
+    .when('/users', {
+        templateUrl: 'views/users.html',
+        controller: 'usersController'
+    })
+   
+    .when('/resources', {
+        templateUrl: 'views/resources.html',
+        controller: 'resourcesController'
+    })
+    
+    .when('/syllabus', {
+        templateUrl: 'views/syllabus.html',
+        controller: 'syllabusController'
+    })
+    .when('/lectures', {
+        templateUrl: 'views/lectures.html',
+        controller: 'LecturesController'
+    })
+    .when('/labs', {
+        templateUrl: 'views/labs.html',
+        controller: 'labsController'
+    })
+
 }]);

@@ -5,27 +5,41 @@
 
 
 /* ----------------------------start of nav bar  */
+html{
+    position: relative;
+    min-height: 100%;
+}
 body {
     height: 100%;
-    /* background-color: #CFCFCF; */
+    margin-bottom: 60px;
 }
 .nav-item {
     font-size: 17px;
 }
 .navbar {
-    background-color: white;
+    background-color: rgb(234, 225, 225);
     height: 70px;
 }
-#login-box {
-    position: absolute;
-    top: 30%;
-    left: 30%;
-}
-
 
 
 /* ---------------------------------end of nav bar  */
+ /* the start of login form  */
+#logincontainer{
+    margin-top:200px;
+    position: relative;
+}
+
+#login-form{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+}
+
+
  
+ /* the end of login an sign up form  */
 
 
 /* start of footer --------------- */
@@ -38,51 +52,34 @@ body {
     background:#373f47;
     box-sizing: border-box;
     text-align:center;
+    /* Set the fixed height of the footer here */
+    line-height: 40px; /* Vertically center the text there */
  }
-
-.py-5 {
-    padding-bottom: 3rem!important;
-}
-.py-5 {
-    padding-top: 3rem!important;
-}
-.bg-dark {
-    background-color: #373f47!important;
-}
-
-
-footer .logo .logo-mark {
-    height: auto;
+ 
+.logo-mark {
+    height: 100px;
     width: 4em;
     margin-bottom: 2em;
-}
-
-
-img {
-    vertical-align: middle;
-    border-style: none;
-    text-align: center;
-}
-div {
-
-    letter-spacing: .01em;
-}
-
-.container {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
+    display: block;
     margin-left: auto;
+    margin-right: auto;
+   
 }
-
-
-.col-lg-2, 
-.col-sm-4 {
-    position: relative;
+div.col-lg-12.col-lg-offset-6 {
+    left: 0;
+    top: 50%;
     width: 100%;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
+    text-align: center;
+    margin-right:100px;
 }
+.container .pt-5 {
+text-align: center;
+}
+
+footer .social-icon {
+    height: auto;
+    width: 2em;
+}
+
+
 /* --------------------end of footer */ 

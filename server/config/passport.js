@@ -13,17 +13,17 @@ function configurePassport(app) {
         passwordField: 'password'
     },
         function (email, password, done) {
-            userProc.readByEmail(email).then(function (user) {
+            userProc.readByEmail(email).then(function(user) {
                 if (!user) {
-                    return done(null, false);
+                    return done(null, false, { message: "error1"});
                 }
                 return utils.checkPassword(password, user.password)
-                    .then(function (matches) {
+                    .then(function(matches) {
                         if (matches) {
                             delete user.password;
                             return done(null, user);
                         } else {
-                            return done(null, false, { message: loginError });
+                            return done(null, false, { message: "error2" });
                         }
                     });
             }).catch(function (err) {
@@ -35,8 +35,8 @@ function configurePassport(app) {
         done(null, user.id);
     });
 
-    passport.deserializeUser(function (id, done) {
-        userProc.read(id).then(function (user) {
+    passport.deserializeUser(function(id, done) {
+        userProc.read(id).then(function(user) {
             done(null, user);
         }, function (err) {
             done(err);
