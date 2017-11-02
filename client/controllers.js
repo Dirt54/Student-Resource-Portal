@@ -81,8 +81,6 @@ angular.module('portal.controllers', [])
         $scope.week10 = LectureByWeek.query({ week: 10 });
     }])
 
-<<<<<<< HEAD
-=======
 
     .controller('usersController', ['$scope', 'NonActiveUsers', 'ActiveUsers', 'Users', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope, NonActiveUsers, ActiveUsers, Users, $location, $routeParams, UserService, SEOService) {
         $scope.nonactiveuser = NonActiveUsers.query();
@@ -102,7 +100,6 @@ angular.module('portal.controllers', [])
 
     }])
 
->>>>>>> 72668932bb61368744ab7730153b658066929f1b
     .controller('resourcesController', ['$scope', 'ResourceByCategory', function($scope, ResourceByCategory) {
         $scope.videos = ResourceByCategory.query({ categoryid: 1 });
         $scope.portfolio = ResourceByCategory.query({ categoryid: 2 });
@@ -120,9 +117,5 @@ angular.module('portal.controllers', [])
         $scope.week8 = LabsByWeek.query({ week: 8 });
         $scope.week9 = LabsByWeek.query({ week: 9 });
         $scope.week10 = LabsByWeek.query({ week: 10 });        
-<<<<<<< HEAD
-    }])
-=======
     }]);
 
->>>>>>> 72668932bb61368744ab7730153b658066929f1b
