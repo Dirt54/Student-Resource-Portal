@@ -7,17 +7,17 @@ var auth = require('../middleware/auth.mw');
 
 var router = express.Router();
 
-router.route('/:id')
-.delete(function(req, res) {
-    procedures.deleteUser(req.params.id)
-    .then(function() {
-        res.sendStatus(204);
-    })
-    .catch(function(err) {
-        console.log(err);
-        res.sendStatus(500);
-    });
-});
+// router.route('/:id')
+// .delete(function(req, res) {
+//     procedures.deleteUser(req.params.id)
+//     .then(function() {
+//         res.sendStatus(204);
+//     })
+//     .catch(function(err) {
+//         console.log(err);
+//         res.sendStatus(500);
+//     });
+// });
 
 
 router.route('/createusers')
@@ -72,6 +72,17 @@ router.route('/nonactive')
             res.sendStatus(500);
         });
     })
+    .delete(function(req, res) {
+        procedures.deleteUser(req.params.id)
+        .then(function() {
+            res.sendStatus(204);
+        })
+        .catch(function(err) {
+            console.log(err);
+            res.sendStatus(500);
+        });
+    });
+
 
     router.route('/active')
     .get(function(req, res) {
@@ -83,7 +94,20 @@ router.route('/nonactive')
             console.log(err);
             res.sendStatus(500);
         });
-    });
+    })
+
+    router.route('/active/:id')
+    .delete(function(req, res) {
+        procedures.deleteUser(req.params.id)
+        .then(function() {
+            res.sendStatus(204);
+        })
+        .catch(function(err) {
+            console.log(err);
+            res.sendStatus(500);
+        });
+    })
+
 
 router.post('/login', function (req, res, next) {
     passport.authenticate('local', function (err, user, info) {
