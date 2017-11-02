@@ -140,7 +140,6 @@ angular.module('portal.controllers', [])
         }
     }])
 
-
     .controller('resourcesController', ['$scope', 'Resource', function ($scope, Resource) {
 
         $scope.hidden = true;
