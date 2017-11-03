@@ -9,7 +9,7 @@ exports.destroy = function (id) {
     return db.empty('deleteResource', [id]);
 }
 
-exports.update = function (id, categoryid, orderid, title, description, url) {
+exports.update = function (id, categoryid, orderid, title, description, url, categoryname) {
     return db.empty('updateResource', [id, categoryid, orderid, title, description, url]);
 }
 

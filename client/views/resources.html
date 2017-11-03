@@ -1,18 +1,18 @@
 <!-- /////////////start: nav bar -->
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
     <a class="navbar-brand" href='/welcome'>
         <img src="images/covalence-text-logo.svg" height="105" width="210">
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar"
         aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+    <div class="navbar-collapse justify-content-end collapse" id="mainNavbar">
         <ul class="navbar-nav pr-xl-5">
 
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+            <li class="nav-item mx-md-1 mx-xl-3 dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" role="button" aria-haspopup="true"
                     aria-expanded="false">Fullstack</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="/lectures">Lectures</a>
@@ -22,9 +22,9 @@
                     <a class="dropdown-item" href="/users">Users</a>
                 </div>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item mx-md-1 mx-xl-3 dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">ReactJS</a>
+                    aria-expanded="false">React Native</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="#">Lectures</a>
                     <a class="dropdown-item" href="#">Labs</a>
@@ -32,7 +32,7 @@
                     <a class="dropdown-item" href="#">Resources</a>
                 </div>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item mx-md-1 mx-xl-3 dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false">Front End Fundamentals</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -43,7 +43,7 @@
                 </div>
             </li>
             <li>
-                <a class="nav-item nav-link" href="#">Blog</a>
+                <a class="nav-item nav-link" href='https://covalence.io/blog/'>Blog</a>
             </li>
             <li class="nav-item mx-md-1 mx-xl-3">
                 <button type="button" class=" btn btn-danger btn-lg" ng-controller="logoutController" ng-click="logout()">
@@ -55,6 +55,7 @@
     </div>
 
 </nav>
+
 <!-- ///////////////end:nav bar //////////////////////////////// -->
 
 
@@ -67,7 +68,13 @@
     <h1>Add New Resource:</h1>
     <form class='my-form' ng-submit="save()">
         <div class="form-group">
-            <input class='form-control' type="text" ng-model="resources.categoryname" placeholder="Category Name">
+            <select class="form-control" ng-model="resources.categoryid">
+                <option value=''>Select Category</option>
+                <option value='1'>Videos</option>
+                <option value='2'>Portfolio Building Projects</option>
+                <option value='3' ng-model='resources.categoryname'>Misc.</option>
+            </select>
+            <input class='form-control' type="number" ng-model="resources.orderid" placeholder="Priority">
             <input class="form-control" type="text" ng-model="resources.title" placeholder="Title">
             <input class="form-control" type="text" ng-model="resources.description" placeholder="Description">
             <input class="form-control" type="text" ng-model="resources.url" placeholder="URL">
@@ -79,13 +86,13 @@
 <div ng-if="me.role === 'admin'">
     <form class='update-resource-form' ng-submit="update()">
         <div class='form-group' ng-repeat="r in sorted_resources = (resources | orderBy: 'categoryid')">
-            <div ng-hide="r.categoryname === sorted_resources[$index - 1].categoryname">
-                <h1>{{ r.categoryname }}</h1>
+            <div ng-hide="r.name === sorted_resources[$index - 1].name">
+                <h1>{{ r.name }}</h1>
 
             </div>
             <div class='form-group'>
                 <p>Category:</p>
-                <input class="form-control" type="text" ng-model="r.categoryname">
+                <input class="form-control" type="text" ng-model="r.name">
                 <p>Title:</p>
                 <input class='form-control' type="text" ng-model="r.title">
                 <p>Description:</p>
@@ -102,10 +109,10 @@
 <!-- ///////////user view/////////// -->
 
 <div ng-if="me.role === 'user'" ng-repeat="r in sorted_resources = (resources | orderBy:'categoryid')" ng-click="show()">
-    <div ng-hide="r.categoryname === sorted_resources[$index - 1].categoryname">
-        <h1>{{ r.categoryname }}</h1>
+    <div ng-hide="r.name === sorted_resources[$index - 1].name">
+        <h1>{{ r.name }}</h1>
     </div>
-    <div ng-hide="hidden" ng-repeat="i in resources | filter: { categoryname : r.categoryname }">
+    <div ng-hide="hidden" ng-repeat="i in resources | filter: { name : r.name }">
         <h3>
             <a ng-href="{{ i.url }}">{{ i.title }}</a>
         </h3>
