@@ -4,6 +4,10 @@ exports.fetch = function (week) {
     return db.rows('getWeek', [week]);
 }
 
+exports.getById = function (id) {
+    return db.rows('getLectureById', [id]);
+}
+
 exports.create = function (dayid, title, description, url, week) {
     return db.row('insertLecture', [dayid, title, description, url, week]);
 }

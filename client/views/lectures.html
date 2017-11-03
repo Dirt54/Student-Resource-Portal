@@ -62,7 +62,7 @@
 <!-- ////////admin view///////// -->
 
 
-<div ng-if="me.role=== 'admin'">
+<div ng-if="me.role === 'admin'">
     <h1>Add New Lecture:</h1>
     <form class='my-form' ng-submit="save()">
         <div class="form-group">
@@ -77,13 +77,15 @@
 </div>
 
 <div ng-if="me.role === 'admin'">
-    <form class='update-lecture-form' ng-submit="update()">
+    <form class='update-lecture-form'>
         <div class='form-group' ng-repeat="l in sorted_lectures = (lectures | orderBy: 'week')">
             <div ng-hide="l.week === sorted_lectures[$index - 1].week">
                 <h1>Week {{ l.week }}</h1>
 
             </div>
             <div class='form-group'>
+                    <p>Id:</p>
+                    <input class="form-control" type="number" ng-model="l.id">
                 <p>Week:</p>
                 <input class="form-control" type="number" ng-model="l.week">
                 <p>Day:</p>
@@ -95,7 +97,7 @@
                 <p>Url:</p>
                 <input class='form-control' type="text" ng-model="l.url">
             </div>
-            <input class="btn btn-info" type="submit" value="Update">
+            <button class="btn btn-info"  ng-click="update()">Update</button>
             </br>
         </div>
     </form>

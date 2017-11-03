@@ -36,6 +36,16 @@ router.route('/')
     })
 
 router.route('/:id')
+.get(function(req, res) {
+    procedures.all()
+    .then(function(lectures) {
+        res.send(lectures);
+    }).catch(function(err) {
+        console.log(err);
+        res.sendStatus(500);
+    })
+})
+
     .delete(function (req, res) {
         procedures.destroy(req.params.id)
             .then(function (id) {

@@ -85,9 +85,6 @@ angular.module('portal.controllers', [])
             })
         }
 
-
-
-
         $scope.show = function () {
             if (this.hidden === true) {
                 this.hidden = false;
@@ -96,6 +93,20 @@ angular.module('portal.controllers', [])
             }
         }
         $scope.lectures = Lecture.query();
+
+        console.log($scope.lectures);
+
+
+        $scope.update = function () {
+            $scope.thisguy = Lecture.get({ id: this.l.id });
+            console.log($scope.thisguy);
+            $scope.thisguy.$update({ id: this.l.id, week: this.l.week, dayid: this.l.dayid, title: this.l.title, description: this.l.description, url: this.l.url }, function () {
+                $scope.lectures = Lecture.query();
+            }, function (err) {
+                console.log(err);
+            });
+        }
+
     }])
 
 
