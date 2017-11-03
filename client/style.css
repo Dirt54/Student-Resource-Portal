@@ -1,3 +1,19 @@
+.navbar{
+
+    box-shadow:0 2px 2px 1px rgba(25,25,25,.2);
+}
+.bg-wite{
+    background-color:#fff;
+}
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
 
 /* ----------------------------start of nav bar  */
 html{
