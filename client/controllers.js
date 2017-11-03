@@ -72,8 +72,18 @@ angular.module('portal.controllers', [])
     }])
 
 
-    .controller('LecturesController', ['$scope', 'Lecture', function ($scope, Lecture) {
+    .controller('LecturesController', ['$scope', 'Lecture', 'LoggedUser', '$location', function ($scope, Lecture, LoggedUser, $location) {
         $scope.hidden = true;
+        $scope.me = LoggedUser.get();
+        
+        $scope.save = function() {
+            var l = new Lecture($scope.lecture);
+            l.$save(function(){
+                $location.path('/lectures');
+            }, function(err) {
+                console.log(err);
+            })
+        }
 
 
 
