@@ -67,9 +67,6 @@ angular.module('portal.controllers', [])
     }])
 
 
-
-
-
     .controller('welcomeController', ['$scope', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope, $location, $routeParams, UserService, SEOService) {
 
     }])
