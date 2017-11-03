@@ -56,13 +56,12 @@ angular.module('portal.controllers', [])
 
 
     .controller('logoutController', ['$scope', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope, $location, $routeParams, UserService, SEOService) {
-        $scope.logout = function () {
-            UserService.logout().then(function (success) {
+        $scope.logout = function() {
+            UserService.logout().then(function(success) {
                 redirect();
             });
             function redirect() {
-                
-                    $location.replace().path('/');
+                $location.replace().path('/');
             }
         }
     }])
