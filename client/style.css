@@ -58,9 +58,9 @@ body {
  /* Syllabus Page */
 
 
-div.class {
+div.syllabus {
     margin: 0 auto;
-    max-width: 500px;
+    max-width: 100rem;
   }
   
   li {
