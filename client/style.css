@@ -1,13 +1,25 @@
+.navbar{
 
+    box-shadow:0 2px 2px 1px rgba(25,25,25,.2);
+}
+.bg-wite{
+    background-color:#fff;
+}
 
-
-
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
 
 
 /* ----------------------------start of nav bar  */
 html{
     position: relative;
     min-height: 100%;
+    scroll-behavior: smooth;
 }
 body {
     height: 100%;
@@ -20,6 +32,7 @@ body {
     background-color: rgb(234, 225, 225);
     height: 70px;
 }
+
 
 
 /* ---------------------------------end of nav bar  */
@@ -42,6 +55,19 @@ body {
  /* the end of login an sign up form  */
 
 
+ /* Syllabus Page */
+
+
+div.syllabus {
+    margin: 0 auto;
+    max-width: 100rem;
+  }
+  
+  li {
+    padding: 5px 0;
+  }
+  
+ /* End Syllabus Page */
 /* start of footer --------------- */
 
 #footer {

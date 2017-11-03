@@ -32,14 +32,30 @@ angular.module('portal.factories', [])
         });
     }])
 
+    .factory('LoggedUser', ['$resource', function($resource){
+        return $resource('/api/users/me');
+    }])
+
     .factory('Lecture', ['$resource', function ($resource) {
-        return $resource('api/lectures/');
+        return $resource('api/lectures/:id', { id: '@id' }, {
+            update: {
+                method: 'PUT'
+            }
+        });
     }])
 
     .factory('Resource', ['$resource', function ($resource) {
-        return $resource('/api/resources/');
+        return $resource('/api/resources/:id' , { id: '@id' }, {
+            update: {
+                method: 'PUT'
+            }
+        });
     }])
 
     .factory('Lab', ['$resource', function ($resource) {
-        return $resource('/api/labs/');
+        return $resource('/api/labs/:id', { id: '@id' }, {
+            update: {
+                method: 'PUT'
+            }
+        });
     }])

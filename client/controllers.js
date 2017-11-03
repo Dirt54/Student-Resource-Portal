@@ -56,8 +56,8 @@ angular.module('portal.controllers', [])
 
 
     .controller('logoutController', ['$scope', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope, $location, $routeParams, UserService, SEOService) {
-        $scope.logout = function() {
-            UserService.logout().then(function(success) {
+        $scope.logout = function () {
+            UserService.logout().then(function (success) {
                 redirect();
             });
             function redirect() {
@@ -67,16 +67,23 @@ angular.module('portal.controllers', [])
     }])
 
 
-
-
-
     .controller('welcomeController', ['$scope', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope, $location, $routeParams, UserService, SEOService) {
 
     }])
 
 
-    .controller('LecturesController', ['$scope', 'Lecture', function ($scope, Lecture) {
+    .controller('LecturesController', ['$scope', 'Lecture', 'LoggedUser', '$location', '$route', function ($scope, Lecture, LoggedUser, $location, $route) {
         $scope.hidden = true;
+        $scope.me = LoggedUser.get();
+        
+        $scope.save = function() {
+            var l = new Lecture($scope.lectures);
+            l.$save(function(){
+                $route.reload();
+            }, function(err) {
+                console.log(err);
+            })
+        }
 
 
 
@@ -132,10 +139,20 @@ angular.module('portal.controllers', [])
         }
     }])
 
-    .controller('resourcesController', ['$scope', 'Resource', function ($scope, Resource) {
-
+    .controller('resourcesController', ['$scope', 'Resource', 'LoggedUser', '$location', function ($scope, Resource, LoggedUser, $location) {
+        $scope.me = LoggedUser.get();
         $scope.hidden = true;
         $scope.resources = Resource.query();
+
+
+        $scope.save = function() {
+            var r = new Resource($scope.resources);
+            r.$save(function(){
+                $location.path('/resources');
+            }, function(err) {
+                console.log(err);
+            })
+        }
 
         $scope.show = function () {
             if (this.hidden === true) {
@@ -146,9 +163,21 @@ angular.module('portal.controllers', [])
         }
     }])
 
-    .controller('labsController', ['$scope', 'Lab', function ($scope, Lab) {
+    .controller('labsController', ['$scope', 'Lab', 'LoggedUser', '$location', function ($scope, Lab, LoggedUser, $location) {
+        $scope.me = LoggedUser.get();
         $scope.hidden = true;
         $scope.labs = Lab.query();
+
+
+        $scope.save = function() {
+            var r = new Resource($scope.labs);
+            r.$save(function(){
+                $location.path('/labs');
+            }, function(err) {
+                console.log(err);
+            })
+        }
+
 
         $scope.show = function () {
             if (this.hidden === true) {
@@ -158,5 +187,17 @@ angular.module('portal.controllers', [])
             }
         }
 
-    }]);
+    }])
 
+
+.controller('syllabusController', ['$scope', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope,  $location, $routeParams, UserService, SEOService) {
+    
+    // $('a[href^="#"]').on('click', function (e) {
+    //     e.preventDefault();
+    //     var target = this.hash;
+    //     var $target = $(target);
+    //     $('html, body').stop().animate({
+    //         scrollTop: $target.offset().top
+    //     }, 1500, 'swing');
+    // });
+}]);

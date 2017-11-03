@@ -1,72 +1,131 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/">
-                <img src="images/covalence-text-logo.svg" height="105" width="210">
-            </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
-            aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="nav navbar-nav navbar-right">
-    
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">Fullstack</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="/lectures">Lectures</a>
-                                <a class="dropdown-item" href="/labs">Labs</a>
-                                <a class="dropdown-item" href="/syllabus">Syllabus</a>
-                                <a class="dropdown-item" href="/resources">Resources</a>
-                                <a class="dropdown-item" href="/users">Users</a>
-                              </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">ReactJS</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Lectures</a>
-                                <a class="dropdown-item" href="#">Labs</a>
-                                <a class="dropdown-item" href="#">Syllabus</a>
-                                <a class="dropdown-item" href="#">Resources</a>
-                                
-                              </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">Front End Fundamentals</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Lectures</a>
-                                <a class="dropdown-item" href="#">Labs</a>
-                                <a class="dropdown-item" href="#">Syllabus</a>
-                                <a class="dropdown-item" href="#">Resources</a>
-                              </div>
-                </li>
-                <li>
-                     <a class="nav-item nav-link" href="#">Blog</a>
-                </li>
-            </div>
-        </div>
-    
-    </nav>
+<!-- /////////////start: nav bar -->
 
-<div ng-repeat="r in sorted_resources = (resources | orderBy:'categoryid')" ng-click="show()">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href='/welcome'>
+        <img src="images/covalence-text-logo.svg" height="105" width="210">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+        <ul class="navbar-nav pr-xl-5">
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">Fullstack</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/lectures">Lectures</a>
+                    <a class="dropdown-item" href="/labs">Labs</a>
+                    <a class="dropdown-item" href="/syllabus">Syllabus</a>
+                    <a class="dropdown-item" href="/resources">Resources</a>
+                    <a class="dropdown-item" href="/users">Users</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">ReactJS</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Lectures</a>
+                    <a class="dropdown-item" href="#">Labs</a>
+                    <a class="dropdown-item" href="#">Syllabus</a>
+                    <a class="dropdown-item" href="#">Resources</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">Front End Fundamentals</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Lectures</a>
+                    <a class="dropdown-item" href="#">Labs</a>
+                    <a class="dropdown-item" href="#">Syllabus</a>
+                    <a class="dropdown-item" href="#">Resources</a>
+                </div>
+            </li>
+            <li>
+                <a class="nav-item nav-link" href="#">Blog</a>
+            </li>
+            <li class="nav-item mx-md-1 mx-xl-3">
+                <button type="button" class=" btn btn-danger btn-lg" ng-controller="logoutController" ng-click="logout()">
+                    <span class="glyphicon glyphicon-log-out"></span> Log out
+                </button>
+
+            </li>
+        </ul>
+    </div>
+
+</nav>
+<!-- ///////////////end:nav bar //////////////////////////////// -->
+
+
+</nav>
+
+
+<!-- /////////////admin view///////////// -->
+
+<div ng-if="me.role=== 'admin'">
+    <h1>Add New Resource:</h1>
+    <form class='my-form' ng-submit="save()">
+        <div class="form-group">
+            <input class='form-control' type="text" ng-model="resources.categoryname" placeholder="Category Name">
+            <input class="form-control" type="text" ng-model="resources.title" placeholder="Title">
+            <input class="form-control" type="text" ng-model="resources.description" placeholder="Description">
+            <input class="form-control" type="text" ng-model="resources.url" placeholder="URL">
+            <input class="btn btn-info" type="submit" value="Add Resource">
+        </div>
+    </form>
+</div>
+
+<div ng-if="me.role === 'admin'">
+    <form class='update-resource-form' ng-submit="update()">
+        <div class='form-group' ng-repeat="r in sorted_resources = (resources | orderBy: 'categoryid')">
+            <div ng-hide="r.categoryname === sorted_resources[$index - 1].categoryname">
+                <h1>{{ r.categoryname }}</h1>
+
+            </div>
+            <div class='form-group'>
+                <p>Category:</p>
+                <input class="form-control" type="text" ng-model="r.categoryname">
+                <p>Title:</p>
+                <input class='form-control' type="text" ng-model="r.title">
+                <p>Description:</p>
+                <input class='form-control' type="text" ng-model="r.description">
+                <p>Url:</p>
+                <input class='form-control' type="text" ng-model="r.url">
+            </div>
+            <input class="btn btn-info" type="submit" value="Update">
+            </br>
+        </div>
+    </form>
+</div>
+
+<!-- ///////////user view/////////// -->
+
+<div ng-if="me.role === 'user'" ng-repeat="r in sorted_resources = (resources | orderBy:'categoryid')" ng-click="show()">
     <div ng-hide="r.categoryname === sorted_resources[$index - 1].categoryname">
         <h1>{{ r.categoryname }}</h1>
     </div>
     <div ng-hide="hidden" ng-repeat="i in resources | filter: { categoryname : r.categoryname }">
-        <h3>  <a ng-href="{{ i.url }}">{{ i.title }}</a></h3>
-            <p>{{ i.description }}</p>
+        <h3>
+            <a ng-href="{{ i.url }}">{{ i.title }}</a>
+        </h3>
+        <p>{{ i.description }}</p>
     </div>
 </div>
+
+<!-- //////////end user view////////// -->
+
+<!--//////////////////////////////////////////////// start:footer -->
+
 
 <div id="footer">
 
     <footer class="bg-dark py-5">
         <div class="logo">
             <div class="row">
-                <a class="col-sm-4 col-lg-2" href="/">
+                <div class="col-lg-12 col-lg-offset-6">
                     <img class="logo-mark" src="https://covalence.io/static/img/logos/covalence-mark.svg" alt="Covalence Logo Mark">
-                </a>
+                </div>
             </div>
         </div>
         <div class="container pt-5">
@@ -104,3 +163,5 @@
 
 
 </div>
+
+<!-- /////////////////////end: footer //////////////// -->

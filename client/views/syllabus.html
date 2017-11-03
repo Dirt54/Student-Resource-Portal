@@ -1,13 +1,14 @@
+<!-- /////////////start: nav bar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/">
+        <a class="navbar-brand" href='/welcome'>
                 <img src="images/covalence-text-logo.svg" height="105" width="210">
             </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
             aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="nav navbar-nav navbar-right">
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+            <ul class="navbar-nav pr-xl-5">
     
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -43,461 +44,544 @@
                 <li>
                      <a class="nav-item nav-link" href="#">Blog</a>
                 </li>
-            </div>
+                <li class="nav-item mx-md-1 mx-xl-3">
+                    <button type="button" class=" btn btn-danger btn-lg" ng-controller="logoutController" ng-click="logout()">
+                        <span class="glyphicon glyphicon-log-out"></span> Log out
+                      </button>
+                
+                </li>
+            </ul>
         </div>
     
     </nav>
+     <!-- ///////////////end:nav bar //////////////////////////////// -->
+        
+          
 
 <div class="syllabus">
     <h1>Full Stack Development Course Syllabus</h1>
+    <h3>“Covalence, LLC is authorized by the Tennessee Higher Education Commission. This authorization must be renewed each year
+            and is based on an evaluation of minimum standards concerning the quality of education, ethical business practices,
+            and fiscal responsibility.”
+        </h3>
     <em>Covalence, LLC Catalog 1001 Lindsay Street Chattanooga, TN 37402 2017 Catalog Publication Date: May 10, 2017, Volume
         number: 002B-011018</em>
     <p></p>
     <p></p>
     <h3>
         <span style="text-decoration: underline;">
-            <strong>Table of Contents</strong>
+            <strong>
+                <a name="toc">Table of Contents</a>
+            </strong>
         </span>
     </h3>
     <ol>
-        <li>Owners and Officers</li>
-        <li>Calendar</li>
-        <li>Enrollment Procedure</li>
-        <li>Attendance Policy</li>
-        <li>Grading Policy</li>
-        <li>Student Conduct</li>
-        <li>Programs Offered</li>
-        <li>Placement</li>
-        <li>Facilities</li>
-        <li>Credit for previous education</li>
-        <li>Refunds/Cancellation</li>
-        <li>Student Grievance</li>
-        <li>Admissions Policy</li>
+        <li>
+            <a href="#section1">Owners and Officers</a>
+        </li>
+        <li>
+            <a href="#section2">Calendar</a>
+        </li>
+        <li>
+            <a href="#section3">Enrollment Procedure</a>
+        </li>
+        <li>
+            <a href="#section4">Attendance Policy</a>
+        </li>
+        <li>
+            <a href="#section5">Grading Policy</a>
+        </li>
+        <li>
+            <a href="#section6">Student Conduct</a>
+        </li>
+        <li>
+            <a href="#section7">Course Outline</a>
+        </li>
+        <li>
+            <a href="#section8">Credit for Previous Education</a>
+        </li>
+        <li>
+            <a href="#section9">Placement Policy</a>
+        </li>
+        <li>
+            <a href="#section10">Facilities</a>
+        </li>
+        <li>
+            <a href="#section11">Cancellation</a>
+        </li>
+        <li>
+                <a href="#section12">Refunds</a>
+        </li>
+        <li>
+            <a href="#section13">Student Grievance</a>
+        </li>
+        <li>
+            <a href="#section14">Admissions Policy</a>
+        </li>
     </ol>
     <p>&nbsp</p>
-    <h2>“Covalence, LLC is authorized by the Tennessee Higher Education Commission. This authorization must be renewed each year
-        and is based on an evaluation of minimum standards concerning the quality of education, ethical business practices,
-        and fiscal responsibility.”
-        <h2>
-            <p></p>
-            <p></p>
-            <h3>
-                <strong>Owners and Officers</strong>
-            </h3>
-            <p>Covalence, LLC is owned by Platypi, LLC which is owned, in part, by the following individuals:</p>
-            <p></p>
-            <p>Matt Landers, CEO and co-owner</p>
-            <p>Matt Morgan, President and co-owner Will Johnston, CTO and co-owner</p>
-            <p>Dean and Laura DeSantis, angel investors</p>
-            <p>&nbsp</p>
-            <p>&nbsp</p>
-            <h3>
-                <strong>Calendar</strong>
-            </h3>
-            <p>
-                <span style="text-decoration: underline;">Holidays:</span> Thanksgiving Day, the Friday after Thanksgiving, and Christmas Day.</p>
-            <p></p>
-            <p>
-                <span style="text-decoration: underline;">Enrollment Periods:</span> each course is 10 weeks long.</p>
-            <ul>
-                <li>September 5, 2017 - November 10, 2017</li>
-            </ul>
-            <p>&nbsp</p>
-            <p>&nbsp</p>
-            <strong>Enrollment Procedure</strong>
-            <em>Online Application</em>
-            <p>All prospective students
-                <a href="https://covalence.io/full-stack-bootcamp-application-start/" target="_blank">must fill out and submit the online application</a> either before or after completing the pre-work.
-            </p>
-            <p></p>
-            <em>Pre-work</em>
-            <p>The pre-work is done prior to acceptance of the program. The pre-work is not part of the course, it is used to
-                assess students prior to accepting them.</p>
-            <p></p>
-            <p>The pre-work is a combination of online courses—that cover HTML, CSS, and JavaScript—and a tutorial on Git (a
-                source control management system). In total, all of the pre-work should end up taking about thirty hours.
-                The pre-work is designed to introduce applicants to the basic set of programming concepts/syntax necessary
-                to complete the Coding Challenge.</p>
-            <p></p>
-            <p>The pre-work also affords him/her a measured opportunity to see whether or not s/he might even like full stack
-                development—or at least enjoy taking the course. Once a prospective student has completed the pre-work, s/he
-                will be given a coding challenge. This coding challenge is, in essence, a way for us to determine:</p>
-            <ol>
-                <li>The effectiveness of the pre-work, and</li>
-                <li>Whether or not, at this point in time, we think the applicant can complete the course in ten weeks.</li>
-            </ol>
-            <p>While we do teach HTML, CSS, and JavaScript during the course, an underlying objective of the pre-work is to
-                be able to gauge how well s/he can teach herself/himself and use the internet to find and implement solutions
-                to whatever problem(s) s/he faces. The coding challenge is really used to measure problem solving and resourcefulness,
-                as much as it is to indicate programming skill or the potential acquisition of it.</p>
-                <p>&nbsp</p>
-                <p>&nbsp</p>
-            <h3>
-                <strong>Attendance Policy</strong>
-            </h3>
-            <p>Students are required to maintain attendance in classes and participate in scheduled activities. The school keeps
-                a record of attendance.</p>
-            <p></p>
-            <em>Absent</em>
-            <p>A student who misses a class session entirely, without permission from staff, will be classified as absent. There
-                are two absence classifications:</p>
-            <ul>
-                <li>Excused: An absence will be considered excused under the following circumstances: Illness, death, or birth
-                    in the immediate family, and other valid reasons substantiated in writing and at the discretion of the
-                    chief academic officer.</li>
-                <li>Unexcused: If a student is absent for any reason other than the reasons cited above for an Excused Absence,
-                    or if the student cannot produce evidence for an Excused Absence, then the absence will be classified
-                    as Unexcused.</li>
-            </ul>
-            <p></p>
-            <em>Dismissal Policy for Nonattendance</em>
-            <p>Attendance in the program is required to be maintained. The specific requirements relating to dismissal from
-                the program due to nonattendance are:</p>
-            <ul>
-                <li>Students who are absent from class for three consecutive calendar days (excluding holidays, breaks and emergency
-                    closures due to unforeseen circumstances such as weather) will be dismissed from the program.</li>
-                <li>During the program, failure to submit 2 full modules of assignments. Students may follow the process presented
-                    in the Grievance Policy outlined in the catalog if they feel an error has been made in their tardiness
-                    or attendance calculation.</li>
-            </ul>
-            <p>A refund of unused fees will be issued per the school’s Refund Policy.</p>
-            <p></p>
-            <em>Make-Up Policy</em>
-            <p>Because of the immersive nature of the program, there is no make-up policy in the residence portion of the program
-                which is especially hands-on. If instructional time is missed, it is the student's responsibility to make
-                an appointment with the instructor to determine if the missed work can be made up and to make a plan to learn
-                the material covered while absent.</p>
-            <p></p>
-            <em>Leave/Re-admittance Policy</em>
-            <p>Students who must take extended periods of leave (greater than 3 days) should contact the School Director for
-                approval to defer. The program is intensive and hands-on where daily attendance is required to acquire the
-                practical skills necessary. There is no leave of absence policy which allows a student to have more than
-                three (3) consecutive calendar days of absences without making up work and return to that same scheduled
-                cohort. However, in the event of extenuating circumstances such as medical necessity or death in the family,
-                the student may request to be readmitted and study with a new cohort by submitting a written request with
-                supporting documentation to the school director. Students who receive approval to return must restart the
-                program at a subsequent offering of the program within 12 months of the date of the request. A new application
-                for admission is not required to be resubmitted for consideration.</p>
-            <p></p>
-            <em>Withdrawal</em>
-            <p>Covalence, LLC expects that most students who begin classes at the school will successfully complete their education.
-                However, sometimes conditions or circumstance beyond the control of a student and/or the school require that
-                a student withdraws from the school. Students who determine the need to withdraw from the school prior to
-                completion must follow the steps below for an official withdrawal:</p>
-            <ol>
-                <li>Students must officially notify the School Director of their intent to officially withdraw in writing by
-                    emailing
-                    <a href="mailto:kimberly@covalence.io"></a>Kimberly Demby.</li>
-                <li>Once students have officially notified the School Director of their intent to withdraw, we will process the
-                    student’s change in enrollment status.</li>
-                <li>The student will receive notification of the refund, which will include the date the refund was made.</li>
-            </ol>
-            <p>&nbsp</p>
-            <p>&nbsp</p>
-            <h3>
-                <strong>Grading Policy</strong>
-            </h3>
-            <p>Student performance is determined by labs administered by the instructor at regular intervals during the 10 weeks.
-                The instructor assesses all labs to check for accuracy. The instructor(s) works with all students individually
-                to make sure they maintain accuracy on labs. All labs must be attempted. Even if a student fails to accurately
-                complete a lab, the student may attempt as many times as they need to to get it correct.</p>
-            <p></p>
-            <em>Satisfactory Academic Progress</em>
-            <p>Satisfactory academic progress standards apply to all students at Covalence, LLC. All students must complete
-                their program of study in the normal duration of 10 weeks for the Full Stack Development program and 400
-                clock hours. In order to earn a certificate, a student must attempt and accurately complete all labs, and
-                maintain attendance throughout the program.</p>
-                <p>&nbsp</p>
-                <p>&nbsp</p>
-            <h3>
-                <strong>Student Conduct</strong>
-            </h3>
-            <p>Students are to be, at all times, "in integrity with oneself and his/her peers", "focused on putting forth maximum
-                sustainable effort towards learning and growth", and "kind to oneself and his/her peers." A student who is
-                found to have violated any of the three listed above may be sanctioned. Sanctions range from a formal reprimand
-                to immediate dismissal from Covalence, LLC. Severe violations can result in immediate dismissal from Covalence,
-                LLC. However, for most violations, students receive a formal reprimand and warning of potential dismissal.
-                Covalence, LLC has a three-strike policy whereby upon the third warning, a student is dismissed from Covalence,
-                LLC. After the third strike, a student may not be readmitted. Students receive a comprehensive explanation
-                of this policy during orientation and agree that the Director of Covalence, LLC has the right to dismiss
-                any student from the Program at his/her discretion and subject to his/her rights and responsibilities.</p>
-                <p>&nbsp</p>
-                <p>&nbsp</p>
-            <h3>
-                <strong>Full Stack Development Course Outline</strong>
-            </h3>
-            <p>The Full Stack Development training program provides students with sufficient technical knowledge and training
-                to pursue entry-level positions in the software engineering field as beginning web developers. Possible career
-                paths include programming, web design, software development, and software support in a professional office
-                environment. To successfully pursue these career paths a student must possess knowledge in coding techniques,
-                documentation reading, debugging, testing, data retrieval, and creating and manipulating databases and tables.
-                The Full Stack Development program is not designed to lead to positions in a profession, occupation, trade
-                or career field requiring licensure in the state.</p>
-            <p></p>
-            <p>The Full Stack Development program is a total of 400 clock hours over a period of 10 weeks. The on-site program
-                of lectures, curated content (books, screencasts, and tutorials), exercises, challenges, games, code competitions,
-                and reviews. Training will be instructor-led and student driven. There is no requirement for after-hours
-                work, but it is expected that because of the intensive nature of the training program students are likely
-                to study/work evenings and weekends.</p>
-            <p></p>
-            <p>Students are not required to participate in an internship or externship or pass a final examination, to complete
-                the program. Details of the required coursework and study are below:</p>
+   <p>&nbsp</p>
+    <h3>
+        <strong>
+            <a name="section1">Owners and Officers</a>
+        </strong>
+    </h3>
+    <p>Covalence, LLC is owned by Platypi, LLC which is owned, in part, by the following individuals:</p>
+    <p>Matt Landers, CEO and co-owner</p>
+    <p>Matt Morgan, President and co-owner Will Johnston, CTO and co-owner</p>
+    <p>Dean and Laura DeSantis, angel investors</p>
+    <p>&nbsp</p>
+    <a href="#toc">Back to Table of Contents</a>
+    <p>&nbsp</p>
+    <h3>
+        <strong>
+            <a name="section2">Calendar</a>
+        </strong>
+    </h3>
+    <p>
+        <span style="text-decoration: underline;">Holidays:</span> Thanksgiving Day, the Friday after Thanksgiving, and Christmas Day.</p>
+    <p></p>
+    <p>
+        <span style="text-decoration: underline;">Enrollment Periods:</span> each course is 10 weeks long.</p>
+    <ul>
+        <li>September 5, 2017 - November 10, 2017</li>
+    </ul>
+    <p>&nbsp</p>
+    <a href="#toc">Back to Table of Contents</a>
+    <p>&nbsp</p>
+    <h3>
+        <strong><a name="section3">Enrollment Procedure</a></strong>
+    </h3>
+    <em>Online Application</em>
+    <p>All prospective students
+        <a href="https://covalence.io/full-stack-bootcamp-application-start/" target="_blank">must fill out and submit the online application</a> either before or after completing the pre-work.
+    </p>
+    <p></p>
+    <em>Pre-work</em>
+    <p>The pre-work is done prior to acceptance of the program. The pre-work is not part of the course, it is used to assess
+        students prior to accepting them.</p>
+    <p></p>
+    <p>The pre-work is a combination of online courses—that cover HTML, CSS, and JavaScript—and a tutorial on Git (a source
+        control management system). In total, all of the pre-work should end up taking about thirty hours. The pre-work is
+        designed to introduce applicants to the basic set of programming concepts/syntax necessary to complete the Coding
+        Challenge.</p>
+    <p></p>
+    <p>The pre-work also affords him/her a measured opportunity to see whether or not s/he might even like full stack development—or
+        at least enjoy taking the course. Once a prospective student has completed the pre-work, s/he will be given a coding
+        challenge. This coding challenge is, in essence, a way for us to determine:</p>
+    <ol>
+        <li>The effectiveness of the pre-work, and</li>
+        <li>Whether or not, at this point in time, we think the applicant can complete the course in ten weeks.</li>
+    </ol>
+    <p>While we do teach HTML, CSS, and JavaScript during the course, an underlying objective of the pre-work is to be able
+        to gauge how well s/he can teach herself/himself and use the internet to find and implement solutions to whatever
+        problem(s) s/he faces. The coding challenge is really used to measure problem solving and resourcefulness, as much
+        as it is to indicate programming skill or the potential acquisition of it.</p>
+    <p>When you create a username on codecademy, please send your username to
+        <a href="mailto:kimberly@covalence.io">Kimberly Demby.</a> Modules to Complete:</p>
+    <ol>
+        <li>Learn HTML: https://www.codecademy.com/learn/learn-html</li>
+        <li>Learn CSS: https://www.codecademy.com/learn/learn-css</li>
+        <li>Make a Website: https://www.codecademy.com/learn/make-a-website</li>
+        <li>Learn JavaScript: https://www.codecademy.com/learn/introduction-to-javascript</li>
+        <li>jQuery: https://www.codecademy.com/learn/learn-jquery</li>
+        <li>Learn AngularJS 1.X: https://www.codecademy.com/learn/learn-angularjs</li>
+        <li>Learn the Command Line: https://www.codecademy.com/learn/learn-the-command-line</li>
+        <li>Learn Git: https://www.codecademy.com/learn/learn-git</li>
+        <li>Learn SQL: https://www.codecademy.com/learn/learn-sql</li>
+    </ol>
+    <p>&nbsp</p>
+    <a href="#toc">Back to Table of Contents</a>
+    <p>&nbsp</p>
+    <h3>
+        <strong>
+            <a name="section4">Attendance Policy</a>
+        </strong>
+    </h3>
+    <p>Students are required to maintain attendance in classes and participate in scheduled activities. The school keeps a record
+        of attendance.</p>
+    <p></p>
+    <em>Absent</em>
+    <p>A student who misses a class session entirely, without permission from staff, will be classified as absent. There are
+        two absence classifications:</p>
+    <ul>
+        <li>Excused: An absence will be considered excused under the following circumstances: Illness, death, or birth in the
+            immediate family, and other valid reasons substantiated in writing and at the discretion of the chief academic
+            officer.</li>
+        <li>Unexcused: If a student is absent for any reason other than the reasons cited above for an Excused Absence, or if
+            the student cannot produce evidence for an Excused Absence, then the absence will be classified as Unexcused.</li>
+    </ul>
+    <p></p>
+    <em>Dismissal Policy for Nonattendance</em>
+    <p>Attendance in the program is required to be maintained. The specific requirements relating to dismissal from the program
+        due to nonattendance are:</p>
+    <ul>
+        <li>Students who are absent from class for three consecutive calendar days (excluding holidays, breaks and emergency
+            closures due to unforeseen circumstances such as weather) will be dismissed from the program.</li>
+        <li>During the program, failure to submit 2 full modules of assignments. Students may follow the process presented in
+            the Grievance Policy outlined in the catalog if they feel an error has been made in their tardiness or attendance
+            calculation.</li>
+    </ul>
+    <p>A refund of unused fees will be issued per the school’s Refund Policy.</p>
+    <p></p>
+    <em>Make-Up Policy</em>
+    <p>Because of the immersive nature of the program, there is no make-up policy in the residence portion of the program which
+        is especially hands-on. If instructional time is missed, it is the student's responsibility to make an appointment
+        with the instructor to determine if the missed work can be made up and to make a plan to learn the material covered
+        while absent.</p>
+    <p></p>
+    <em>Leave/Re-admittance Policy</em>
+    <p>Students who must take extended periods of leave (greater than 3 days) should contact the School Director for approval
+        to defer. The program is intensive and hands-on where daily attendance is required to acquire the practical skills
+        necessary. There is no leave of absence policy which allows a student to have more than three (3) consecutive calendar
+        days of absences without making up work and return to that same scheduled cohort. However, in the event of extenuating
+        circumstances such as medical necessity or death in the family, the student may request to be readmitted and study
+        with a new cohort by submitting a written request with supporting documentation to the school director. Students
+        who receive approval to return must restart the program at a subsequent offering of the program within 12 months
+        of the date of the request. A new application for admission is not required to be resubmitted for consideration.</p>
+    <p></p>
+    <em>Withdrawal</em>
+    <p>Covalence, LLC expects that most students who begin classes at the school will successfully complete their education.
+        However, sometimes conditions or circumstance beyond the control of a student and/or the school require that a student
+        withdraws from the school. Students who determine the need to withdraw from the school prior to completion must follow
+        the steps below for an official withdrawal:</p>
+    <ol>
+        <li>Students must officially notify the School Director of their intent to officially withdraw in writing by emailing
+            <a href="mailto:kimberly@covalence.io"></a>Kimberly Demby.</li>
+        <li>Once students have officially notified the School Director of their intent to withdraw, we will process the student’s
+            change in enrollment status.</li>
+        <li>The student will receive notification of the refund, which will include the date the refund was made.</li>
+    </ol>
+    <p>&nbsp</p>
+    <a href="#toc">Back to Table of Contents</a>
+    <p>&nbsp</p>
+    <h3>
+        <strong>
+            <a name="section5">Grading Policy</a>
+        </strong>
+    </h3>
+    <p>Student performance is determined by labs administered by the instructor at regular intervals during the 10 weeks. The
+        instructor assesses all labs to check for accuracy. The instructor(s) works with all students individually to make
+        sure they maintain accuracy on labs. All labs must be attempted. Even if a student fails to accurately complete a
+        lab, the student may attempt as many times as they need to to get it correct.</p>
+    <p></p>
+    <em>Satisfactory Academic Progress</em>
+    <p>Satisfactory academic progress standards apply to all students at Covalence, LLC. All students must complete their program
+        of study in the normal duration of 10 weeks for the Full Stack Development program and 400 clock hours. In order
+        to earn a certificate, a student must attempt and accurately complete all labs, and maintain attendance throughout
+        the program.</p>
+    <p>&nbsp</p>
+    <a href="#toc">Back to Table of Contents</a>
+    <p>&nbsp</p>
+    <h3>
+        <strong>
+            <a name="section6">Student Conduct</a>
+        </strong>
+    </h3>
+    <p>Students are to be, at all times, "in integrity with oneself and his/her peers", "focused on putting forth maximum sustainable
+        effort towards learning and growth", and "kind to oneself and his/her peers." A student who is found to have violated
+        any of the three listed above may be sanctioned. Sanctions range from a formal reprimand to immediate dismissal from
+        Covalence, LLC. Severe violations can result in immediate dismissal from Covalence, LLC. However, for most violations,
+        students receive a formal reprimand and warning of potential dismissal. Covalence, LLC has a three-strike policy
+        whereby upon the third warning, a student is dismissed from Covalence, LLC. After the third strike, a student may
+        not be readmitted. Students receive a comprehensive explanation of this policy during orientation and agree that
+        the Director of Covalence, LLC has the right to dismiss any student from the Program at his/her discretion and subject
+        to his/her rights and responsibilities.</p>
+    <p>&nbsp</p>
+    <a href="#toc">Back to Table of Contents</a>
+    <p>&nbsp</p>
+    <h3>
+        <strong>
+            <a name="section7">Full Stack Development Course Outline</a>
+        </strong>
+    </h3>
+    <p>The Full Stack Development training program provides students with sufficient technical knowledge and training to pursue
+        entry-level positions in the software engineering field as beginning web developers. Possible career paths include
+        programming, web design, software development, and software support in a professional office environment. To successfully
+        pursue these career paths a student must possess knowledge in coding techniques, documentation reading, debugging,
+        testing, data retrieval, and creating and manipulating databases and tables. The Full Stack Development program is
+        not designed to lead to positions in a profession, occupation, trade or career field requiring licensure in the state.</p>
+    <p></p>
+    <p>The Full Stack Development program is a total of 400 clock hours over a period of 10 weeks. The on-site program of lectures,
+        curated content (books, screencasts, and tutorials), exercises, challenges, games, code competitions, and reviews.
+        Training will be instructor-led and student driven. There is no requirement for after-hours work, but it is expected
+        that because of the intensive nature of the training program students are likely to study/work evenings and weekends.</p>
+    <p></p>
+    <p>Students are not required to participate in an internship or externship or pass a final examination, to complete the
+        program. Details of the required coursework and study are below:</p>
 
-            <p>Week 1</p>
-            <ul>
-                <li>Programming concepts overview</li>
-                <li>Programming foundations</li>
-                <li>Algorithms</li>
-                <li>Data Structures</li>
-            </ul>
-            <p>Week 2</p>
-            <ul>
-                <li>NodeJS</li>
-                <li>Asynchronous JavaScript</li>
-                <li>ExpressJS</li>
-                <li>Databases overview</li>
-                <li>SQL(MySQL)</li>
-                <li>Object Relational Mapping</li>
-                <li>Schema Design</li>
-            </ul>
-            <p>Week 3</p>
-            <ul>
-                <li>NoSQL Databases overview</li>
-                <li>MongoDB</li>
-                <li>NoSQL Schemas</li>
-                <li>HTML/CSS</li>
-                <li>DOM/JQuery</li>
-                <li>Applied JavaScript</li>
-            </ul>
-            <p>Week 4</p>
-            <ul>
-                <li>HTTP, DNS</li>
-                <li>AJAX</li>
-                <li>LESS</li>
-                <li>Traditional website structures</li>
-                <li>Relative resource links</li>
-                <li>Test-driven development</li>
-            </ul>
-            <p>Week 5</p>
-            <ul>
-                <li>Intro to AngularJS</li>
-                <li>MVC</li>
-                <li>Sessions, Authentication, and Cookies</li>
-                <li>REST API’s</li>
-                <li>Full Stack Project using AngularJS</li>
-            </ul>
-            <p>Week 6</p>
-            <ul>
-                <li>Angular directives, custom directives</li>
-                <li>API Authentication</li>
-                <li>Stripe Payment processing</li>
-                <li>Advanced project</li>
-            </ul>
-            <p>Week 7</p>
-            <ul>
-                <li>Review</li>
-                <li>Using Git for project collaboration</li>
-                <li>Working in teams</li>
-            </ul>
-            <p>Week 8</p>
-            <ul>
-                <li>Utilize developed skills to complete an end to end project</li>
-                <li>Collaborate with students in a multi-developer environment</li>
-                <li>E-commerce team project</li>
-                <li>Server deployment</li>
-            </ul>
-            <p>Week 9/10</p>
-            <ul>
-                <li>Develop end to end custom application based on their ideas Tuition: $8,000 total cost.</li>
-            </ul>
-            <p>&nbsp</p>
-            <p>&nbsp</p>
-            <h3>
-                <strong>Credit for Previous Education</strong>
-            </h3>
-            <p>We do not offer credit for previous education.</p>
-            <p>&nbsp</p>
-            <p>&nbsp</p>
-            <h3>
-                <strong>Placement Policy</strong>
-            </h3>
-            <p>We do not offer job placement assistance.</p>
-            <p>&nbsp</p>
-            <p>&nbsp</p>
-            <h3>
-                <strong>Facilities</strong>
-            </h3>
-            <p>Our classroom is 4250 sq. ft. We own all desks and tables that the students will be using. We own the projector
-                and projection screen that is used during lecture. Wifi is provided by the building. There is a private restroom
-                for the students to use.</p>
-                <p>&nbsp</p>
-                <p>&nbsp</p>
-            <h3>
-                <strong>Cancellation Policy</strong>
-            </h3>
-            <p>A full refund will be made to any student who cancels the enrollment contract.</p>
-            <p>&nbsp</p>
-            <p>&nbsp</p>
-            <h3>
-                <strong>Refund Policy</strong>
-            </h3>
-            <p>Prorated refunds are given under certain circumstances. A refund will be made to any student who withdraws, drops
-                out, is expelled from the institution, or otherwise, fails to complete the period of enrollment for which
-                he or she was charged. If after classes have commenced and before expiration of ten percent (10%) of the
-                period of enrollment for which the student was charged, a student withdraws, drops out, is expelled, or otherwise
-                fails to attend classes, the refund shall equal seventy-five percent (75%); If after expiration of ten percent
-                (10%) of the period of enrollment for which the student was charged, and before expiration of twenty-five
-                percent (25%) of the period, a student withdraws, drops out, is expelled, or otherwise fails to attend classes,
-                the refund shall equal twenty-five percent (25%) of all refundable fees paid; or If after expiration of twenty-five
-                percent (25%) of the period of enrollment for which the student was charged, a student withdraws, drops out,
-                is expelled, or otherwise fails to attend classes, the student may be deemed obligated for one hundred percent
-                (100%) of the tuition and other fees charged by the institution. For a student who cannot complete one or
-                more classes because the institution discontinued such a class during a period of enrollment for which the
-                student was charged, the institution shall refund the sum of all refundable fees paid and, if the student
-                has institutional loans, forgive the amounts owed by the student.</p>
-                <p>&nbsp</p>
-                <p>&nbsp</p>
-            <h3>
-                <strong>Student Complaint Procedure/Grievance Policy</strong>
-            </h3>
-            <p>Covalence, LLC encourages students to bring all complaints or grievances about academically related situations
-                to its attention. Many questions or concerns that students may have can be resolved simply through discussion.
-                A student may present a grievance through the following complaint and dispute resolution procedures. Covalence,
-                LLC will investigate all complaints or grievances fully and promptly. A grievance is defined as a student's
-                written expression of dissatisfaction concerning conditions of enrollment or treatment by instructors, other
-                students, or staff. Grievances may include misapplication of Covalence, LLC policies, rules, regulations,
-                and procedures, or unfair treatment.</p>
-            <p></p>
-            <p>
-                <span style="text-decoration: underline;">STEP 1:</span> A student should first bring the grievance to the attention of the instructor.</p>
-            <p></p>
-            <p>
-                <span style="text-decoration: underline;">STEP 2:</span> Should the student's grievance not be resolved to the student's satisfaction after completing
-                step 1, or if step 1 is otherwise impracticable because the grievance is related to those individuals, the
-                student should next bring the grievance to the attention of the Director.</p>
-            <p></p>
-            <p>
-                <span style="text-decoration: underline;">STEP 3:</span> Should the student's grievance not be resolved to the student's satisfaction after completing
-                steps 1 and 2, or if steps 1 and 2 are otherwise impracticable because the grievance is related to those
-                individuals, the student should next bring the grievance to the attention to the CEO of Covalence, LLC.</p>
-            <p>Matt Landers, CEO</p>
-            <p>matt@covalence.io, (678)300-6919</p>
-            <p>1500 1st Ave N Birmingham, AL 35203</p>
-            <p></p>
-            <p>
-                <span style="text-decoration: underline;">STEP 4:</span> Any person claiming damage or loss as a result of any act or practice by the institution that
-                may be a violation of the Title 49, Chapter 7, Part 20 of Rule Chapter 1540-01-02 may file a complaint with
-                the Tennessee Higher Education Commission, Division of Postsecondary State Authorization. The student may
-                contact:</p>
-            <p>The State of Tennessee</p>
-            <p>Higher Education Commission</p>
-            <p>Parkway Towers, Suite 1900 Nashville, TN 37243 (615)741-5293</p>
-            <p></p>
-            <p>Covalence, LLC is a special purpose institution. That purpose is beginning a career as a developer is beginning
-                a career in learning, and our program is designed to empower students with the ability to learn independently
-                by teaching crucial problem-solving techniques. Students should be aware that transfer of contact hours is
-                always the responsibility of the receiving institution. Whether or not contact hours transfer is solely up
-                to the receiving institution. Any student interested in transferring contact hours should check with the
-                receiving institution directly to determine to what extent, if any, contact hours can be transferred.</p>
-                <p>&nbsp</p>
-                <p>&nbsp</p>
-            <h3>
-                <strong>Admission Policy</strong>
-            </h3>
-            <p>Covalence, LLC is an immersive professional training program at heart, and we have an admissions process that
-                has been structured to ensure that we admit only those students for whom our program is appropriate and effective
-                in preparing them for a successful career as a web developer.</p>
-            <p></p>
-            <p>The admissions process begins with the submission of the prospective student’s application. After the application
-                is completed, the student is invited to be reviewed by an interview where s/he will receive a 1:1 interview
-                with a member of the admissions team. The interview provides the prospective student and Covalence, LLC the
-                opportunity to determine if the training program is a good fit for all concerned. The interview/assessment
-                process focuses on evaluating three different aspects of fit:</p>
-            <p></p>
-            <p>
-                <span style="text-decoration: underline;">Cultural Fit:</span> is Covalence, LLC learning approach well-suited for the student's personality and apparent
-                learning style? (i.e. does s/he have a base-level belief that there are benefits to giving and receiving
-                feedback?)</p>
-            <p></p>
-            <p>
-                <span style="text-decoration: underline;">Program Fit:</span> is the format of the Covalence, LLC program a good match for how the prospective student
-                appears to learn best or would prefer to learn? (i.e. would s/he thrive in an environment of intensive group-based
-                learning?)</p>
-            <p></p>
-            <p>
-                <span style="text-decoration: underline;">Technical Aptitude Fit:</span> does the prospective student demonstrate both the real underlying desire to
-                learn web development (or are they more interested in the salaries in the industry) and the intellectual
-                rigor and persistence to learn effectively in the format(s)/structure(s) that Covalence, LLC teaches its
-                students? (i.e. is s/he applying for the right reason - does s/he truly wish to be a web developer or does
-                s/he see it as a means to an end?) On all portions of the interview, the interviewer may decide that further
-                evaluation is required and will request the applicant to revisit the interview preparation materials prior
-                to a second interview, during which a decision will be made on that applicant's fit with Covalence, LLC.
-                If the interview does not qualify a prospective student for the Training Program, the prospective student
-                is not accepted to the Program.</p>
-            <p></p>
-            <em>Admissions Requirements</em>
-            <p>A prospective student must demonstrate operating proficiency on a computer and requires that the student have
-                a high school diploma/GED or foreign equivalent at the time of enrollment. To be admitted into the program,
-                the applicant must meet the eligibility and admission requirements, discussed below. All instruction at Covalence,
-                LLC will be conducted in English. Covalence, LLC does not offer or provide English language services, including
-                instruction such as ESL. Prospective students from other countries where the primary language is not English
-                will need a passing score of at least 80 on the TOEFL IBT examination prior to enrolling into the program.
-                It is the responsibility of the student to cover the cost of the examination, which is not included in the
-                tuition fees to attend Covalence, LLC. For more information on TOEFL by
-                <a href="https://www.ets.org/toefl"
-                    target="_blank">clicking here.</a> Covalence, LLC does not offer visa services for students from other countries.</p>
-            <p></p>
-            <em>Required Materials</em>
-            <p>Each student is required to have a MacBook. This is necessary in order to fulfill all requirements of the course.</p>
+    <p>Week 1</p>
+    <ul>
+        <li>Programming concepts overview</li>
+        <li>Programming foundations</li>
+        <li>Algorithms</li>
+        <li>Data Structures</li>
+    </ul>
+    <p>Week 2</p>
+    <ul>
+        <li>NodeJS</li>
+        <li>Asynchronous JavaScript</li>
+        <li>ExpressJS</li>
+        <li>Databases overview</li>
+        <li>SQL(MySQL)</li>
+        <li>Object Relational Mapping</li>
+        <li>Schema Design</li>
+    </ul>
+    <p>Week 3</p>
+    <ul>
+        <li>NoSQL Databases overview</li>
+        <li>MongoDB</li>
+        <li>NoSQL Schemas</li>
+        <li>HTML/CSS</li>
+        <li>DOM/JQuery</li>
+        <li>Applied JavaScript</li>
+    </ul>
+    <p>Week 4</p>
+    <ul>
+        <li>HTTP, DNS</li>
+        <li>AJAX</li>
+        <li>LESS</li>
+        <li>Traditional website structures</li>
+        <li>Relative resource links</li>
+        <li>Test-driven development</li>
+    </ul>
+    <p>Week 5</p>
+    <ul>
+        <li>Intro to AngularJS</li>
+        <li>MVC</li>
+        <li>Sessions, Authentication, and Cookies</li>
+        <li>REST API’s</li>
+        <li>Full Stack Project using AngularJS</li>
+    </ul>
+    <p>Week 6</p>
+    <ul>
+        <li>Angular directives, custom directives</li>
+        <li>API Authentication</li>
+        <li>Stripe Payment processing</li>
+        <li>Advanced project</li>
+    </ul>
+    <p>Week 7</p>
+    <ul>
+        <li>Review</li>
+        <li>Using Git for project collaboration</li>
+        <li>Working in teams</li>
+    </ul>
+    <p>Week 8</p>
+    <ul>
+        <li>Utilize developed skills to complete an end to end project</li>
+        <li>Collaborate with students in a multi-developer environment</li>
+        <li>E-commerce team project</li>
+        <li>Server deployment</li>
+    </ul>
+    <p>Week 9/10</p>
+    <ul>
+        <li>Develop end to end custom application based on their ideas Tuition: $8,000 total cost.</li>
+    </ul>
+    <p>&nbsp</p>
+    <a href="#toc">Back to Table of Contents</a>
+    <p>&nbsp</p>
+    <h3>
+        <strong>
+            <a name="section8">Credit for Previous Education</a>
+        </strong>
+    </h3>
+    <p>We do not offer credit for previous education.</p>
+    <p>&nbsp</p>
+    <a href="#toc">Back to Table of Contents</a>
+    <p>&nbsp</p>
+    <h3>
+        <strong>
+            <a name="section9">Placement Policy</a>
+        </strong>
+    </h3>
+    <p>We do not offer job placement assistance.</p>
+    <p>&nbsp</p>
+    <a href="#toc">Back to Table of Contents</a>
+    <p>&nbsp</p>
+    <h3>
+        <strong>
+            <a name="section10">Facilities</a>
+        </strong>
+    </h3>
+    <p>Our classroom is 4250 sq. ft. We own all desks and tables that the students will be using. We own the projector and projection
+        screen that is used during lecture. Wifi is provided by the building. There is a private restroom for the students
+        to use.</p>
+    <p>&nbsp</p>
+    <a href="#toc">Back to Table of Contents</a>
+    <p>&nbsp</p>
+    <h3>
+        <strong>
+            <a name="section11">Cancellation Policy</a>
+        </strong>
+    </h3>
+    <p>A full refund will be made to any student who cancels the enrollment contract.</p>
+    <p>&nbsp</p>
+    <p>&nbsp</p>
+    <h3>
+        <strong>
+            <a name="section12">Refund Policy</a>
+        </strong>
+    </h3>
+    <p>Prorated refunds are given under certain circumstances. A refund will be made to any student who withdraws, drops out,
+        is expelled from the institution, or otherwise, fails to complete the period of enrollment for which he or she was
+        charged. If after classes have commenced and before expiration of ten percent (10%) of the period of enrollment for
+        which the student was charged, a student withdraws, drops out, is expelled, or otherwise fails to attend classes,
+        the refund shall equal seventy-five percent (75%); If after expiration of ten percent (10%) of the period of enrollment
+        for which the student was charged, and before expiration of twenty-five percent (25%) of the period, a student withdraws,
+        drops out, is expelled, or otherwise fails to attend classes, the refund shall equal twenty-five percent (25%) of
+        all refundable fees paid; or If after expiration of twenty-five percent (25%) of the period of enrollment for which
+        the student was charged, a student withdraws, drops out, is expelled, or otherwise fails to attend classes, the student
+        may be deemed obligated for one hundred percent (100%) of the tuition and other fees charged by the institution.
+        For a student who cannot complete one or more classes because the institution discontinued such a class during a
+        period of enrollment for which the student was charged, the institution shall refund the sum of all refundable fees
+        paid and, if the student has institutional loans, forgive the amounts owed by the student.</p>
+    <p>&nbsp</p>
+    <p>&nbsp</p>
+    <h3>
+        <strong>
+            <a name="section13">Student Complaint Procedure/Grievance Policy</a>
+        </strong>
+    </h3>
+    <p>Covalence, LLC encourages students to bring all complaints or grievances about academically related situations to its
+        attention. Many questions or concerns that students may have can be resolved simply through discussion. A student
+        may present a grievance through the following complaint and dispute resolution procedures. Covalence, LLC will investigate
+        all complaints or grievances fully and promptly. A grievance is defined as a student's written expression of dissatisfaction
+        concerning conditions of enrollment or treatment by instructors, other students, or staff. Grievances may include
+        misapplication of Covalence, LLC policies, rules, regulations, and procedures, or unfair treatment.</p>
+    <p></p>
+    <p>
+        <span style="text-decoration: underline;">STEP 1:</span> A student should first bring the grievance to the attention of the instructor.</p>
+    <p></p>
+    <p>
+        <span style="text-decoration: underline;">STEP 2:</span> Should the student's grievance not be resolved to the student's satisfaction after completing step
+        1, or if step 1 is otherwise impracticable because the grievance is related to those individuals, the student should
+        next bring the grievance to the attention of the Director.</p>
+    <p></p>
+    <p>
+        <span style="text-decoration: underline;">STEP 3:</span> Should the student's grievance not be resolved to the student's satisfaction after completing steps
+        1 and 2, or if steps 1 and 2 are otherwise impracticable because the grievance is related to those individuals, the
+        student should next bring the grievance to the attention to the CEO of Covalence, LLC.</p>
+    <p>Matt Landers, CEO</p>
+    <p>matt@covalence.io, (678)300-6919</p>
+    <p>1500 1st Ave N Birmingham, AL 35203</p>
+    <p></p>
+    <p>
+        <span style="text-decoration: underline;">STEP 4:</span> Any person claiming damage or loss as a result of any act or practice by the institution that may
+        be a violation of the Title 49, Chapter 7, Part 20 of Rule Chapter 1540-01-02 may file a complaint with the Tennessee
+        Higher Education Commission, Division of Postsecondary State Authorization. The student may contact:
+    </p>
+    <p>The State of Tennessee</p>
+    <p>Higher Education Commission</p>
+    <p>Parkway Towers, Suite 1900 Nashville, TN 37243 (615)741-5293</p>
+    <p></p>
+    <p>Covalence, LLC is a special purpose institution. That purpose is beginning a career as a developer is beginning a career
+        in learning, and our program is designed to empower students with the ability to learn independently by teaching
+        crucial problem-solving techniques. Students should be aware that transfer of contact hours is always the responsibility
+        of the receiving institution. Whether or not contact hours transfer is solely up to the receiving institution. Any
+        student interested in transferring contact hours should check with the receiving institution directly to determine
+        to what extent, if any, contact hours can be transferred.</p>
+    <p>&nbsp</p>
+    <a href="#toc">Back to Table of Contents</a>
+    <p>&nbsp</p>
+    <h3>
+        <strong>
+            <a name="section14">Admission Policy</a>
+        </strong>
+    </h3>
+    <p>Covalence, LLC is an immersive professional training program at heart, and we have an admissions process that has been
+        structured to ensure that we admit only those students for whom our program is appropriate and effective in preparing
+        them for a successful career as a web developer.</p>
+    <p></p>
+    <p>The admissions process begins with the submission of the prospective student’s application. After the application is
+        completed, the student is invited to be reviewed by an interview where s/he will receive a 1:1 interview with a member
+        of the admissions team. The interview provides the prospective student and Covalence, LLC the opportunity to determine
+        if the training program is a good fit for all concerned. The interview/assessment process focuses on evaluating three
+        different aspects of fit:</p>
+    <p></p>
+    <p>
+        <span style="text-decoration: underline;">Cultural Fit:</span> is Covalence, LLC learning approach well-suited for the student's personality and apparent learning
+        style? (i.e. does s/he have a base-level belief that there are benefits to giving and receiving feedback?)
+    </p>
+    <p></p>
+    <p>
+        <span style="text-decoration: underline;">Program Fit:</span> is the format of the Covalence, LLC program a good match for how the prospective student appears
+        to learn best or would prefer to learn? (i.e. would s/he thrive in an environment of intensive group-based learning?)
+    </p>
+    <p></p>
+    <p>
+        <span style="text-decoration: underline;">Technical Aptitude Fit:</span> does the prospective student demonstrate both the real underlying desire to learn
+        web development (or are they more interested in the salaries in the industry) and the intellectual rigor and persistence
+        to learn effectively in the format(s)/structure(s) that Covalence, LLC teaches its students? (i.e. is s/he applying
+        for the right reason - does s/he truly wish to be a web developer or does s/he see it as a means to an end?) On all
+        portions of the interview, the interviewer may decide that further evaluation is required and will request the applicant
+        to revisit the interview preparation materials prior to a second interview, during which a decision will be made
+        on that applicant's fit with Covalence, LLC. If the interview does not qualify a prospective student for the Training
+        Program, the prospective student is not accepted to the Program.</p>
+    <p></p>
+    <em>Admissions Requirements</em>
+    <p>A prospective student must demonstrate operating proficiency on a computer and requires that the student have a high
+        school diploma/GED or foreign equivalent at the time of enrollment. To be admitted into the program, the applicant
+        must meet the eligibility and admission requirements, discussed below. All instruction at Covalence, LLC will be
+        conducted in English. Covalence, LLC does not offer or provide English language services, including instruction such
+        as ESL. Prospective students from other countries where the primary language is not English will need a passing score
+        of at least 80 on the TOEFL IBT examination prior to enrolling into the program. It is the responsibility of the
+        student to cover the cost of the examination, which is not included in the tuition fees to attend Covalence, LLC.
+        For more information on TOEFL by
+        <a href="https://www.ets.org/toefl" target="_blank">clicking here.</a> Covalence, LLC does not offer visa services for students from other countries.</p>
+    <p></p>
+    <em>Required Materials</em>
+    <p>Each student is required to have a MacBook. This is necessary in order to fulfill all requirements of the course.</p>
+    <p>&nbsp</p>
+    <a href="#toc">Back to Table of Contents</a>
 </div>
 
 <!--- Top of footer-->
 <div id="footer">
-    
-        <footer class="bg-dark py-5">
-            <div class="logo">
-                <div class="row">
-                    <div class="col-lg-12 col-lg-offset-6">
+
+    <footer class="bg-dark py-5">
+        <div class="logo">
+            <div class="row">
+                <div class="col-lg-12 col-lg-offset-6">
                     <img class="logo-mark" src="https://covalence.io/static/img/logos/covalence-mark.svg" alt="Covalence Logo Mark">
-                    </div>
                 </div>
             </div>
-            <div class="container pt-5">
-                <div class="row">
-                    <div class="col-md-4 align-self-end text-center text-md-left mb-2">
-                        <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/covalence.io/" class="d-inline mx-1">
+        </div>
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-md-4 align-self-end text-center text-md-left mb-2">
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/covalence.io/" class="d-inline mx-1">
                         <img class="social-icon" src="https://covalence.io/static/img/social/instagram.svg" alt="Instagram Logo"> </a>
-                        <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/covalence_io/" class="d-inline mx-1">
+                    <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/covalence_io/" class="d-inline mx-1">
                         <img class="social-icon" src="https://covalence.io/static/img/social/twitter.svg" alt="Twitter Logo"> </a>
-                        <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/covalence.io/" class="d-inline mx-1">
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/covalence.io/" class="d-inline mx-1">
                         <img class="social-icon" src="https://covalence.io/static/img/social/facebook.svg" alt="Facebook Logo"> </a>
-                        <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/covalence---coding-bootcamp/" class="d-inline mx-1">
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/covalence---coding-bootcamp/" class="d-inline mx-1">
                         <img class="social-icon" src="https://covalence.io/static/img/social/linkedin.svg" alt="Linkedin Logo"> </a>
-                        <a target="_blank" rel="noopener noreferrer" href="https://www.coursereport.com/schools/covalence" class="d-inline mx-1">
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.coursereport.com/schools/covalence" class="d-inline mx-1">
                         <img class="social-icon" src="https://covalence.io/static/img/social/coursereport.svg" alt="Course Report Logo">
                     </a>
-                    </div>
-                    <div class="contact col-md-6 align-self-end text-center text-md-right my-2">
-                        <span class="text-warning px-2">General Admissions Contact:</span>
-                        <a href="mailto:admissions@covalence.io" class="text-white br px-2">admissions@covalence.io</a>
-                        <a href="tel:+12055884232" class="text-white px-2">205.588.4232</a>
-                    </div>
                 </div>
-                <hr class="bg-gray mb-2">
-                <div class="row">
-                    <div class="col text-center text-md-left">
-                        <span class="px-2 br text-gray text-nowrap">
-                        <span style="font-size:80%">©</span> 2017 Covalence. All Rights Reserved</span>
-                        <a href="/privacy-policy/" class="px-2 text-info br text-nowrap">Privacy Policy</a>
-                        <a href="/terms-of-service/" class="px-2 text-info text-nowrap">Terms of Service</a>
-                    </div>
+                <div class="contact col-md-6 align-self-end text-center text-md-right my-2">
+                    <span class="text-warning px-2">General Admissions Contact:</span>
+                    <a href="mailto:admissions@covalence.io" class="text-white br px-2">admissions@covalence.io</a>
+                    <a href="tel:+12055884232" class="text-white px-2">205.588.4232</a>
                 </div>
             </div>
-        </footer>
-    
-    
-    </div>
-    
-    
-    
-    <!--- Bottom of footer-->
+            <hr class="bg-gray mb-2">
+            <div class="row">
+                <div class="col text-center text-md-left">
+                    <span class="px-2 br text-gray text-nowrap">
+                        <span style="font-size:80%">©</span> 2017 Covalence. All Rights Reserved</span>
+                    <a href="/privacy-policy/" class="px-2 text-info br text-nowrap">Privacy Policy</a>
+                    <a href="/terms-of-service/" class="px-2 text-info text-nowrap">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</div>
+
+
+
+<!--- Bottom of footer-->
