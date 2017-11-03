@@ -64,13 +64,13 @@
 
 <div ng-if="me.role=== 'admin'">
     <h1>Add New Lecture:</h1>
-    <form class='lecture-form' ng-submit="save()">
+    <form class='my-form' ng-submit="save()">
         <div class="form-group">
-            <input class="form-control" type="number" ng-model="lecture.week" placeholder="Week">
-            <input class="form-control" type="number" ng-model="lecture.dayid" placeholder="Day">
-            <input class="form-control" type="text" ng-model="lecture.title" placeholder="Title">
-            <input class="form-control" type="text" ng-model="lecture.description" placeholder="Description">
-            <input class="form-control" type="text" ng-model="lecture.url" placeholder="URL">
+            <input class="form-control" type="number" ng-model="lectures.week" placeholder="Week">
+            <input class="form-control" type="number" ng-model="lectures.dayid" placeholder="Day">
+            <input class="form-control" type="text" ng-model="lectures.title" placeholder="Title">
+            <input class="form-control" type="text" ng-model="lectures.description" placeholder="Description">
+            <input class="form-control" type="text" ng-model="lectures.url" placeholder="URL">
             <input class="btn btn-info" type="submit" value="Add Lecture">
         </div>
     </form>
