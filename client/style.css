@@ -1,13 +1,9 @@
 
-
-
-
-
-
 /* ----------------------------start of nav bar  */
 html{
     position: relative;
     min-height: 100%;
+    scroll-behavior: smooth;
 }
 body {
     height: 100%;

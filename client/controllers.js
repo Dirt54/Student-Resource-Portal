@@ -56,8 +56,8 @@ angular.module('portal.controllers', [])
 
 
     .controller('logoutController', ['$scope', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope, $location, $routeParams, UserService, SEOService) {
-        $scope.logout = function() {
-            UserService.logout().then(function(success) {
+        $scope.logout = function () {
+            UserService.logout().then(function (success) {
                 redirect();
             });
             function redirect() {
@@ -160,3 +160,16 @@ angular.module('portal.controllers', [])
 
     }]);
 
+
+// Smooth Scroll//
+// .controller('syllabusController', ['$scope', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope,  $location, $routeParams, UserService, SEOService) {
+//     
+//     $('a[href^="#"]').on('click', function (e) {
+//         e.preventDefault();
+//         var target = this.hash;
+//         var $target = $(target);
+//         $('html, body').stop().animate({
+//             scrollTop: $target.offset().top
+//         }, 1500, 'swing');
+//     });
+// }]);
