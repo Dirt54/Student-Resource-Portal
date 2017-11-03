@@ -32,6 +32,10 @@ angular.module('portal.factories', [])
         });
     }])
 
+    .factory('LoggedUser', ['$resource', function($resource){
+        return $resource('/api/users/me');
+    }])
+
     .factory('Lecture', ['$resource', function ($resource) {
         return $resource('api/lectures/');
     }])
