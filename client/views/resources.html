@@ -67,7 +67,13 @@
     <h1>Add New Resource:</h1>
     <form class='my-form' ng-submit="save()">
         <div class="form-group">
-            <input class='form-control' type="text" ng-model="resources.categoryname" placeholder="Category Name">
+            <select class="form-control" ng-model="resources.categoryid">
+                <option value=''>Select Category</option>
+                <option value='1'>Videos</option>
+                <option value='2'>Portfolio Building Projects</option>
+                <option value='3' ng-model='resources.categoryname'>Misc.</option>
+            </select>
+            <input class='form-control' type="number" ng-model="resources.orderid" placeholder="Priority">
             <input class="form-control" type="text" ng-model="resources.title" placeholder="Title">
             <input class="form-control" type="text" ng-model="resources.description" placeholder="Description">
             <input class="form-control" type="text" ng-model="resources.url" placeholder="URL">
@@ -79,13 +85,13 @@
 <div ng-if="me.role === 'admin'">
     <form class='update-resource-form' ng-submit="update()">
         <div class='form-group' ng-repeat="r in sorted_resources = (resources | orderBy: 'categoryid')">
-            <div ng-hide="r.categoryname === sorted_resources[$index - 1].categoryname">
-                <h1>{{ r.categoryname }}</h1>
+            <div ng-hide="r.name === sorted_resources[$index - 1].name">
+                <h1>{{ r.name }}</h1>
 
             </div>
             <div class='form-group'>
                 <p>Category:</p>
-                <input class="form-control" type="text" ng-model="r.categoryname">
+                <input class="form-control" type="text" ng-model="r.name">
                 <p>Title:</p>
                 <input class='form-control' type="text" ng-model="r.title">
                 <p>Description:</p>
@@ -102,10 +108,10 @@
 <!-- ///////////user view/////////// -->
 
 <div ng-if="me.role === 'user'" ng-repeat="r in sorted_resources = (resources | orderBy:'categoryid')" ng-click="show()">
-    <div ng-hide="r.categoryname === sorted_resources[$index - 1].categoryname">
-        <h1>{{ r.categoryname }}</h1>
+    <div ng-hide="r.name === sorted_resources[$index - 1].name">
+        <h1>{{ r.name }}</h1>
     </div>
-    <div ng-hide="hidden" ng-repeat="i in resources | filter: { categoryname : r.categoryname }">
+    <div ng-hide="hidden" ng-repeat="i in resources | filter: { name : r.name }">
         <h3>
             <a ng-href="{{ i.url }}">{{ i.title }}</a>
         </h3>

@@ -139,7 +139,7 @@ angular.module('portal.controllers', [])
         }
     }])
 
-    .controller('resourcesController', ['$scope', 'Resource', 'LoggedUser', '$location', function ($scope, Resource, LoggedUser, $location) {
+    .controller('resourcesController', ['$scope', 'Resource', 'LoggedUser', '$location', '$route', function ($scope, Resource, LoggedUser, $location, $route) {
         $scope.me = LoggedUser.get();
         $scope.hidden = true;
         $scope.resources = Resource.query();
@@ -148,7 +148,7 @@ angular.module('portal.controllers', [])
         $scope.save = function() {
             var r = new Resource($scope.resources);
             r.$save(function(){
-                $location.path('/resources');
+                $route.reload();
             }, function(err) {
                 console.log(err);
             })
@@ -163,16 +163,16 @@ angular.module('portal.controllers', [])
         }
     }])
 
-    .controller('labsController', ['$scope', 'Lab', 'LoggedUser', '$location', function ($scope, Lab, LoggedUser, $location) {
+    .controller('labsController', ['$scope', 'Lab', 'LoggedUser', '$location', '$route', function ($scope, Lab, LoggedUser, $location, $route) {
         $scope.me = LoggedUser.get();
         $scope.hidden = true;
         $scope.labs = Lab.query();
 
 
         $scope.save = function() {
-            var r = new Resource($scope.labs);
+            var r = new Lab($scope.labs);
             r.$save(function(){
-                $location.path('/labs');
+                $route.reload();
             }, function(err) {
                 console.log(err);
             })
