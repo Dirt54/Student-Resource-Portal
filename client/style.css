@@ -55,6 +55,19 @@ body {
  /* the end of login an sign up form  */
 
 
+ /* Syllabus Page */
+
+
+div.class {
+    margin: 0 auto;
+    max-width: 500px;
+  }
+  
+  li {
+    padding: 5px 0;
+  }
+  
+ /* End Syllabus Page */
 /* start of footer --------------- */
 
 #footer {
