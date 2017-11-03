@@ -66,26 +66,22 @@ body {
     text-align: center;
 }
 
-
- 
  /* the end of login an sign up form  */
 
-
- /* Syllabus Page */
-
-
+ /* Syllabus Page s*/
 div.syllabus {
-    margin: 0 auto;
-    max-width: 100rem;
-   
+        margin-left: 3rem;
+        margin-right: 3rem;
+        margin-top:5 auto;
+        margin-bottom:5 auto;
+        max-width: 100rem;
   }
   
   li {
     padding: 5px 0;
   }
+ /* End Syllabus Pages */
 
-  
- /* End Syllabus Page */
 /* start of footer --------------- */
 
 #footer {
