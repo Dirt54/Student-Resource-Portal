@@ -1,3 +1,5 @@
+<!-- /////////////start: nav bar -->
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="/">
                 <img src="images/covalence-text-logo.svg" height="105" width="210">
@@ -6,8 +8,8 @@
             aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="nav navbar-nav navbar-right">
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+            <ul class="navbar-nav pr-xl-5">
     
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -43,10 +45,19 @@
                 <li>
                      <a class="nav-item nav-link" href="#">Blog</a>
                 </li>
-            </div>
+                <li class="nav-item mx-md-1 mx-xl-3">
+                    <button type="button" class=" btn btn-danger btn-lg" ng-controller="logoutController" ng-click="logout()">
+                        <span class="glyphicon glyphicon-log-out"></span> Log out
+                      </button>
+                
+                </li>
+            </ul>
         </div>
     
     </nav>
+     <!-- ///////////////end:nav bar //////////////////////////////// -->
+        
+          
 
 <div ng-repeat="l in sorted_labs = (labs | orderBy: 'week')" ng-click="show()">
     <div ng-hide="l.week === sorted_labs[$index - 1].week">
@@ -57,49 +68,53 @@
         <p>{{ i.title }}<a ng-href="{{ i.readmeURL }}"target="blank">&nbsp{{ i.description }}</a></p>
     </div>
 </div>
+<!--//////////////////////////////////////////////// start:footer -->
+
 
 <div id="footer">
-
-    <footer class="bg-dark py-5">
-        <div class="logo">
-            <div class="row">
-                <div class="col-lg-12 col-lg-offset-6">
-                    <img class="logo-mark" src="https://covalence.io/static/img/logos/covalence-mark.svg" alt="Covalence Logo Mark">
+        
+            <footer class="bg-dark py-5">
+                <div class="logo">
+                    <div class="row">
+                        <div class="col-lg-12 col-lg-offset-6">
+                        <img class="logo-mark" src="https://covalence.io/static/img/logos/covalence-mark.svg" alt="Covalence Logo Mark">
+                        </div>
+                    </div>
                 </div>
-            </div>
+                <div class="container pt-5">
+                    <div class="row">
+                        <div class="col-md-4 align-self-end text-center text-md-left mb-2">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/covalence.io/" class="d-inline mx-1">
+                            <img class="social-icon" src="https://covalence.io/static/img/social/instagram.svg" alt="Instagram Logo"> </a>
+                            <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/covalence_io/" class="d-inline mx-1">
+                            <img class="social-icon" src="https://covalence.io/static/img/social/twitter.svg" alt="Twitter Logo"> </a>
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/covalence.io/" class="d-inline mx-1">
+                            <img class="social-icon" src="https://covalence.io/static/img/social/facebook.svg" alt="Facebook Logo"> </a>
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/covalence---coding-bootcamp/" class="d-inline mx-1">
+                            <img class="social-icon" src="https://covalence.io/static/img/social/linkedin.svg" alt="Linkedin Logo"> </a>
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.coursereport.com/schools/covalence" class="d-inline mx-1">
+                            <img class="social-icon" src="https://covalence.io/static/img/social/coursereport.svg" alt="Course Report Logo">
+                        </a>
+                        </div>
+                        <div class="contact col-md-6 align-self-end text-center text-md-right my-2">
+                            <span class="text-warning px-2">General Admissions Contact:</span>
+                            <a href="mailto:admissions@covalence.io" class="text-white br px-2">admissions@covalence.io</a>
+                            <a href="tel:+12055884232" class="text-white px-2">205.588.4232</a>
+                        </div>
+                    </div>
+                    <hr class="bg-gray mb-2">
+                    <div class="row">
+                        <div class="col text-center text-md-left">
+                            <span class="px-2 br text-gray text-nowrap">
+                            <span style="font-size:80%">©</span> 2017 Covalence. All Rights Reserved</span>
+                            <a href="/privacy-policy/" class="px-2 text-info br text-nowrap">Privacy Policy</a>
+                            <a href="/terms-of-service/" class="px-2 text-info text-nowrap">Terms of Service</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        
+        
         </div>
-        <div class="container pt-5">
-            <div class="row">
-                <div class="col-md-4 align-self-end text-center text-md-left mb-2">
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/covalence.io/" class="d-inline mx-1">
-                        <img class="social-icon" src="https://covalence.io/static/img/social/instagram.svg" alt="Instagram Logo"> </a>
-                    <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/covalence_io/" class="d-inline mx-1">
-                        <img class="social-icon" src="https://covalence.io/static/img/social/twitter.svg" alt="Twitter Logo"> </a>
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/covalence.io/" class="d-inline mx-1">
-                        <img class="social-icon" src="https://covalence.io/static/img/social/facebook.svg" alt="Facebook Logo"> </a>
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/covalence---coding-bootcamp/" class="d-inline mx-1">
-                        <img class="social-icon" src="https://covalence.io/static/img/social/linkedin.svg" alt="Linkedin Logo"> </a>
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.coursereport.com/schools/covalence" class="d-inline mx-1">
-                        <img class="social-icon" src="https://covalence.io/static/img/social/coursereport.svg" alt="Course Report Logo">
-                    </a>
-                </div>
-                <div class="contact col-md-6 align-self-end text-center text-md-right my-2">
-                    <span class="text-warning px-2">General Admissions Contact:</span>
-                    <a href="mailto:admissions@covalence.io" class="text-white br px-2">admissions@covalence.io</a>
-                    <a href="tel:+12055884232" class="text-white px-2">205.588.4232</a>
-                </div>
-            </div>
-            <hr class="bg-gray mb-2">
-            <div class="row">
-                <div class="col text-center text-md-left">
-                    <span class="px-2 br text-gray text-nowrap">
-                        <span style="font-size:80%">©</span> 2017 Covalence. All Rights Reserved</span>
-                    <a href="/privacy-policy/" class="px-2 text-info br text-nowrap">Privacy Policy</a>
-                    <a href="/terms-of-service/" class="px-2 text-info text-nowrap">Terms of Service</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-
-</div>
+        
+           <!-- /////////////////////end: footer //////////////// -->
