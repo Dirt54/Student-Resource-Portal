@@ -25,26 +25,26 @@ router.route('/')
                 res.sendStatus(500);
             });
     })
-    .get(function(req, res) {
+    .get(function (req, res) {
         procedures.all()
-        .then(function(lectures) {
-            res.send(lectures);
-        }).catch(function(err) {
-            console.log(err);
-            res.sendStatus(500);
-        })
+            .then(function (lectures) {
+                res.send(lectures);
+            }).catch(function (err) {
+                console.log(err);
+                res.sendStatus(500);
+            })
     })
 
 router.route('/:id')
-.get(function(req, res) {
-    procedures.read(req.params.id)
-    .then(function(lectures) {
-        res.send(lectures);
-    }).catch(function(err) {
-        console.log(err);
-        res.sendStatus(500);
+    .get(function (req, res) {
+        procedures.read(req.params.id)
+            .then(function (lectures) {
+                res.send(lectures);
+            }).catch(function (err) {
+                console.log(err);
+                res.sendStatus(500);
+            })
     })
-})
 
     .delete(function (req, res) {
         procedures.destroy(req.params.id)
@@ -58,7 +58,7 @@ router.route('/:id')
 
     .put(function (req, res) {
         var l = req.body;
-        procedures.update(l.id, l.week, l.dayid, l.title, l.description, l.url)
+        procedures.update(req.params.id, l.week, l.dayid, l.title, l.description, l.url)
             .then(function () {
                 res.sendStatus(204);
             }).catch(function (err) {

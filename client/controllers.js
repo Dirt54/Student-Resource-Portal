@@ -75,12 +75,12 @@ angular.module('portal.controllers', [])
     .controller('LecturesController', ['$scope', 'Lecture', 'LoggedUser', '$location', '$route', function ($scope, Lecture, LoggedUser, $location, $route) {
         $scope.hidden = true;
         $scope.me = LoggedUser.get();
-        
-        $scope.save = function() {
+
+        $scope.save = function () {
             var l = new Lecture($scope.lectures);
-            l.$save(function(){
+            l.$save(function () {
                 $route.reload();
-            }, function(err) {
+            }, function (err) {
                 console.log(err);
             })
         }
@@ -95,7 +95,7 @@ angular.module('portal.controllers', [])
         $scope.lectures = Lecture.query();
 
 
-       
+
 
         $scope.update = function () {
             $scope.thisguy = Lecture.get({ id: this.l.id });
@@ -105,15 +105,23 @@ angular.module('portal.controllers', [])
             console.log(this.l.description);
             console.log(this.l.url);
             $scope.thisguy.$update({ id: this.l.id, week: this.l.week, dayid: this.l.dayid, title: this.l.title, description: this.l.description, url: this.l.url })
-            .then(function () {
-                $scope.lectures = Lecture.query();
-            }, function (err) {
-                console.log(err);
-            });
+                .then(function () {
+                    $scope.lectures = Lecture.query();
+                }, function (err) {
+                    console.log(err);
+                });
         }
 
-        $scope.delete = function() {
-            $scope.thisthing = Lecture.get({ this.l.id });
+        $scope.delete = function () {
+            if (confirm('Are you sure you want to delete this?')) {
+                $scope.thisthing = Lecture.get({ id: this.l.id });
+                $scope.thisthing.$delete({ id: this.l.id })
+                    .then(function () {
+                        $scope.lectures = Lecture.query();
+                    }, function (err) {
+                        console.log(err);
+                    })
+            }
         }
 
     }])
@@ -165,11 +173,11 @@ angular.module('portal.controllers', [])
         $scope.resources = Resource.query();
 
 
-        $scope.save = function() {
+        $scope.save = function () {
             var r = new Resource($scope.resources);
-            r.$save(function(){
+            r.$save(function () {
                 $route.reload();
-            }, function(err) {
+            }, function (err) {
                 console.log(err);
             })
         }
@@ -179,6 +187,18 @@ angular.module('portal.controllers', [])
                 this.hidden = false;
             } else {
                 this.hidden = true;
+            }
+        }
+
+        $scope.delete = function () {
+            if (confirm('Are you sure you want to delete this?')) {
+                $scope.thisthing = Resource.get({ id: this.r.id });
+                $scope.thisthing.$delete({ id: this.r.id })
+                    .then(function () {
+                        $scope.resources = Resource.query();
+                    }, function (err) {
+                        console.log(err);
+                    })
             }
         }
     }])
@@ -189,11 +209,11 @@ angular.module('portal.controllers', [])
         $scope.labs = Lab.query();
 
 
-        $scope.save = function() {
+        $scope.save = function () {
             var r = new Lab($scope.labs);
-            r.$save(function(){
+            r.$save(function () {
                 $route.reload();
-            }, function(err) {
+            }, function (err) {
                 console.log(err);
             })
         }
@@ -207,14 +227,26 @@ angular.module('portal.controllers', [])
             }
         }
 
+        $scope.delete = function () {
+            if (confirm('Are you sure you want to delete this?')) {
+                $scope.thisthing = Lab.get({ id: this.l.id });
+                $scope.thisthing.$delete({ id: this.l.id })
+                    .then(function () {
+                        $scope.labs = Lab.query();
+                    }, function (err) {
+                        console.log(err);
+                    })
+            }
+        }
+
     }])
 
 
-.controller('syllabusController', ['$scope', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope,  $location, $routeParams, UserService, SEOService) {
-}])
+    .controller('syllabusController', ['$scope', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope, $location, $routeParams, UserService, SEOService) {
+    }])
 
-.controller('frontendsyllabusController', ['$scope', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope,  $location, $routeParams, UserService, SEOService) {
-}])
-    
-.controller('reactsyllabusController', ['$scope', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope,  $location, $routeParams, UserService, SEOService) {
-}]);
+    .controller('frontendsyllabusController', ['$scope', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope, $location, $routeParams, UserService, SEOService) {
+    }])
+
+    .controller('reactsyllabusController', ['$scope', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope, $location, $routeParams, UserService, SEOService) {
+    }]);

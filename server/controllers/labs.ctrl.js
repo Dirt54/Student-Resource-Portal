@@ -57,4 +57,14 @@ router.route('/:id')
                 res.sendStatus(500);
             })
     })
+
+    .get(function(req, res) {
+        procedures.read(req.params.id)
+        .then(function(lab) {
+            res.send(lab);
+        }).catch(function(err) {
+            console.log(err);
+            res.sendStatus(500);
+        })
+    })
 module.exports = router;

@@ -45,7 +45,17 @@ router.route('/:id')
                 console.log(err);
                 res.sendStatus(500);
             })
-    });
+    })
+
+    .get(function(req, res) {
+        procedures.read(req.params.id)
+        .then(function(resource) {
+            res.send(resource);
+        }).catch(function(err) {
+            console.log(err);
+            res.sendStatus(500);
+        })
+    })
 
 router.route('/:categoryid')
     .get(function(req, res) {

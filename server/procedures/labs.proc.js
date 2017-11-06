@@ -21,3 +21,7 @@ exports.update = function (id, week, dayid, title, description, readmeURL) {
 exports.all = function() {
     return db.rows('getAllLabs');
 }
+
+exports.read = function(id) {
+    return db.row('getLabById', [id])
+}
