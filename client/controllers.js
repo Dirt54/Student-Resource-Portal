@@ -102,7 +102,7 @@ angular.module('portal.controllers', [])
             $scope.thisguy = Lecture.get({ id: this.l.id });
             console.log(this.l.id);
             console.log($scope.thisguy);
-            $scope.thisguy.$update()
+            $scope.thisguy.$update( {week: this.l.week, dayid: this.l.dayid, title: this.l.title, description: this.l.description, url: this.l.url} )
             .then(function () {
                 
             }, function (err) {
