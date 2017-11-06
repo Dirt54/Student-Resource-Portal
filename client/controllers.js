@@ -94,23 +94,26 @@ angular.module('portal.controllers', [])
         }
         $scope.lectures = Lecture.query();
 
-        console.log($scope.lectures);
 
        
 
         $scope.update = function () {
             $scope.thisguy = Lecture.get({ id: this.l.id });
+            console.log($scope.thisguy);
             console.log(this.l.id);
             console.log(this.l.title);
             console.log(this.l.description);
             console.log(this.l.url);
-            console.log($scope.thisguy);
             $scope.thisguy.$update({ id: this.l.id, week: this.l.week, dayid: this.l.dayid, title: this.l.title, description: this.l.description, url: this.l.url })
             .then(function () {
                 $scope.lectures = Lecture.query();
             }, function (err) {
                 console.log(err);
             });
+        }
+
+        $scope.delete = function() {
+            $scope.thisthing = Lecture.get({ this.l.id });
         }
 
     }])
