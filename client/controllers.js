@@ -96,10 +96,12 @@ angular.module('portal.controllers', [])
 
         console.log($scope.lectures);
 
+       
 
         $scope.update = function () {
-            $scope.thisguy = Lecture.get({ id: this.l.id });
+            $scope.thisguy = Lecture.get({ week: this.l.week, dayid: this.l.dayid, title: this.l.title, description: this.l.description, url: this.l.url });
             console.log($scope.thisguy);
+
             $scope.thisguy.$update({ id: this.l.id, week: this.l.week, dayid: this.l.dayid, title: this.l.title, description: this.l.description, url: this.l.url }, function () {
                 $scope.lectures = Lecture.query();
             }, function (err) {
