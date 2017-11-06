@@ -1,6 +1,8 @@
 .navbar{
 
     box-shadow:0 2px 2px 1px rgba(25,25,25,.2);
+    --font-family-sans-serif: "Lato",-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    --font-family-monospace: "SFMono-Regular",Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
 }
 .bg-wite{
     background-color:#fff;
@@ -39,6 +41,7 @@ body {
     height: 100%;
     margin-bottom: 60px;
     margin-top: 150px;
+    font-family: Lato,-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
  }
  
 .nav-item {
@@ -82,6 +85,25 @@ div.syllabus {
   }
  /* End Syllabus Pages */
 
+ /* Form Styling for Lectures, Labs, and Resources */
+ #weekNum{
+    width:2.6rem;
+  }
+  #dayNum{
+    width:2.6rem;
+  }
+  #smallTitle{
+    width:5rem;
+  }
+  #shortDescription{
+    width:15rem;
+  }
+  #url{
+    width:10;
+  }
+
+/* End Form Styling for Lectures, Labs, and Resources */
+
 /* start of footer --------------- */
 
 #footer {
@@ -94,6 +116,8 @@ div.syllabus {
     text-align:center;
     /* Set the fixed height of the footer here */
     line-height: 40px; /* Vertically center the text there */
+    --font-family-sans-serif: "Lato",-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    --font-family-monospace: "SFMono-Regular",Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
  }
  
 .logo-mark {
@@ -111,9 +135,13 @@ div.col-lg-12.col-lg-offset-6 {
     width: 100%;
     text-align: center;
     margin-right:100px;
+    --font-family-sans-serif: "Lato",-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    --font-family-monospace: "SFMono-Regular",Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
 }
 .container .pt-5 {
 text-align: center;
+--font-family-sans-serif: "Lato",-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+--font-family-monospace: "SFMono-Regular",Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
 }
 
 footer .social-icon {
