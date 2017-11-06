@@ -23,3 +23,7 @@ exports.update = function (id, week, dayid, title, description, url) {
 exports.all = function() {
     return db.rows('getLectures');
 }
+
+exports.read = function(id) {
+    return db.row('getLectureById', [id]);
+}

@@ -37,7 +37,7 @@ router.route('/')
 
 router.route('/:id')
 .get(function(req, res) {
-    procedures.all()
+    procedures.read(req.params.id)
     .then(function(lectures) {
         res.send(lectures);
     }).catch(function(err) {
