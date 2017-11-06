@@ -96,6 +96,7 @@ angular.module('portal.controllers', [])
 
         console.log($scope.lectures);
 
+       
 
         $scope.update = function () {
             $scope.thisguy = Lecture.get({ id: this.l.id });
@@ -207,13 +208,10 @@ angular.module('portal.controllers', [])
 
 
 .controller('syllabusController', ['$scope', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope,  $location, $routeParams, UserService, SEOService) {
+}])
+
+.controller('frontendsyllabusController', ['$scope', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope,  $location, $routeParams, UserService, SEOService) {
+}])
     
-    // $('a[href^="#"]').on('click', function (e) {
-    //     e.preventDefault();
-    //     var target = this.hash;
-    //     var $target = $(target);
-    //     $('html, body').stop().animate({
-    //         scrollTop: $target.offset().top
-    //     }, 1500, 'swing');
-    // });
+.controller('reactsyllabusController', ['$scope', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope,  $location, $routeParams, UserService, SEOService) {
 }]);
