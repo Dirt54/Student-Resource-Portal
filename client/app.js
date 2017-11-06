@@ -33,6 +33,16 @@ angular.module('studentportal', ['ngRoute', 'ngResource', 'portal.controllers', 
                 controller: 'syllabusController',
                 requiresLogin: true,
             })
+            .when('/frontendsyllabus', {
+                templateUrl: 'views/frontendsyllabus.html',
+                controller: 'frontendsyllabusController',
+                requiresLogin: true,
+            })
+            .when('/reactsyllabus', {
+                templateUrl: 'views/reactsyllabus.html',
+                controller: 'reactsyllabusController',
+                requiresLogin: true,
+            })
             .when('/lectures', {
                 templateUrl: 'views/lectures.html',
                 controller: 'LecturesController',
