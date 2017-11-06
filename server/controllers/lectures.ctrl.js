@@ -37,6 +37,8 @@ router.route('/')
 
 router.route('/:id')
     .get(function (req, res) {
+        var body = req.body;
+
         procedures.read(req.params.id)
             .then(function (lectures) {
                 res.send(lectures);
@@ -58,6 +60,7 @@ router.route('/:id')
 
     .put(function (req, res) {
         var l = req.body;
+
         procedures.update(req.params.id, l.week, l.dayid, l.title, l.description, l.url)
             .then(function () {
                 res.sendStatus(204);
