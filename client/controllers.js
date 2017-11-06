@@ -100,14 +100,6 @@ angular.module('portal.controllers', [])
         $scope.update = function () {
             $scope.thisguy = Lecture.get({ id: this.l.id });
             console.log($scope.thisguy);
-<<<<<<< HEAD
-            $scope.thisguy.$update( {week: this.l.week, dayid: this.l.dayid, title: this.l.title, description: this.l.description, url: this.l.url} )
-            .then(function () {
-                
-            }, function (err) {
-                console.log(err);
-            });
-=======
             console.log(this.l.id);
             console.log(this.l.title);
             console.log(this.l.description);
@@ -130,7 +122,6 @@ angular.module('portal.controllers', [])
                         console.log(err);
                     })
             }
->>>>>>> 91c0e0f427f6cf9bf2298cde23261cc2cc66e122
         }
 
     }])
