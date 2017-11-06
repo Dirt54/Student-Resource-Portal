@@ -79,7 +79,7 @@
 </div>
 
 <div ng-if="me.role === 'admin'">
-    <form class='update-lab-form' ng-submit="update()">
+    <form class='update-lab-form'>
         <div class='form-group' ng-repeat="l in sorted_labs = (labs | orderBy: 'week')">
             <div ng-hide="l.week === sorted_labs[$index - 1].week">
                 <h1>Week {{ l.week }}</h1>
@@ -97,7 +97,7 @@
                 <p>Url:</p>
                 <input class='form-control' type="text" ng-model="l.readmeURL">
             </div>
-            <input class="btn btn-info" type="submit" value="Update">
+            <button class="btn btn-info" ng-click="update()">Update</button>
             </br>
             <button class="btn btn-info" ng-click="delete()">Delete</button>
         </div>

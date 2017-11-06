@@ -196,6 +196,16 @@ angular.module('portal.controllers', [])
                     })
             }
         }
+
+        $scope.update = function () {
+            (console.log(this));
+            this.r.$update(function(){
+                $scope.resources = Resource.query();
+            }, function(err){
+                console.log(err)
+            })
+            
+        }
     }])
 
     .controller('labsController', ['$scope', 'Lab', 'LoggedUser', '$location', '$route', function ($scope, Lab, LoggedUser, $location, $route) {
@@ -232,6 +242,16 @@ angular.module('portal.controllers', [])
                         console.log(err);
                     })
             }
+        }
+
+        $scope.update = function () {
+            (console.log(this));
+            this.l.$update(function(){
+                $scope.labs = Lab.query();
+            }, function(err){
+                console.log(err)
+            })
+            
         }
 
     }])
