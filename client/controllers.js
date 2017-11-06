@@ -85,9 +85,6 @@ angular.module('portal.controllers', [])
             })
         }
 
-
-
-
         $scope.show = function () {
             if (this.hidden === true) {
                 this.hidden = false;
@@ -96,6 +93,23 @@ angular.module('portal.controllers', [])
             }
         }
         $scope.lectures = Lecture.query();
+
+        console.log($scope.lectures);
+
+       
+
+        $scope.update = function () {
+            $scope.thisguy = Lecture.get({ id: this.l.id });
+            console.log(this.l.id);
+            console.log($scope.thisguy);
+            $scope.thisguy.$update()
+            .then(function () {
+                
+            }, function (err) {
+                console.log(err);
+            });
+        }
+
     }])
 
 
@@ -139,7 +153,7 @@ angular.module('portal.controllers', [])
         }
     }])
 
-    .controller('resourcesController', ['$scope', 'Resource', 'LoggedUser', '$location', function ($scope, Resource, LoggedUser, $location) {
+    .controller('resourcesController', ['$scope', 'Resource', 'LoggedUser', '$location', '$route', function ($scope, Resource, LoggedUser, $location, $route) {
         $scope.me = LoggedUser.get();
         $scope.hidden = true;
         $scope.resources = Resource.query();
@@ -148,7 +162,7 @@ angular.module('portal.controllers', [])
         $scope.save = function() {
             var r = new Resource($scope.resources);
             r.$save(function(){
-                $location.path('/resources');
+                $route.reload();
             }, function(err) {
                 console.log(err);
             })
@@ -163,16 +177,16 @@ angular.module('portal.controllers', [])
         }
     }])
 
-    .controller('labsController', ['$scope', 'Lab', 'LoggedUser', '$location', function ($scope, Lab, LoggedUser, $location) {
+    .controller('labsController', ['$scope', 'Lab', 'LoggedUser', '$location', '$route', function ($scope, Lab, LoggedUser, $location, $route) {
         $scope.me = LoggedUser.get();
         $scope.hidden = true;
         $scope.labs = Lab.query();
 
 
         $scope.save = function() {
-            var r = new Resource($scope.labs);
+            var r = new Lab($scope.labs);
             r.$save(function(){
-                $location.path('/labs');
+                $route.reload();
             }, function(err) {
                 console.log(err);
             })
@@ -191,13 +205,10 @@ angular.module('portal.controllers', [])
 
 
 .controller('syllabusController', ['$scope', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope,  $location, $routeParams, UserService, SEOService) {
+}])
+
+.controller('frontendsyllabusController', ['$scope', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope,  $location, $routeParams, UserService, SEOService) {
+}])
     
-    // $('a[href^="#"]').on('click', function (e) {
-    //     e.preventDefault();
-    //     var target = this.hash;
-    //     var $target = $(target);
-    //     $('html, body').stop().animate({
-    //         scrollTop: $target.offset().top
-    //     }, 1500, 'swing');
-    // });
+.controller('reactsyllabusController', ['$scope', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope,  $location, $routeParams, UserService, SEOService) {
 }]);

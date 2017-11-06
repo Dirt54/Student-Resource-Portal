@@ -99,10 +99,9 @@ padding-top: 4em;
     text-align: center;
 }
 
-
- 
  /* the end of login an sign up form  */
 
+<<<<<<< HEAD
 
  /* Syllabus Page */
 
@@ -110,18 +109,22 @@ div.main {
 
     margin-top: 150px;
 }
+=======
+ /* Syllabus Page s*/
+>>>>>>> aa034d199ab846a1fdce35c9267a7d8ecf69940a
 div.syllabus {
-    margin: 0 auto;
-    max-width: 100rem;
-   
+        margin-left: 3rem;
+        margin-right: 3rem;
+        margin-top:5 auto;
+        margin-bottom:5 auto;
+        max-width: 100rem;
   }
   
   li {
     padding: 5px 0;
   }
+ /* End Syllabus Pages */
 
-  
- /* End Syllabus Page */
 /* start of footer --------------- */
 
 #footer {

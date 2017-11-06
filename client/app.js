@@ -1,4 +1,4 @@
-angular.module('studentportal', ['ngRoute', 'ngResource', 'portal.controllers', 'portal.factories', 'portal.services'])
+angular.module('studentportal', ['ngRoute', 'ngResource', 'portal.controllers', 'portal.factories', 'portal.services','smoothScroll'])
     .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
         $locationProvider.html5Mode(true);
         $routeProvider
@@ -31,6 +31,16 @@ angular.module('studentportal', ['ngRoute', 'ngResource', 'portal.controllers', 
             .when('/syllabus', {
                 templateUrl: 'views/syllabus.html',
                 controller: 'syllabusController',
+                requiresLogin: true,
+            })
+            .when('/frontendsyllabus', {
+                templateUrl: 'views/frontendsyllabus.html',
+                controller: 'frontendsyllabusController',
+                requiresLogin: true,
+            })
+            .when('/reactsyllabus', {
+                templateUrl: 'views/reactsyllabus.html',
+                controller: 'reactsyllabusController',
                 requiresLogin: true,
             })
             .when('/lectures', {
