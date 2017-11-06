@@ -59,12 +59,11 @@
 
 <div class="main">
 
-<hr>
+
 <div id="all-users">
-
-    <h1>Pending Users</h1>
-
+<!-- <h1>PENDING Users</h1>
     <div ng-repeat="n in nonactiveuser">
+        
         <p>{{ n.id }}</p>
         <h2>{{ n.firstname }} {{ n.lastname }}</h2>
         <h4>{{ n.email }}</h4>
@@ -72,11 +71,77 @@
             <h5>{{ n.classStatus }}</h5>
             <button ng-click="activate()">Activate</button>
             <button ng-click="deleteNon()">Delete Account</button>
-    </div>
+    </div> -->
+    
+    <table class="table table-hover" >
+           <h2>Pending Users</h2>
+        <thead >
+              <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Class Status</th>
+                <th>Activate</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody  ng-repeat="n in nonactiveuser">
+              <tr>
+                <th scope="row">{{ n.id }}</th>
+                <td>{{ n.firstname }}</td>
+                <td>{{ n.lastname }}</td>
+                <td>{{ n.email }}</td>
+                <td>{{ n.role }}</td>
+                <td>{{ n.classStatus }}</td>
+                <td> <button ng-click="activate()">Activate</button></td>
+                <td><button ng-click="deleteNon()">Delete Account</button></td>
+              </tr>
+              <tr>
+             
+              </tr>
+              <tr>
+            
+              </tr>
+            </tbody>
+          </table>
+    
+    
     <hr>
-    <h1>Active Users</h1>
-
-    <div ng-repeat="a in activeuser">
+   
+    <table class="table table-hover" >
+            <h2>Active Users Users</h2>
+         <thead >
+               <tr>
+                 <th>#</th>
+                 <th>First Name</th>
+                 <th>Last Name</th>
+                 <th>Email</th>
+                 <th>Role</th>
+                 <th>Class Status</th>
+                 <th>Delete</th>
+               </tr>
+             </thead>
+             <tbody  ng-repeat="a in activeuser">
+               <tr>
+                 <th scope="row">{{ a.id }}</th>
+                 <td>{{ a.firstname }}</td>
+                 <td>{{ a.lastname }}</td>
+                 <td>{{ a.email }}</td>
+                 <td>{{ a.role }}</td>
+                 <td>{{ a.classStatus }}</td>
+                 <td> <button ng-click="deleteAct()">Delete Account</button></td>
+               </tr>
+               <tr>
+              
+               </tr>
+               <tr>
+             
+               </tr>
+             </tbody>
+           </table>
+    <!-- <div ng-repeat="a in activeuser">
         <p>{{ a.id }}</p>
         <h2>{{ a.firstname }} {{ a.lastname }}</h2>
         <h4>{{ a.email }}</h4>
@@ -84,9 +149,10 @@
             <h5>{{ a.classStatus }}</h5>
             <button ng-click="deleteAct()">Delete Account</button>
     </div>
+</div> -->
+
 </div>
 <hr>
-</div>
 <!--//////////////////////////////////////////////// start:footer -->
 
 
