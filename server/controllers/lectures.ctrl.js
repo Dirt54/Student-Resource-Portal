@@ -59,7 +59,6 @@ router.route('/:id')
     })
 
     .put(function (req, res) {
-        
         var l = req.body;
 
         procedures.update(req.params.id, l.week, l.dayid, l.title, l.description, l.url)
