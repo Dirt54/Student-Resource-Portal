@@ -57,10 +57,14 @@
     <!-- ///////////////end:nav bar //////////////////////////////// -->
 
 
+
+
+
+
 <!-- /////////admin view//////////// -->
 
 
-<div ng-if="me.role=== 'admin'">
+<div class= "main" ng-if="me.role=== 'admin'">
     <h1>Add New Lab:</h1>
     <form class='my-form' ng-submit="save()">
         <div class="form-group">
@@ -95,6 +99,7 @@
             </div>
             <input class="btn btn-info" type="submit" value="Update">
             </br>
+            <button class="btn btn-info" ng-click="delete()">Delete</button>
         </div>
     </form>
 </div>

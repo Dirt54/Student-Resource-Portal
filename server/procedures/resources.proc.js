@@ -20,3 +20,7 @@ exports.fetch = function(categoryid) {
 exports.all = function() {
     return db.rows('getResources');
 }
+
+exports.read = function(id) {
+    return db.row('getResourceById', [id])
+}

@@ -1,66 +1,66 @@
 <!--Begin Nav Bar-->
 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
-        <a class="navbar-brand" href='/welcome'>
-            <img src="images/covalence-text-logo.svg" height="105" width="210">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-collapse justify-content-end collapse" id="mainNavbar">
-            <ul class="navbar-nav pr-xl-5">
-    
-                <li class="nav-item mx-md-1 mx-xl-3 dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" role="button" aria-haspopup="true"
-                        aria-expanded="false">Fullstack</a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/lectures">Lectures</a>
-                        <a class="dropdown-item" href="/labs">Labs</a>
-                        <a class="dropdown-item" href="/syllabus">Syllabus</a>
-                        <a class="dropdown-item" href="/resources">Resources</a>
-                        <a class="dropdown-item" href="/users">Users</a>
-                    </div>
-                </li>
-                <li class="nav-item mx-md-1 mx-xl-3 dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">React Native</a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Lectures</a>
-                        <a class="dropdown-item" href="#">Labs</a>
-                        <a class="dropdown-item" href="/reactsyllabus">Syllabus</a>
-                        <a class="dropdown-item" href="#">Resources</a>
-                    </div>
-                </li>
-                <li class="nav-item mx-md-1 mx-xl-3 dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">Front End Fundamentals</a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Lectures</a>
-                        <a class="dropdown-item" href="#">Labs</a>
-                        <a class="dropdown-item" href="/frontendsyllabus">Syllabus</a>
-                        <a class="dropdown-item" href="#">Resources</a>
-                    </div>
-                </li>
-                <li>
-                    <a class="nav-item nav-link" href='https://covalence.io/blog/'>Blog</a>
-                </li>
-                <li class="nav-item mx-md-1 mx-xl-3">
-                    <button type="button" class=" btn btn-danger btn-lg" ng-controller="logoutController" ng-click="logout()">
-                        <span class="glyphicon glyphicon-log-out"></span> Log out
-                    </button>
-    
-                </li>
-            </ul>
-        </div>
-    
-    </nav>
-    <!-- ///////////////end:nav bar //////////////////////////////// -->
+    <a class="navbar-brand" href='/welcome'>
+        <img src="images/covalence-text-logo.svg" height="105" width="210">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse justify-content-end collapse" id="mainNavbar">
+        <ul class="navbar-nav pr-xl-5">
+
+            <li class="nav-item mx-md-1 mx-xl-3 dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" role="button" aria-haspopup="true"
+                    aria-expanded="false">Fullstack</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/lectures">Lectures</a>
+                    <a class="dropdown-item" href="/labs">Labs</a>
+                    <a class="dropdown-item" href="/syllabus">Syllabus</a>
+                    <a class="dropdown-item" href="/resources">Resources</a>
+                    <a class="dropdown-item" href="/users">Users</a>
+                </div>
+            </li>
+            <li class="nav-item mx-md-1 mx-xl-3 dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">React Native</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Lectures</a>
+                    <a class="dropdown-item" href="#">Labs</a>
+                    <a class="dropdown-item" href="/reactsyllabus">Syllabus</a>
+                    <a class="dropdown-item" href="#">Resources</a>
+                </div>
+            </li>
+            <li class="nav-item mx-md-1 mx-xl-3 dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">Front End Fundamentals</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Lectures</a>
+                    <a class="dropdown-item" href="#">Labs</a>
+                    <a class="dropdown-item" href="/frontendsyllabus">Syllabus</a>
+                    <a class="dropdown-item" href="#">Resources</a>
+                </div>
+            </li>
+            <li>
+                <a class="nav-item nav-link" href='https://covalence.io/blog/'>Blog</a>
+            </li>
+            <li class="nav-item mx-md-1 mx-xl-3">
+                <button type="button" class=" btn btn-danger btn-lg" ng-controller="logoutController" ng-click="logout()">
+                    <span class="glyphicon glyphicon-log-out"></span> Log out
+                </button>
+
+            </li>
+        </ul>
+    </div>
+
+</nav>
+<!-- ///////////////end:nav bar //////////////////////////////// -->
 
 
 <!-- ////////admin view///////// -->
 
 
-<div ng-if="me.role === 'admin'">
+<div class="lectures, main" ng-if="me.role=== 'admin'">
     <h1>Add New Lecture:</h1>
     <form class='my-form' ng-submit="save()">
         <div class="form-group">
@@ -82,8 +82,8 @@
 
             </div>
             <div class='form-group'>
-                    <p>Id:</p>
-                    <input class="form-control" type="number" ng-model="l.id">
+                <p>Id:</p>
+                <input class="form-control" type="number" ng-model="l.id">
                 <p>Week:</p>
                 <input class="form-control" type="number" ng-model="l.week">
                 <p>Day:</p>
@@ -95,9 +95,11 @@
                 <p>Url:</p>
                 <input class='form-control' type="text" ng-model="l.url">
             </div>
-            <button class="btn btn-info"  ng-click="update()">Update</button>
+            <button class="btn btn-info" ng-click="update()">Update</button>
             </br>
+            <button class="btn btn-info" ng-click="delete()">Delete</button>
         </div>
+
     </form>
 </div>
 
