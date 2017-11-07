@@ -108,7 +108,7 @@
 
 <!-- ///////////user view/////////// -->
 
-<div ng-if="me.role === 'user'" ng-repeat="r in sorted_resources = (resources | orderBy:'categoryid')" ng-click="show()">
+<div class="main" ng-if="me.role === 'user'" ng-repeat="r in sorted_resources = (resources | orderBy:'categoryid')" ng-click="show()">
     <div ng-hide="r.name === sorted_resources[$index - 1].name">
         <h1>{{ r.name }}</h1>
     </div>
