@@ -62,7 +62,7 @@
 
 <div class="lectures main" ng-if="me.role=== 'admin'">
     <h1>Add New Lecture:</h1>
-    <form class='my-form' ng-submit="save()">
+    <form class='my-form mx-auto' ng-submit="save()">
         <div class="form-group">
             <input class="form-control" type="number" ng-model="lectures.week" placeholder="Week">
             <input class="form-control" type="number" ng-model="lectures.dayid" placeholder="Day">
@@ -75,7 +75,7 @@
 </div>
 
 <div class= "main" ng-if="me.role === 'admin'">
-    <form class='update-lecture-form'>
+    <form class='update-lecture-form mx-auto'>
         <div class='form-group' ng-repeat="l in sorted_lectures = (lectures | orderBy: 'week')">
             <div ng-hide="l.week === sorted_lectures[$index - 1].week">
                 <h1>Week {{ l.week }}</h1>
