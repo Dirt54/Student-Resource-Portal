@@ -67,7 +67,8 @@ angular.module('portal.controllers', [])
     }])
 
 
-    .controller('welcomeController', ['$scope', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope, $location, $routeParams, UserService, SEOService) {
+    .controller('welcomeController', ['$scope', '$location', '$routeParams', 'UserService', 'LoggedUser', 'SEOService', function ($scope, $location, $routeParams, UserService, LoggedUser, SEOService) {
+        $scope.me = LoggedUser.get();
 
     }])
 
@@ -277,11 +278,14 @@ angular.module('portal.controllers', [])
     }])
 
 
-    .controller('syllabusController', ['$scope', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope, $location, $routeParams, UserService, SEOService) {
+    .controller('syllabusController', ['$scope', '$location', '$routeParams', 'UserService', 'SEOService', 'LoggedUser', function ($scope, $location, $routeParams, UserService, SEOService, LoggedUser) {
+        $scope.me = LoggedUser.get();
     }])
 
-    .controller('frontendsyllabusController', ['$scope', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope, $location, $routeParams, UserService, SEOService) {
+    .controller('frontendsyllabusController', ['$scope', '$location', '$routeParams', 'UserService', 'SEOService', 'LoggedUser', function ($scope, $location, $routeParams, UserService, SEOService, LoggedUser) {
+        $scope.me = LoggedUser.get();
     }])
 
-    .controller('reactsyllabusController', ['$scope', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope, $location, $routeParams, UserService, SEOService) {
+    .controller('reactsyllabusController', ['$scope', '$location', '$routeParams', 'UserService', 'SEOService', 'LoggedUser', function ($scope, $location, $routeParams, UserService, SEOService, LoggedUser) {
+        $scope.me = LoggedUser.get();
     }]);

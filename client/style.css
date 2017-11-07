@@ -34,7 +34,7 @@
     padding: .5rem 1rem;
 } */
 
-.dropdown-menu i{
+#mainNavbar .dropdown-menu.i{
     position: absolute;
     top: 100%;
     left: 0;
@@ -115,7 +115,7 @@ padding-top: 4em;
 
 div.main {
 
-    margin-top: 150px;
+    margin-top: 150px; /*match the smooth scroll bufer*/
 }
 div.syllabus {
         margin-left: 3rem;
