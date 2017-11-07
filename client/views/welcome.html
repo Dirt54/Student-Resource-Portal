@@ -13,32 +13,32 @@
             <li class="nav-item mx-md-1 mx-xl-3 dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" role="button" aria-haspopup="true"
                     aria-expanded="false">Fullstack</a>
-                <div class="dropdown-menu i" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/lectures">Lectures</a>
-                    <a class="dropdown-item" href="/labs">Labs</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a ng-if="me.classStatus === 'active'" class="dropdown-item" href="/lectures">Lectures</a>
+                    <a ng-if="me.classStatus === 'active'" class="dropdown-item" href="/labs">Labs</a>
                     <a class="dropdown-item" href="/syllabus">Syllabus</a>
-                    <a class="dropdown-item" href="/resources">Resources</a>
-                    <a class="dropdown-item" href="/users">Users</a>
+                    <a ng-if="me.classStatus === 'active'" class="dropdown-item" href="/resources">Resources</a>
+                    <a ng-if="me.role === 'admin'" class="dropdown-item" href="/users">Users</a>
                 </div>
             </li>
             <li class="nav-item mx-md-1 mx-xl-3 dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false">React Native</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Lectures</a>
-                    <a class="dropdown-item" href="#">Labs</a>
+                    <a ng-if="me.role === 'admin'" class="dropdown-item" href="#">Lectures</a>
+                    <a ng-if="me.role === 'admin'" class="dropdown-item" href="#">Labs</a>
                     <a class="dropdown-item" href="/reactsyllabus">Syllabus</a>
-                    <a class="dropdown-item" href="#">Resources</a>
+                    <a ng-if="me.role === 'admin'" class="dropdown-item" href="#">Resources</a>
                 </div>
             </li>
             <li class="nav-item mx-md-1 mx-xl-3 dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false">Front End Fundamentals</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Lectures</a>
-                    <a class="dropdown-item" href="#">Labs</a>
+                    <a ng-if="me.role === 'admin'" class="dropdown-item" href="#">Lectures</a>
+                    <a ng-if="me.role === 'admin'" class="dropdown-item" href="#">Labs</a>
                     <a class="dropdown-item" href="/frontendsyllabus">Syllabus</a>
-                    <a class="dropdown-item" href="#">Resources</a>
+                    <a ng-if="me.role === 'admin'" class="dropdown-item" href="#">Resources</a>
                 </div>
             </li>
             <li>
@@ -58,12 +58,16 @@
 
 <!-- ///////////////main content  //////////////////////////////// -->
 <div class="main">
-
+    <h3 id="welcome-page">Welcome to the Colvalence Student Resources Portal</h3>
+    <p id="welcome-page">While attending your Covalence course you can access lectures, labs, and more pertaining to your particular Cohort here.
+        As well as assisting students to achieve success while in class, we hope to grow this site to support graduates with
+        resources to further develop their skills and reference what they've learned.</p>
+    <p>&nbsp</p>
     <div class="calendar-container">
         <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=2&amp;bgcolor=%239999ff&amp;src=q7088kp0s222c5h2ks5e1e7o0c%40group.calendar.google.com&amp;color=%238C500B&amp;ctz=America%2FNew_York"
             style="border-width:0" width="800" height="600" frameborder="0" scrolling="no" margin-left=""></iframe>
     </div>
-
+    <p>&nbsp</p>
 
 
 </div>

@@ -14,31 +14,31 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" role="button" aria-haspopup="true"
                         aria-expanded="false">Fullstack</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/lectures">Lectures</a>
-                        <a class="dropdown-item" href="/labs">Labs</a>
+                        <a ng-if="me.classStatus === 'active'" class="dropdown-item" href="/lectures">Lectures</a>
+                        <a ng-if="me.classStatus === 'active'" class="dropdown-item" href="/labs">Labs</a>
                         <a class="dropdown-item" href="/syllabus">Syllabus</a>
-                        <a class="dropdown-item" href="/resources">Resources</a>
-                        <a class="dropdown-item" href="/users">Users</a>
+                        <a ng-if="me.classStatus === 'active'" class="dropdown-item" href="/resources">Resources</a>
+                        <a ng-if="me.role === 'admin'" class="dropdown-item" href="/users">Users</a>
                     </div>
                 </li>
                 <li class="nav-item mx-md-1 mx-xl-3 dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">React Native</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Lectures</a>
-                        <a class="dropdown-item" href="#">Labs</a>
+                        <a ng-if="me.role === 'admin'" class="dropdown-item" href="#">Lectures</a>
+                        <a ng-if="me.role === 'admin'" class="dropdown-item" href="#">Labs</a>
                         <a class="dropdown-item" href="/reactsyllabus">Syllabus</a>
-                        <a class="dropdown-item" href="#">Resources</a>
+                        <a ng-if="me.role === 'admin'" class="dropdown-item" href="#">Resources</a>
                     </div>
                 </li>
                 <li class="nav-item mx-md-1 mx-xl-3 dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">Front End Fundamentals</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Lectures</a>
-                        <a class="dropdown-item" href="#">Labs</a>
+                        <a ng-if="me.role === 'admin'" class="dropdown-item" href="#">Lectures</a>
+                        <a ng-if="me.role === 'admin'" class="dropdown-item" href="#">Labs</a>
                         <a class="dropdown-item" href="/frontendsyllabus">Syllabus</a>
-                        <a class="dropdown-item" href="#">Resources</a>
+                        <a ng-if="me.role === 'admin'" class="dropdown-item" href="#">Resources</a>
                     </div>
                 </li>
                 <li>
@@ -57,14 +57,21 @@
     <!-- ///////////////end:nav bar //////////////////////////////// -->
 
 
+</nav>
+<!-- ///////////////end:nav bar //////////////////////////////// -->
 
 
+<!--Begin End Text Intro-->
+<div id="labs-intro">
+    <h3 id="labs-page">Full Stack Development Course Labs</h3>
+    <p id="labs-page">Click on the corresponding week to find the labs and projects materials by day.</p>
+    <p>&nbsp</p>
+</div>
+<!--End Text Intro-->
 
 
 <!-- /////////admin view//////////// -->
-
-
-<div class= "main" ng-if="me.role=== 'admin'">
+<div class="main" ng-if="me.role=== 'admin'">
     <h1>Add New Lab:</h1>
     <form class='my-form' ng-submit="save()">
         <div class="form-group">
@@ -86,8 +93,6 @@
 
             </div>
             <div class='form-group'>
-                <p>Week:</p>
-                <input class="form-control" type="number" ng-model="l.week">
                 <p>Day:</p>
                 <input class='form-control' type="number" ng-model="l.dayid">
                 <p>Title:</p>
