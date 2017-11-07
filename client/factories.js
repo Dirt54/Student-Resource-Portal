@@ -12,6 +12,7 @@ angular.module('portal.factories', [])
         return $resource('/api/users/nonactive/:id', { id: '@id' }, {
             update: {
                 method: 'PUT'
+                
             }
         });
     }])

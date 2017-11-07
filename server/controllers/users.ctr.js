@@ -4,6 +4,7 @@ var procedures = require('../procedures/users.proc');
 var passport = require('passport');
 var utils = require('../utils');
 var auth = require('../middleware/auth.mw');
+var emailSvc = require('../services/email.svc')
 
 var router = express.Router();
 
@@ -50,8 +51,9 @@ router.route('/nonactive')
         })
     })
     .put(auth.isLoggedIn, auth.isAdmin, auth.isActive, function(req, res) {
-        // console.log(req);
+        var email = req.body.email;
         procedures.editUser(req.params.id)
+        .then(emailSvc.sendEmail(req.body.email))
         .then(function() {
             res.sendStatus(204);
         })
