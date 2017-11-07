@@ -100,12 +100,12 @@ angular.module('portal.controllers', [])
 
         $scope.update = function () {
             (console.log(this));
-            this.l.$update(function(){
+            this.l.$update(function () {
                 $scope.lectures = Lecture.query();
-            }, function(err){
+            }, function (err) {
                 console.log(err)
             })
-            
+
         }
 
         $scope.delete = function () {
@@ -136,13 +136,13 @@ angular.module('portal.controllers', [])
 
 
         $scope.activate = function () {
-            $scope.thatguy = NonActiveUsers.get({ id: this.n.id });
-            $scope.thatguy.$update({ id: this.n.id }, function () {
+            NonActiveUsers.get({ id: this.n.id }, function (user) {
+                console.log(user);
+                user.$update().then(function() {
                 $scope.nonactiveuser = NonActiveUsers.query();
                 $scope.activeuser = ActiveUsers.query();
-            }, function (err) {
-                console.log(err);
-            });
+                });
+            })
         }
 
         $scope.deleteNon = function () {
@@ -207,12 +207,12 @@ angular.module('portal.controllers', [])
 
         $scope.update = function () {
             (console.log(this));
-            this.r.$update(function(){
+            this.r.$update(function () {
                 $scope.resources = Resource.query();
-            }, function(err){
+            }, function (err) {
                 console.log(err)
             })
-            
+
         }
 
         SEOService.setSEO({
@@ -260,12 +260,12 @@ angular.module('portal.controllers', [])
         }
 
         $scope.update = function () {
-            this.l.$update(function(){
+            this.l.$update(function () {
                 $scope.labs = Lab.query();
-            }, function(err){
+            }, function (err) {
                 console.log(err)
             })
-            
+
         }
 
         SEOService.setSEO({
