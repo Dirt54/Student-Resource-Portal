@@ -1,7 +1,10 @@
 var express = require('express');
 var procedures = require('../procedures/resources.proc');
+var auth = require('../middleware/auth.mw');
 
 var router = express.Router();
+
+router.all('*', auth.isLoggedIn);
 
 router.route('/')
     .post(function (req, res) {

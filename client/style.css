@@ -196,3 +196,7 @@ footer .social-icon {
 
 
 /* --------------------end of footer */ 
+
+.list{
+    cursor: pointer;
+}

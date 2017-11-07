@@ -259,7 +259,6 @@ angular.module('portal.controllers', [])
         }
 
         $scope.update = function () {
-            (console.log(this));
             this.l.$update(function(){
                 $scope.labs = Lab.query();
             }, function(err){
