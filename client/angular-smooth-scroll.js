@@ -85,7 +85,7 @@
 			var location = 0;
 			if (element.offsetParent) {
 				do {
-					location += element.offsetTop;
+					location += element.offsetTop;//add px to match the top nav bar//
 					element = element.offsetParent;
 				} while (element);
 			}
