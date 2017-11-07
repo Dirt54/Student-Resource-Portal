@@ -67,7 +67,8 @@ angular.module('portal.controllers', [])
     }])
 
 
-    .controller('welcomeController', ['$scope', '$location', '$routeParams', 'UserService', 'SEOService', function ($scope, $location, $routeParams, UserService, SEOService) {
+    .controller('welcomeController', ['$scope', '$location', '$routeParams', 'UserService', 'LoggedUser', 'SEOService', function ($scope, $location, $routeParams, UserService, LoggedUser, SEOService) {
+        $scope.me = LoggedUser.get();
 
     }])
 
