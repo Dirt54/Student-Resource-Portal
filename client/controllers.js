@@ -72,7 +72,7 @@ angular.module('portal.controllers', [])
     }])
 
 
-    .controller('LecturesController', ['$scope', 'Lecture', 'LoggedUser', '$location', '$route', function ($scope, Lecture, LoggedUser, $location, $route) {
+    .controller('LecturesController', ['$scope', 'Lecture', 'LoggedUser', '$location', '$route', 'SEOService', function ($scope, Lecture, LoggedUser, $location, $route, SEOService) {
         $scope.hidden = true;
         $scope.me = LoggedUser.get();
 
@@ -119,6 +119,13 @@ angular.module('portal.controllers', [])
             }
         }
 
+        SEOService.setSEO({
+            title: 'Lectures',
+            image: 'http://' + $location.host() + '/images/',
+            url: $location.url(),
+            description: 'Course Lectures'
+        });
+
     }])
 
 
@@ -162,7 +169,7 @@ angular.module('portal.controllers', [])
         }
     }])
 
-    .controller('resourcesController', ['$scope', 'Resource', 'LoggedUser', '$location', '$route', function ($scope, Resource, LoggedUser, $location, $route) {
+    .controller('resourcesController', ['$scope', 'Resource', 'LoggedUser', '$location', '$route', 'SEOService', function ($scope, Resource, LoggedUser, $location, $route, SEOService) {
         $scope.me = LoggedUser.get();
         $scope.hidden = true;
         $scope.resources = Resource.query();
@@ -206,9 +213,16 @@ angular.module('portal.controllers', [])
             })
             
         }
+
+        SEOService.setSEO({
+            title: 'Resources',
+            image: 'http://' + $location.host() + '/images/',
+            url: $location.url(),
+            description: 'Extra Resources'
+        });
     }])
 
-    .controller('labsController', ['$scope', 'Lab', 'LoggedUser', '$location', '$route', function ($scope, Lab, LoggedUser, $location, $route) {
+    .controller('labsController', ['$scope', 'Lab', 'LoggedUser', '$location', '$route', 'SEOService', function ($scope, Lab, LoggedUser, $location, $route, SEOService) {
         $scope.me = LoggedUser.get();
         $scope.hidden = true;
         $scope.labs = Lab.query();
@@ -253,6 +267,13 @@ angular.module('portal.controllers', [])
             })
             
         }
+
+        SEOService.setSEO({
+            title: 'Labs',
+            image: 'http://' + $location.host() + '/images/',
+            url: $location.url(),
+            description: 'Course Labs'
+        });
 
     }])
 
