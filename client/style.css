@@ -127,7 +127,43 @@ body {
 /* welcome page */
 
 
+ /* Lecture Page */
 
+ .list{
+     cursor: pointer;
+        margin-top: 150px; /*match the smooth scroll bufer*/
+        margin-left: 3rem;
+        margin-right: 3rem;
+        margin-top:5 auto;
+        margin-bottom:5 auto;
+        max-width: 150rem;
+        font-family: Lato,-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+        font-size: 5rem;
+    }
+     
+      #flavor-text {
+        margin-left: 3rem;
+        margin-right: 3rem;
+        margin-top:5 auto;
+        margin-bottom:5 auto;
+        max-width: 150rem;
+        font-family: Lato,-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+        font-size: 3rem;
+  }
+  h3#flavor-text{
+      font-size:5rem;
+  }
+  
+  h1.ng-binding {
+      font-size: 5rem;
+  }
+  p.ng-binding {
+    font-size: 4rem;
+}
+a.ng-binding {
+    font-size: 4rem;
+}
+ /* End Lecture Page */
 
 
 
@@ -225,6 +261,3 @@ footer .social-icon {
 
 /* --------------------end of footer */ 
 
-.list{
-    cursor: pointer;
-}
