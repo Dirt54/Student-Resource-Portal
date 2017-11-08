@@ -131,7 +131,7 @@ body {
 
  .list{
      cursor: pointer;
-        margin-top: 150px; /*match the smooth scroll bufer*/
+        /* margin-top: 150px; */
         margin-left: 3rem;
         margin-right: 3rem;
         margin-top:5 auto;
