@@ -220,6 +220,9 @@ div.syllabus {
   #url{
     width: 25rem;
   }
+  #descriptionBox {
+      width: 25rem;
+  }
   #tablePadding {
       padding-bottom: 2.5rem;
   }
