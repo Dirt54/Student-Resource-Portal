@@ -20,7 +20,7 @@
 .bg-wite{
     background-color:#fff;
 }
-/* .navbar {
+.navbar.navbar-expand-lg.navbar-light.bg-light {
     position: relative;
     display: flex;
     -ms-flex-wrap: wrap;
@@ -32,9 +32,37 @@
     -ms-flex-pack: justify;
     justify-content: space-between;
     padding: .5rem 1rem;
-} */
+    padding-top: 0.5rem;
+    padding-right: 1rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+}
+/* @media (max-width: 991px) */
 
-#mainNavbar .dropdown-menu.i{
+.navbar .dropdown-menu{
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+.navbar-nav .dropdown-menu {
+    position: static;
+    float: none;
+}
+.navbar-collapse.collapsing .nav-item .navbar-collapse.show .nav-item {
+    padding-left: 1em;
+}
+.navbar-collapse a {
+    letter-spacing: .12em;
+}
+.pb-2 .py-2 {
+    padding-bottom: .5rem!important;
+}
+.pt-2 .py-2 {
+    padding-top: .5rem!important;
+}
+
+.dropdown-menu {
     position: absolute;
     top: 100%;
     left: 0;
@@ -44,16 +72,16 @@
     min-width: 10rem;
     padding: .5rem 0;
     margin: .125rem 0 0;
-    font-size: 1rem;
-    color: #222;
+    font-size: 1.4rem;
+    color: #212529;
     text-align: left;
     list-style: none;
-    background-color: #fff;
+    background-color: #f8f9fa!important;;
     background-clip: padding-box;
-    border: 1px solid rgba(34,34,34,.15);
+    border: 1px solid rgba(0,0,0,.15);
     border-radius: .25rem;
 }
-.dropdown-item i {
+.dropdown-item {
     display: block;
     width: 100%;
     padding: .25rem 1.5rem;
@@ -79,13 +107,7 @@ body {
 .nav-item {
     font-size: 17px;
 }
-/* .navbar {
-    background-color: rgb(234, 225, 225);
-    height: 70px;
-}  */
-/* .main{ 
-padding-top: 4em;
-} */
+
 /* ---------------------------------end of nav bar  */
  /* the start of login form  */
 #logincontainer {
@@ -105,7 +127,43 @@ padding-top: 4em;
 /* welcome page */
 
 
+ /* Lecture Page */
 
+ .list{
+     cursor: pointer;
+        margin-top: 150px; /*match the smooth scroll bufer*/
+        margin-left: 3rem;
+        margin-right: 3rem;
+        margin-top:5 auto;
+        margin-bottom:5 auto;
+        max-width: 150rem;
+        font-family: Lato,-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+        font-size: 5rem;
+    }
+     
+      #flavor-text {
+        margin-left: 3rem;
+        margin-right: 3rem;
+        margin-top:5 auto;
+        margin-bottom:5 auto;
+        max-width: 150rem;
+        font-family: Lato,-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+        font-size: 3rem;
+  }
+  h3#flavor-text{
+      font-size:5rem;
+  }
+  
+  h1.ng-binding {
+      font-size: 5rem;
+  }
+  p.ng-binding {
+    font-size: 4rem;
+}
+a.ng-binding {
+    font-size: 4rem;
+}
+ /* End Lecture Page */
 
 
 
@@ -203,6 +261,3 @@ footer .social-icon {
 
 /* --------------------end of footer */ 
 
-.list{
-    cursor: pointer;
-}

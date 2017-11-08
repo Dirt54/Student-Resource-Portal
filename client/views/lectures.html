@@ -58,9 +58,14 @@
 
 <!--Begin End Text Intro-->
 <div class="main">
-<h3 id="lecture-page">Full Stack Development Course Lectures</h3>
-<p id="lecture-page">Click on the corresponding week to find the lectures and other materials by day.</p>
-<p>&nbsp</p>
+    <center>
+        <h3 id="flavor-text">Full Stack Development Course Lectures</h3>
+    </center>
+    <p>&nbsp</p>
+    <center>
+        <p id="flavor-text">Click on the corresponding week to find the lectures and other materials by day.</p>
+    </center>
+    <p>&nbsp</p>
 </div>
 <!--End Text Intro-->
 
@@ -80,7 +85,7 @@
     </form>
 </div>
 
-<div class= "main" ng-if="me.role === 'admin'">
+<div class="main" ng-if="me.role === 'admin'">
     <form class='update-lecture-form mx-auto'>
         <div class='form-group' ng-repeat="l in sorted_lectures = (lectures | orderBy: 'week')">
             <div ng-hide="l.week === sorted_lectures[$index - 1].week">
@@ -111,13 +116,13 @@
 
 <!-- /////////user view///////// -->
 
-<div  class="main list" ng-if="me.role === 'user'" ng-repeat="l in sorted_lectures = (lectures | orderBy: 'week')" ng-click="show()">
+<div class="main list" ng-if="me.role === 'user'" ng-repeat="l in sorted_lectures = (lectures | orderBy: 'week')" ng-click="show()">
     <div ng-hide="l.week === sorted_lectures[$index - 1].week">
         <h1>Week {{l.week }}</h1>
     </div>
     <div ng-hide="hidden" ng-repeat="i in lectures | filter: { week : l.week }">
 
-        <h3>Day: {{ i.dayid }} </h3>
+        <p>Day: {{ i.dayid }} </p>
         <a>{{ i.title }}
             <a ng-href="{{ i.url }}" target="blank">&nbsp{{ i.description }}</a>
     </div>
