@@ -48,10 +48,12 @@ angular.module('portal.controllers', [])
 
         SEOService.setSEO({
             title: 'Login',
-            image: 'http://' + $location.host() + '/images/',
+            image: 'http://' + $location.host() + '/images/favicon-20171103083357746.ico',
             url: $location.url(),
             description: 'Please Login'
         });
+
+
     }])
 
 
@@ -70,6 +72,13 @@ angular.module('portal.controllers', [])
     .controller('welcomeController', ['$scope', '$location', '$routeParams', 'UserService', 'LoggedUser', 'SEOService', function ($scope, $location, $routeParams, UserService, LoggedUser, SEOService) {
         $scope.me = LoggedUser.get();
 
+
+        SEOService.setSEO({
+            title: 'Welcome',
+            image: 'http://' + $location.host() + '/images/favicon-20171103083357746.ico',
+            url: $location.url(),
+            description: 'Welcome page'
+        });
     }])
 
 
@@ -122,7 +131,7 @@ angular.module('portal.controllers', [])
 
         SEOService.setSEO({
             title: 'Lectures',
-            image: 'http://' + $location.host() + '/images/',
+            image: 'http://' + $location.host() + '/images/favicon-20171103083357746.ico',
             url: $location.url(),
             description: 'Course Lectures'
         });
@@ -168,6 +177,14 @@ angular.module('portal.controllers', [])
                 });
             }
         }
+
+        SEOService.setSEO({
+            title: 'Users',
+            image: 'http://' + $location.host() + '/images/favicon-20171103083357746.ico',
+            url: $location.url(),
+            description: 'Users page'
+        });
+
     }])
 
     .controller('resourcesController', ['$scope', 'Resource', 'LoggedUser', '$location', '$route', 'SEOService', function ($scope, Resource, LoggedUser, $location, $route, SEOService) {
@@ -217,10 +234,13 @@ angular.module('portal.controllers', [])
 
         SEOService.setSEO({
             title: 'Resources',
-            image: 'http://' + $location.host() + '/images/',
+            image: 'http://' + $location.host() + '/images/favicon-20171103083357746.ico',
             url: $location.url(),
             description: 'Extra Resources'
         });
+
+
+       
     }])
 
     .controller('labsController', ['$scope', 'Lab', 'LoggedUser', '$location', '$route', 'SEOService', function ($scope, Lab, LoggedUser, $location, $route, SEOService) {
@@ -270,22 +290,45 @@ angular.module('portal.controllers', [])
 
         SEOService.setSEO({
             title: 'Labs',
-            image: 'http://' + $location.host() + '/images/',
+            image: 'http://' + $location.host() + '/images/favicon-20171103083357746.ico',
             url: $location.url(),
             description: 'Course Labs'
         });
+
 
     }])
 
 
     .controller('syllabusController', ['$scope', '$location', '$routeParams', 'UserService', 'SEOService', 'LoggedUser', function ($scope, $location, $routeParams, UserService, SEOService, LoggedUser) {
         $scope.me = LoggedUser.get();
+
+        SEOService.setSEO({
+            title: 'Syllabus',
+            image: 'http://' + $location.host() + '/images/favicon-20171103083357746.ico',
+            url: $location.url(),
+            description: 'Course syllabus'
+        });
     }])
 
     .controller('frontendsyllabusController', ['$scope', '$location', '$routeParams', 'UserService', 'SEOService', 'LoggedUser', function ($scope, $location, $routeParams, UserService, SEOService, LoggedUser) {
         $scope.me = LoggedUser.get();
+
+        SEOService.setSEO({
+            title: 'Syllabus',
+            image: 'http://' + $location.host() + '/images/favicon-20171103083357746.ico',
+            url: $location.url(),
+            description: 'Course syllabus'
+        });
     }])
 
     .controller('reactsyllabusController', ['$scope', '$location', '$routeParams', 'UserService', 'SEOService', 'LoggedUser', function ($scope, $location, $routeParams, UserService, SEOService, LoggedUser) {
         $scope.me = LoggedUser.get();
+
+
+        SEOService.setSEO({
+            title: 'Syllabus',
+            image: 'http://' + $location.host() + '/images/favicon-20171103083357746.ico',
+            url: $location.url(),
+            description: 'Course syllabus'
+        });
     }]);
