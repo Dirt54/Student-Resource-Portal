@@ -56,18 +56,31 @@
 </nav>
 <!-- ///////////////end:nav bar //////////////////////////////// -->
 
-<!--Begin End Text Intro-->
-<div class="main">
-    <div class="flavor-text">
-        <center>
-            <h3 id="flavor-text">Full Stack Development Course Labs</h3>
-            <img src="images/coder-dude.svg" height="200rem" width="200rem">
-            <p id="flavor-text">Click on the corresponding week to find the labs and projects materials by day.</p>
-        </center>
-        <p>&nbsp</p>
+<!--Begin Text Intro Admin-->
+<div class="main"ng-if="me.role=== 'admin'">
+        <div class="flavor-text">
+            <center>
+                <h3 id="flavor-text">Full Stack Development Course Labs</h3>
+                <img src="images/coder-dude.svg" height="200rem" width="200rem">
+                <p id="flavor-text">Add, edit, or delete labs by week and day using the corresponding fields and buttons.</p>
+            </center>
+            <p>&nbsp</p>
+        </div>
     </div>
-</div>
-<!--End Text Intro-->
+    <!--End Text Intro Admin-->
+      
+    <!--Begin Text Intro Student-->
+    <div class="main"ng-if="me.role=== 'user'">
+        <div class="flavor-text">
+            <center>
+                <h3 id="flavor-text">Full Stack Development Course Labs</h3>
+                <img src="images/coder-dude.svg" height="200rem" width="200rem">
+                <p id="flavor-text">Click on the corresponding week to find the labs and project readme's by each day.</p>
+            </center>
+            <p>&nbsp</p>
+        </div>
+    </div>
+    <!--End Text Intro Student-->
 
 
 <!-- /////////admin view//////////// -->
