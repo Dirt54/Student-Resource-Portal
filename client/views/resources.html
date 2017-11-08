@@ -70,50 +70,79 @@
 <!--End Text Intro-->
 
 <!-- /////////////admin view///////////// -->
-
-<div class="main" ng-if="me.role=== 'admin'">
-    <h1>Add New Resource:</h1>
-    <form class='my-form' ng-submit="save()">
-        <div class="form-group">
-            <select class="form-control" ng-model="resources.categoryid">
+<div class="container">
+    <div class="main" ng-if="me.role=== 'admin'">
+        <h1>Add New Resource:</h1>
+        <form class='my-form' ng-submit="save()">
+            <div class="form-group">
+                <select class="form-control" ng-model="resources.categoryid">
                 <option value=''>Select Category</option>
                 <option value='1'>Videos</option>
                 <option value='2'>Portfolio Building Projects</option>
                 <option value='3' ng-model='resources.categoryname'>Misc.</option>
             </select>
-            <input class='form-control' type="number" ng-model="resources.orderid" placeholder="Priority">
-            <input class="form-control" type="text" ng-model="resources.title" placeholder="Title">
-            <input class="form-control" type="text" ng-model="resources.description" placeholder="Description">
-            <input class="form-control" type="text" ng-model="resources.url" placeholder="URL">
-            <input class="btn btn-info" type="submit" value="Add Resource">
-        </div>
-    </form>
-</div>
-
-<div ng-if="me.role === 'admin'">
-    <form class='update-resource-form'>
-        <div class='form-group' ng-repeat="r in sorted_resources = (resources | orderBy: 'categoryid')">
-            <div ng-hide="r.name === sorted_resources[$index - 1].name">
-                <h1>{{ r.name }}</h1>
-
+                <input class='form-control' type="number" ng-model="resources.orderid" placeholder="Priority">
+                <input class="form-control" type="text" ng-model="resources.title" placeholder="Title">
+                <input class="form-control" type="text" ng-model="resources.description" placeholder="Description">
+                <input class="form-control" type="text" ng-model="resources.url" placeholder="URL">
+                <input class="btn btn-success" type="submit" value="Add Resource">
             </div>
-            <div class='form-group'>
-                <p>Category:</p>
-                <input class="form-control" type="text" ng-model="r.name">
-                <p>Title:</p>
-                <input class='form-control' type="text" ng-model="r.title">
-                <p>Description:</p>
-                <input class='form-control' type="text" ng-model="r.description">
-                <p>Url:</p>
-                <input class='form-control' type="text" ng-model="r.url">
-            </div>
-            <button class="btn btn-info" ng-click="update()">Update</button>
-            </br>
-            <button class="btn btn-danger" ng-click="delete()">Delete</button>
-        </div>
-    </form>
-</div>
+        </form>
+    </div>
 
+    <div ng-if="me.role === 'admin'">
+        <form class='update-resource-form'>
+            <div class='form-group' ng-repeat="r in sorted_resources = (resources | orderBy: 'categoryid')">
+                <div ng-hide="r.name === sorted_resources[$index - 1].name">
+                    <h1>{{ r.name }}</h1>
+
+                </div>
+                <table class='table table-hover'>
+                    <thead>
+                        <tr>
+                            <th scope="col">Category:</th>
+                            <th scope="col">Title:</th>
+                            <th scope="col">Url:</th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        <tr scope="row">
+                            <td>
+                                <input class="form-control" type="text" ng-model="r.name">
+                            </td>
+                            <td>
+                                <input class='form-control' type="text" ng-model="r.title">
+                            </td>
+                            <td>
+                                <input class='form-control' type="text" ng-model="r.url">
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+                    <thead>
+                        <tr>
+                            <th>Description:</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr scope="row">
+                            <td colspan="3">
+                                <input class='form-control' type="text" ng-model="r.description">
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <button class="btn btn-info" ng-click="update()">Update</button>
+                <button class="btn btn-danger" ng-click="delete()">Delete</button>
+                </br>
+            </div>
+        </form>
+    </div>
+
+</div>
 </div>
 
 <!-- ///////////user view/////////// -->
