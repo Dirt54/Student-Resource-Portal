@@ -76,6 +76,7 @@
 
 
 <!-- /////////admin view//////////// -->
+<div class="container">
 <div class="main" ng-if="me.role=== 'admin'">
     <h1>Add New Lab:</h1>
     <form class='my-form' ng-submit="save()">
@@ -109,11 +110,11 @@
             </div>
             <button class="btn btn-info" ng-click="update()">Update</button>
             </br>
-            <button class="btn btn-info" ng-click="delete()">Delete</button>
+            <button class="btn btn-danger" ng-click="delete()">Delete</button>
         </div>
     </form>
 </div>
-
+</div>
 <!-- ////////////end admin view//////////// -->
 
 <!-- //////////user view/////////// -->
