@@ -124,10 +124,9 @@ body {
 }
 
  /* the end of login an sign up form  */
-/* welcome page */
 
 
- /* Lecture Page */
+ /* Lecture, Lab, and Resource Pages*/
 
  .list{
      cursor: pointer;
@@ -140,8 +139,24 @@ body {
         font-family: Lato,-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
         font-size: 5rem;
     }
-     
-      #flavor-text {
+      
+h1.ng-binding {
+    font-size: 5rem;
+}
+p.ng-binding {
+  font-size: 4rem;
+}
+a.ng-binding {
+  font-size: 4rem;
+}   
+/* End Lecture, Lab, and Resource Pages*/
+
+/* Flavor text */
+div.flavor-text{
+    background-color: #17a2b8!important;
+    background: #59bcca;
+}
+#flavor-text {
         margin-left: 3rem;
         margin-right: 3rem;
         margin-top:5 auto;
@@ -149,40 +164,41 @@ body {
         max-width: 150rem;
         font-family: Lato,-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
         font-size: 3rem;
+        color: #fff;
+        
   }
   h3#flavor-text{
       font-size:5rem;
+      color: #fff;
   }
-  
-  h1.ng-binding {
-      font-size: 5rem;
-  }
-  p.ng-binding {
-    font-size: 4rem;
+/* End Flavor Text */
+
+/* Google Calendar*/
+div.calendar-container{
+    background: #f7fafc;
 }
-a.ng-binding {
-    font-size: 4rem;
-}
- /* End Lecture Page */
-
-
-
-
+/* End Google Calendar*/
 
  /* Syllabus Page */
 
 div.main {
 
-    margin-top: 150px; /*match the smooth scroll bufer*/
+    margin-top: 125px;
+     /*match the smooth scroll bufer */
 }
 div.syllabus {
         margin-left: 3rem;
         margin-right: 3rem;
-        margin-top:5 auto;
         margin-bottom:5 auto;
-        max-width: 100rem;
+        max-width: 120rem;
   }
-  
+  .flavor-text #top-text{
+    color: #fff;
+    width:100%; 
+  }
+  div.flavor-text #top-div{
+    margin-top:150px;
+  }
   li {
     padding: 5px 0;
   }
