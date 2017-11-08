@@ -4,6 +4,7 @@ var app = express();
 var bodyParser = require('body-parser');
 var clientPath = path.join(__dirname, '../client');
 var mysql = require('mysql');
+var mailgun = require('mailgun-js')({ apiKey: process.env.MAILGUN_API_KEY, domain: process.env.DOMAIN_KEY });
 
 var api = require('./api');
 var cookieParser = require('cookie-parser');
