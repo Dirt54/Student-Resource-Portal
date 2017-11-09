@@ -1,4 +1,4 @@
-#list-example {
+/* #list-example {
     width: 20rem;
 }
 
@@ -7,7 +7,7 @@
   position: relative;
   height: 500px;
   overflow-y: scroll;
-}
+} */
 /* ----------------------------start of nav bar  */
 .navbar-brand img {
     max-width: none;
@@ -137,10 +137,12 @@ html {
     position: relative;
     min-height: 100%;
     scroll-behavior: smooth;
+    
 }
 body {
     height: 100%;
     margin-bottom: 60px;
+   
     font-family: "Lato","-apple-system,system-ui,BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif;
  }
  
