@@ -201,6 +201,7 @@ a.ng-binding {
 div.flavor-text{
     background-color: #17a2b8!important;
     background: #59bcca;
+    width: 100%;
 }
 #flavor-text {
         margin-left: 3rem;
@@ -284,6 +285,10 @@ div.syllabus {
       width: 60%
   } */
 /* End Form Styling for Lectures, Labs, and Resources */
+
+hr.style1{
+	border-top: 1px solid #8c8b8b;
+}
 
 /* start of footer --------------- */
 

@@ -6,16 +6,7 @@ var router = express.Router();
 
 router.all('*', auth.isLoggedIn);
 
-router.route('/week/:week')
-    .get(function (req, res) {
-        procedures.fetch(req.params.week)
-            .then(function (lecture) {
-                res.send(lecture);
-            }).catch(function (err) {
-                console.log(err);
-                res.sendStatus(500);
-            });
-    });
+
 
 router.route('/')
     .post(function (req, res) {
