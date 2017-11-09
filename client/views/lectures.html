@@ -1,7 +1,7 @@
 <!--Begin Nav Bar-->
 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
     <a class="navbar-brand" href='/welcome'>
-        <img src="images/covalence-text-logo.svg" >
+        <img src="images/covalence-text-logo.svg">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar"
         aria-expanded="false" aria-label="Toggle navigation">
@@ -9,7 +9,6 @@
     </button>
     <div class="navbar-collapse justify-content-end collapse" id="mainNavbar">
         <ul class="navbar-nav pr-xl-5">
-
             <li class="nav-item mx-md-1 mx-xl-3 dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" role="button" aria-haspopup="true"
                     aria-expanded="false">Fullstack</a>
@@ -42,33 +41,33 @@
                 </div>
             </li>
             <li>
-                <a class="nav-item nav-link" href='https://covalence.io/blog/'>Blog</a>
+                <a class="nav-item nav-link" href='https://covalence.io/blog/' target="_blank">Blog</a>
             </li>
             <li class="nav-item mx-md-1 mx-xl-3">
                 <button type="button" class=" btn btn-danger btn-lg" ng-controller="logoutController" ng-click="logout()">
                     <span class="glyphicon glyphicon-log-out"></span> Log out
                 </button>
-
             </li>
         </ul>
     </div>
 </nav>
 <!-- ///////////////end:nav bar //////////////////////////////// -->
 
-<!--Begin Text Intro Student-->
+<!--Begin Body Contents-->
 <div class="main">
+<!--Begin Text Intro Student-->    
     <div class="flavor-text">
         <center>
             <h3 id="flavor-text">Full Stack Development Course Lectures</h3>
-            <img src="images/full-stack-badge-noborder.svg" height="200rem" width="200rem">
+            <img src="images/full-stack-badge-noborder.svg" height="200rem" width="300rem">
             <p id="flavor-text" ng-if="me.role === 'user'">Click on the corresponding week to find the lectures and other materials by each day.</p>
             <p id="flavor-text" ng-if="me.role === 'admin'">Add, edit, or delete items to Lectures by week and day using the corresponding fields and buttons.</p>
         </center>
         <p>&nbsp</p>
     </div>
-    <!--End Text Intro Student-->
+<!--End Text Intro Student-->
 
-    <!-- ////////admin view///////// -->
+<!-- ////////admin view///////// -->
     <div class="container">
         <div class="lectures main" ng-if="me.role=== 'admin'">
             <h1>Add New Lecture:</h1>
@@ -89,8 +88,8 @@
                 <div id="tablePadding" class='form-group' ng-repeat="l in sorted_lectures = (lectures | orderBy: 'week')">
                     <div ng-hide="l.week === sorted_lectures[$index - 1].week">
                         <h1>Week {{ l.week }}</h1>
-
                     </div>
+
                     <table class='table table-hover'>
                         <thead>
                             <tr>
@@ -115,90 +114,77 @@
                                 <td>
                                     <input class='form-control' id="url" type="text" ng-model="l.url">
                                 </td>
-
                             </tr>
-
                         </tbody>
                     </table>
+
                     <button class="btn btn-info" ng-click="update()">Update</button>
                     <button class="btn btn-danger" ng-click="delete()">Delete</button>
                     </br>
-
                 </div>
-
             </form>
         </div>
     </div>
-    <!-- /////////end of admin view////////// -->
+<!-- /////////end of admin view////////// -->
 
-   
-  
-    <!-- /////////user view///////// -->
+<!-- /////////user view///////// -->
+    <div class="container">
+        <div class="list" ng-if="me.role === 'user'" ng-repeat="l in sorted_lectures = (lectures | orderBy: 'week')" ng-click="show()">
+            <div ng-hide="l.week === sorted_lectures[$index - 1].week">
+                <h1>Week {{l.week }}</h1>
+            </div>
+            <div ng-hide="hidden" ng-repeat="i in lectures | filter: { week : l.week }">
+                <p>Day: {{ i.dayid }} </p>
+                <a>{{ i.title }}
+                    <a ng-href="{{ i.url }}" target="blank">&nbsp{{ i.description }}</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //////////end of user view////////// -->
+<!--End Body Contents-->
 
-  
-  <div class="container">
-            <div class="list" ng-if="me.role === 'user'" ng-repeat="l in sorted_lectures = (lectures | orderBy: 'week')" ng-click="show()">
-                <div ng-hide="l.week === sorted_lectures[$index - 1].week">
-                    <h1>Week {{l.week }}</h1>
-                </div>
-                <div ng-hide="hidden" ng-repeat="i in lectures | filter: { week : l.week }">
-        
-                    <p>Day: {{ i.dayid }} </p>
-                    <a>{{ i.title }}
-                        <a ng-href="{{ i.url }}" target="blank">&nbsp{{ i.description }}</a>
+<!--//////////////////////////////////////////////// start:footer -->
+<div id="footer">
+    <footer class="bg-dark py-5">
+        <div class="logo">
+            <div class="row">
+                <div class="col-lg-12 col-lg-offset-6">
+                    <img class="logo-mark" src="https://covalence.io/static/img/logos/covalence-mark.svg" alt="Covalence Logo Mark">
                 </div>
             </div>
         </div>
-
-
-
-
-    <!-- //////////end of user view////////// -->
-
-    <!--//////////////////////////////////////////////// start:footer -->
-    <div id="footer">
-        <footer class="bg-dark py-5">
-            <div class="logo">
-                <div class="row">
-                    <div class="col-lg-12 col-lg-offset-6">
-                        <img class="logo-mark" src="https://covalence.io/static/img/logos/covalence-mark.svg" alt="Covalence Logo Mark">
-                    </div>
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-md-4 align-self-end text-center text-md-left mb-2">
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/covalence.io/" class="d-inline mx-1">
+                        <img class="social-icon" src="https://covalence.io/static/img/social/instagram.svg" alt="Instagram Logo"> </a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/covalence_io/" class="d-inline mx-1">
+                        <img class="social-icon" src="https://covalence.io/static/img/social/twitter.svg" alt="Twitter Logo"> </a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/covalence.io/" class="d-inline mx-1">
+                        <img class="social-icon" src="https://covalence.io/static/img/social/facebook.svg" alt="Facebook Logo"> </a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/covalence---coding-bootcamp/" class="d-inline mx-1">
+                        <img class="social-icon" src="https://covalence.io/static/img/social/linkedin.svg" alt="Linkedin Logo"> </a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.coursereport.com/schools/covalence" class="d-inline mx-1">
+                        <img class="social-icon" src="https://covalence.io/static/img/social/coursereport.svg" alt="Course Report Logo">
+                    </a>
+                </div>
+                <div class="contact col-md-6 align-self-end text-center text-md-right my-2">
+                    <span class="text-warning px-2">General Admissions Contact:</span>
+                    <a href="mailto:admissions@covalence.io" class="text-white br px-2">admissions@covalence.io</a>
+                    <a href="tel:+12055884232" class="text-white px-2">205.588.4232</a>
                 </div>
             </div>
-            <div class="container pt-5">
-                <div class="row">
-                    <div class="col-md-4 align-self-end text-center text-md-left mb-2">
-                        <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/covalence.io/" class="d-inline mx-1">
-                            <img class="social-icon" src="https://covalence.io/static/img/social/instagram.svg" alt="Instagram Logo"> </a>
-                        <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/covalence_io/" class="d-inline mx-1">
-                            <img class="social-icon" src="https://covalence.io/static/img/social/twitter.svg" alt="Twitter Logo"> </a>
-                        <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/covalence.io/" class="d-inline mx-1">
-                            <img class="social-icon" src="https://covalence.io/static/img/social/facebook.svg" alt="Facebook Logo"> </a>
-                        <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/covalence---coding-bootcamp/" class="d-inline mx-1">
-                            <img class="social-icon" src="https://covalence.io/static/img/social/linkedin.svg" alt="Linkedin Logo"> </a>
-                        <a target="_blank" rel="noopener noreferrer" href="https://www.coursereport.com/schools/covalence" class="d-inline mx-1">
-                            <img class="social-icon" src="https://covalence.io/static/img/social/coursereport.svg" alt="Course Report Logo">
-                        </a>
-                    </div>
-                    <div class="contact col-md-6 align-self-end text-center text-md-right my-2">
-                        <span class="text-warning px-2">General Admissions Contact:</span>
-                        <a href="mailto:admissions@covalence.io" class="text-white br px-2">admissions@covalence.io</a>
-                        <a href="tel:+12055884232" class="text-white px-2">205.588.4232</a>
-                    </div>
-                </div>
-                <hr class="bg-gray mb-2">
-                <div class="row">
-                    <div class="col text-center text-md-left">
-                        <span class="px-2 br text-gray text-nowrap">
-                                <span  id="grey-text-footer">©2017 Covalence. All Rights Reserved</span>
+            <hr class="bg-gray mb-2">
+            <div class="row">
+                <div class="col text-center text-md-left">
+                    <span class="px-2 br text-gray text-nowrap">
+                        <span id="grey-text-footer">©2017 Covalence. All Rights Reserved</span>
                         <a href="/privacy-policy/" class="px-2 text-info br text-nowrap">Privacy Policy</a>
                         <a href="/terms-of-service/" class="px-2 text-info text-nowrap">Terms of Service</a>
-                    </div>
                 </div>
             </div>
-        </footer>
-    </div>
-    <!-- /////////////////////end: footer //////////////// -->
-    <script>
-            var scroll = new SmoothScroll('a[href*="#"]');
-        </script>
+        </div>
+    </footer>
+</div>
+<!-- /////////////////////end: footer //////////////// -->

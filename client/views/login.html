@@ -1,5 +1,4 @@
 <!-- /////////////start: nav bar -->
-
  <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href='/'>
                 <img src="images/covalence-text-logo.svg" >
@@ -10,7 +9,6 @@
             </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
             <ul class="navbar-nav pr-xl-5">
-    
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">Fullstack</a>
@@ -43,79 +41,21 @@
                               </div>
                 </li>
                 <li>
-                     <a class="nav-item nav-link" href="#">Blog</a>
+                     <a class="nav-item nav-link" href="https://covalence.io/blog/" target="_blank">Blog</a>
                 </li>
                 <li class="nav-item mx-md-1 mx-xl-3">
                     <button type="button" class=" btn btn-danger btn-lg" ng-controller="logoutController" ng-click="logout()">
                         <span class="glyphicon glyphicon-log-out"></span> Log out
                       </button>
-                
                 </li>
             </ul>
-        </div>
-    
+        </div> 
     </nav>
 <!-- ///////////////end:nav bar //////////////////////////////// -->
 
-<!-- <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
-    <a href="/" class="navbar-brand">
-        <img src="images/covalence-text-logo.svg" alt="Covalence Logo" class="d-inline-block align-top"> </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar"
-        aria-expanded="true" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="navbar-collapse justify-content-end collapse show" id="mainNavbar" >
-        <ul class="navbar-nav pr-xl-5">
-            <li class="nav-item mx-md-1 mx-xl-3 dropdown">
-                <li class="nav-item mx-md-1 mx-xl-3 dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="locationsDropdown" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">Fullstack</a>
-                    <div class="dropdown-menu" aria-labelledby="locationsDropdown">
-                        <a ng-if="me.classStatus === 'active'" class="dropdown-item py-2" href="/lectures">Lectures</a>
-                        <a ng-if="me.classStatus === 'active'" class="dropdown-item py-2"  href="/labs">Labs</a>
-                        <a class="dropdown-item py-2" href="/syllabus">Syllabus</a>
-                        <a ng-if="me.classStatus === 'active'" class="dropdown-item py-2" href="/resources">Resources</a>
-                        <a ng-if="me.role === 'admin'" class="dropdown-item py-2" href="/users">Users</a>
-                    </div>
-                </li>
-            </li>
-            <li class="nav-item mx-md-1 mx-xl-3 dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="locationsDropdown" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">React Native</a>
-                <div class="dropdown-menu" aria-labelledby="locationsDropdown">
-                    <a ng-if="me.role === 'admin'" class="dropdown-item py-2" href="#">Lectures</a>
-                    <a ng-if="me.role === 'admin'" class="dropdown-item py-2" href="#">Labs</a>
-                    <a class="dropdown-item py-2" href="/reactsyllabus">Syllabus</a>
-                    <a ng-if="me.role === 'admin'" class="dropdown-item py-2" href="#">Resources</a>
-                </div>
-            </li>
-            <li class="nav-item mx-md-1 mx-xl-3 dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="locationsDropdown" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">Front End Fundamentals</a>
-                <div class="dropdown-menu" aria-labelledby="locationsDropdown">
-                    <a ng-if="me.role === 'admin'" class="dropdown-item py-2" href="#">Lectures</a>
-                    <a ng-if="me.role === 'admin'" class="dropdown-item py-2" href="#">Labs</a>
-                    <a class="dropdown-item py-2" href="/frontendsyllabus">Syllabus</a>
-                    <a ng-if="me.role === 'admin'" class="dropdown-item py-2" href="#">Resources</a>
-                </div>
-            </li>
-            <li class="nav-item mx-md-1 mx-xl-3 mr-3">
-                <a class="nav-link" href="/blog/">BLOG</a>
-            </li>
-            <li class="nav-item mx-md-1 mx-xl-3">
-                <button type="button" class=" btn btn-danger btn-lg" ng-controller="logoutController" ng-click="logout()">
-                    <span class="glyphicon glyphicon-log-out"></span> Log out
-                  </button>
-            </li>
-        </ul>
-    </div>
-</nav>  -->
 <!-- ///////////////////The start of the login and sign up -->
 <div id="logincontainer">
-
-
     <form id="login-form">
-
         <div class="form-group">
             <label>
                 <span class="fa fa-envelope" aria-hidden="true" style="position:unset"></span>
@@ -130,21 +70,13 @@
             <input type="password" name="password" ng-model="password" placeholder="password" required>
         </div>
 
-        <p class="forgot">
-            <a href="#">Forgot Password?</a>
-        </p>
-
         <button class="btn btn-lg btn-primary" ng-click="login()"> Log In</button>
         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Sign Up</button>
-
-
     </form>
-
 </div>
 
 
 <!-- tab-content -->
-
 <div class="login-container">
     <!-- Trigger the modal with a button -->
 
@@ -160,13 +92,10 @@
                 </div>
                 <div class="modal-body">
                     <div class="form">
-
                         <div class="tab-content">
                             <div id="signup">
                                 <h1>Create an Account</h1>
-
                                 <form>
-
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label>
@@ -184,6 +113,7 @@
                                             <input type="text" name="lastname" ng-model="lastname" id="name" placeholder="lastname" required autocomplete="off">
                                         </div>
                                     </div>
+
                                     <div class="form-group">
                                         <label>
                                             Email Address
@@ -201,27 +131,22 @@
                                     </div>
 
                                     <button type="submit" class="button button-block" ng-click="signup()">Sign Up</button>
-
                                 </form>
-
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
                     </div>
-
                 </div>
             </div>
-
         </div>
     </div>
 </div>
-
 <!-- ///////////////////////////sthe end of login and start up  -->
+
 <!--- Top of footer-->
 <div id="footer">
-
     <footer class="bg-dark py-5">
         <div class="logo">
             <div class="row">
@@ -235,13 +160,13 @@
                 <div class="col-md-4 align-self-end text-center text-md-left mb-2">
                     <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/covalence.io/" class="d-inline mx-1">
                         <img class="social-icon" src="https://covalence.io/static/img/social/instagram.svg" alt="Instagram Logo"> </a>
-                    <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/covalence_io/" class="d-inline mx-1">
+                    <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/covalence_io/"class="d-inline mx-1">
                         <img class="social-icon" src="https://covalence.io/static/img/social/twitter.svg" alt="Twitter Logo"> </a>
                     <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/covalence.io/" class="d-inline mx-1">
                         <img class="social-icon" src="https://covalence.io/static/img/social/facebook.svg" alt="Facebook Logo"> </a>
                     <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/covalence---coding-bootcamp/" class="d-inline mx-1">
                         <img class="social-icon" src="https://covalence.io/static/img/social/linkedin.svg" alt="Linkedin Logo"> </a>
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.coursereport.com/schools/covalence" class="d-inline mx-1">
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.coursereport.com/schools/covalence"class="d-inline mx-1">
                         <img class="social-icon" src="https://covalence.io/static/img/social/coursereport.svg" alt="Course Report Logo">
                     </a>
                 </div>
@@ -262,9 +187,5 @@
             </div>
         </div>
     </footer>
-
-
 </div>
-
-
 <!--- Bottom of footer-->
