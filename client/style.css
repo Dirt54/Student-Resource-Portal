@@ -182,7 +182,7 @@ body {
         margin-top:5 auto;
         margin-bottom:5 auto;
         max-width: 150rem;
-        font-family: Lato,-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+        font-family: "Lato","-apple-system","system-ui","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif;
         font-size: 5rem;
     }
       
@@ -209,7 +209,7 @@ div.flavor-text{
         margin-top:5 auto;
         margin-bottom:5 auto;
         max-width: 150rem;
-        font-family: Lato,-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+        font-family: "Lato","-apple-system","system-ui","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif;
         font-size: 2rem;
         color: #fff;
         
@@ -233,22 +233,22 @@ div.main {
     margin-top: 75px;
      /*match the smooth scroll bufer */
 }
-div.syllabus {
+#syllabus{
         margin-left: 3rem;
         margin-right: 3rem;
         margin-bottom:5 auto;
         max-width: 120rem;
-        font-family: Lato,-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+        font-family: "Lato","-apple-system","system-ui","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif;
   }
   .flavor-text #top-text{
     color: #fff;
     width:100%; 
-    font-family: Lato,-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  }
+    font-family: "Lato","-apple-system","system-ui","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif;
+}
   div.flavor-text #top-div{
     margin-top:150px;
-    font-family: Lato,-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  }
+    font-family: "Lato","-apple-system","system-ui","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif;
+}
   li {
     padding: 5px 0;
   }
@@ -302,8 +302,8 @@ hr.style1{
     text-align:center;
     /* Set the fixed height of the footer here */
     line-height: 40px; /* Vertically center the text there */
-    --font-family-sans-serif: "Lato",-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-    --font-family-monospace: "SFMono-Regular",Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+    --font-family-sans-serif: "Lato","-apple-system","system-ui","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif;
+    --font-family-monospace: "SFMono-Regular","Menlo","Monaco","Consolas","Liberation Mono","Courier New",monospace;
  }
  
 .logo-mark {
@@ -321,13 +321,13 @@ div.col-lg-12.col-lg-offset-6 {
     width: 100%;
     text-align: center;
     margin-right:100px;
-    --font-family-sans-serif: "Lato",-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-    --font-family-monospace: "SFMono-Regular",Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+    --font-family-sans-serif: "Lato","-apple-system","system-ui","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif;
+    --font-family-monospace: "SFMono-Regular","Menlo","Monaco","Consolas","Liberation Mono","Courier New",monospace;
 }
 .container .pt-5 {
 text-align: center;
---font-family-sans-serif: "Lato",-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
---font-family-monospace: "SFMono-Regular",Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+--font-family-sans-serif: "Lato","-apple-system","system-ui","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif;
+--font-family-monospace: "SFMono-Regular","Menlo","Monaco","Consolas","Liberation Mono","Courier New",monospace;
 }
 
 footer .social-icon {

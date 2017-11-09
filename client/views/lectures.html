@@ -53,9 +53,8 @@
 </nav>
 <!-- ///////////////end:nav bar //////////////////////////////// -->
 
-<!--Begin Body Contents-->
+<!--Begin Text Intro Student-->
 <div class="main">
-<!--Begin Text Intro Student-->    
     <div class="flavor-text">
         <center>
             <h3 id="flavor-text">Full Stack Development Course Lectures</h3>
@@ -65,75 +64,75 @@
         </center>
         <p>&nbsp</p>
     </div>
+</div>
 <!--End Text Intro Student-->
 
 <!-- ////////admin view///////// -->
-    <div class="container">
-        <div class="lectures main" ng-if="me.role=== 'admin'">
-            <h1>Add New Lecture:</h1>
-            <form class='my-form mx-auto' ng-submit="save()">
-                <div class="form-group">
-                    <input class="form-control" type="number" ng-model="lectures.week" placeholder="Week">
-                    <input class="form-control" type="number" ng-model="lectures.dayid" placeholder="Day">
-                    <input class="form-control" type="text" ng-model="lectures.title" placeholder="Title">
-                    <input class="form-control" type="text" ng-model="lectures.description" placeholder="Description">
-                    <input class="form-control" type="text" ng-model="lectures.url" placeholder="URL">
-                    <input class="btn btn-success" type="submit" value="Add Lecture">
-                </div>
-            </form>
-        </div>
-
-        <div class="main" ng-if="me.role === 'admin'">
-            <form class='update-lecture-form mx-auto'>
-                <div id="tablePadding" class='form-group' ng-repeat="l in sorted_lectures = (lectures | orderBy: 'week')">
-                    <div ng-hide="l.week === sorted_lectures[$index - 1].week">
-                        <h1>Week {{ l.week }}</h1>
-                    </div>
-
-                    <table class='table table-hover'>
-                        <thead>
-                            <tr>
-                                <th scope="col">Day:</th>
-                                <th scope="col">Title:</th>
-                                <th scope="col">Description:</th>
-                                <th scope="col">Url:</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            <tr scope="row">
-                                <td>
-                                    <input class='form-control' id="dayNum" type="number" ng-model="l.dayid">
-                                </td>
-                                <td>
-                                    <input class='form-control' id="smallTitle" type="text" ng-model="l.title">
-                                </td>
-                                <td>
-                                    <input class='form-control' id="shortDescription" type="text" ng-model="l.description">
-                                </td>
-                                <td>
-                                    <input class='form-control' id="url" type="text" ng-model="l.url">
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <button class="btn btn-info" ng-click="update()">Update</button>
-                    <button class="btn btn-danger" ng-click="delete()">Delete</button>
-                    </br>
-                </div>
-            </form>
-        </div>
+<div class="container">
+    <div class="lectures main" ng-if="me.role=== 'admin'">
+        <h1>Add New Lecture:</h1>
+        <form class='my-form mx-auto' ng-submit="save()">
+            <div class="form-group">
+                <input class="form-control" type="number" ng-model="lectures.week" placeholder="Week">
+                <input class="form-control" type="number" ng-model="lectures.dayid" placeholder="Day">
+                <input class="form-control" type="text" ng-model="lectures.title" placeholder="Title">
+                <input class="form-control" type="text" ng-model="lectures.description" placeholder="Description">
+                <input class="form-control" type="text" ng-model="lectures.url" placeholder="URL">
+                <input class="btn btn-success" type="submit" value="Add Lecture">
+            </div>
+        </form>
     </div>
 
-    <!-- /////////end of admin view////////// -->
+    <div class="main" ng-if="me.role === 'admin'">
+        <form class='update-lecture-form mx-auto'>
+            <div id="tablePadding" class='form-group' ng-repeat="l in sorted_lectures = (lectures | orderBy: 'week')">
+                <div ng-hide="l.week === sorted_lectures[$index - 1].week">
+                    <h1>Week {{ l.week }}</h1>
+                </div>
+
+                <table class='table table-hover'>
+                    <thead>
+                        <tr>
+                            <th scope="col">Day:</th>
+                            <th scope="col">Title:</th>
+                            <th scope="col">Description:</th>
+                            <th scope="col">Url:</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr scope="row">
+                            <td>
+                                <input class='form-control' id="dayNum" type="number" ng-model="l.dayid">
+                            </td>
+                            <td>
+                                <input class='form-control' id="smallTitle" type="text" ng-model="l.title">
+                            </td>
+                            <td>
+                                <input class='form-control' id="shortDescription" type="text" ng-model="l.description">
+                            </td>
+                            <td>
+                                <input class='form-control' id="url" type="text" ng-model="l.url">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <button class="btn btn-info" ng-click="update()">Update</button>
+                <button class="btn btn-danger" ng-click="delete()">Delete</button>
+                </br>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- /////////end of admin view////////// -->
 
 
 
-    <!-- /////////user view///////// -->
+<!-- /////////user view///////// -->
 
 
-    <!-- <div class="container">
+<!-- <div class="container">
             <div class="list" ng-if="me.role === 'user'" ng-repeat="l in sorted_lectures = (lectures | orderBy: 'week')" ng-click="show()">
                 <div ng-hide="l.week === sorted_lectures[$index - 1].week">
                     <h1>Week {{l.week }}</h1>
@@ -147,49 +146,45 @@
 <!-- /////////end of admin view////////// -->
 
 <!-- /////////user view///////// -->
-
-
-        <div class="container">
-                <div class="main" ng-if="me.role === 'user'">
-                    <form class='update-lecture-form mx-auto'>
-                        <div id="tablePadding" class='form-group' ng-repeat="l in sorted_lectures = (lectures | orderBy: 'week')">
-                            <div ng-hide="l.week === sorted_lectures[$index - 1].week">
-                                <h1>Week {{ l.week }}</h1>
-        
-                            </div>
-                        
-                            <table class='table table-hover'>
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Day:</th>
-                                        <th scope="col">Title:</th>
-                                        <th scope="col">Description:</th>
-                                    </tr>
-                                </thead>
-
-        
-                                <tbody>
-                                        <tr scope="row">
-                                                <td>
-                                                    <p class="lectureText">Day: {{ l.dayid }}</p>
-                                                </td>
-                                                <td>
-                                                    <p class="lectureText">{{ l.title }}</p>
-                                                </td>
-                                                <td>
-                                                    <a class="lectureText" ng-href="{{ l.url }}" target="blank">&nbsp{{ l.description }}</a>
-                                                </td>
-                                            </tr>
-        
-                                </tbody>
-                            </table>
-                        </div>
-        
-                    </form>
+<div class="container">
+    <div class="main" ng-if="me.role === 'user'">
+        <form class='update-lecture-form mx-auto'>
+            <div id="tablePadding" class='form-group' ng-repeat="l in sorted_lectures = (lectures | orderBy: 'week')">
+                <div ng-hide="l.week === sorted_lectures[$index - 1].week">
+                    <h1>Week {{ l.week }}</h1>
                 </div>
-            </div>
 
-    <!-- <div class="container">
+                <table class='table table-hover'>
+                    <thead>
+                        <tr>
+                            <th scope="col">Day:</th>
+                            <th scope="col">Title:</th>
+                            <th scope="col">Description:</th>
+                        </tr>
+                    </thead>
+
+
+                    <tbody>
+                        <tr scope="row">
+                            <td>
+                                <p class="lectureText">Day: {{ l.dayid }}</p>
+                            </td>
+                            <td>
+                                <p class="lectureText">{{ l.title }}</p>
+                            </td>
+                            <td>
+                                <a class="lectureText" ng-href="{{ l.url }}" target="blank">&nbsp{{ l.description }}</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- /////////End user view///////// -->
+
+<!-- <div class="container">
         <div ng-if="me.role === 'user'" ng-repeat="l in sorted_lectures = (lectures | orderBy: 'week')">
             <div ng-hide="l.week === sorted_lectures[$index - 1].week">
                 
@@ -223,8 +218,8 @@
         </div>
     </div>
 </div>
-<!-- //////////end of user view////////// -->
-<!--End Body Contents-->
+
+<!End Body Contents-->
 
 <!--//////////////////////////////////////////////// start:footer -->
 <div id="footer">
