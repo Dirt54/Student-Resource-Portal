@@ -86,6 +86,8 @@ angular.module('portal.controllers', [])
         $scope.hidden = true;
         $scope.me = LoggedUser.get();
 
+        // document.getElementById('scrollbox1').scrollspy({ target: document.getElementById('list-example') });
+
         $scope.save = function () {
             var l = new Lecture($scope.lectures);
             l.$save(function () {
