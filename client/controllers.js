@@ -47,7 +47,7 @@ angular.module('portal.controllers', [])
 
 
         SEOService.setSEO({
-            title: 'Login',
+            title: 'Covalence Student Resource Login',
             image: 'http://' + $location.host() + '/images/favicon-20171103083357746.ico',
             url: $location.url(),
             description: 'Please Login'
