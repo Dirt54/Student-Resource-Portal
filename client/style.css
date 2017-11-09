@@ -1,7 +1,13 @@
 #list-example {
-    width: 17rem;
+    width: 20rem;
 }
 
+
+#scrollbox1 {
+  position: relative;
+  height: 500px;
+  overflow-y: scroll;
+}
 /* ----------------------------start of nav bar  */
 .navbar-brand img {
     max-width: none;
