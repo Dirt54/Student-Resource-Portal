@@ -13,9 +13,7 @@ exports.update = function (id, categoryid, orderid, title, description, url, cat
     return db.empty('updateResource', [id, categoryid, orderid, title, description, url]);
 }
 
-exports.fetch = function(categoryid) {
-    return db.rows('getCategories', [categoryid])
-}
+
 
 exports.all = function() {
     return db.rows('getResources');
