@@ -1,7 +1,7 @@
 <!-- /////////////start: nav bar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
     <a class="navbar-brand" href='/welcome'>
-        <img src="images/covalence-text-logo.svg" >
+        <img src="images/covalence-text-logo.svg">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar"
         aria-expanded="false" aria-label="Toggle navigation">
@@ -55,19 +55,19 @@
 
 </nav>
 <!-- ///////////////end:nav bar //////////////////////////////// -->
-    
+
 <!--Begin Text Intro-->
-    <div class="main">
-        <div class="flavor-text">
-            <center>
-                <h3 id="flavor-text">Full Stack Development Course Extra Resources</h3>
-                <img src="images/girl-coder.svg" height="200rem" width="200rem">
-                <p id="flavor-text" ng-if="me.role === 'user'">Below are several categories with various links to videos, sites, and portfolio building projects.</p>
-                <p id="flavor-text" ng-if="me.role === 'admin'">Add, edit, or delete items to the various Extra Resources categories using the corresponding fields and buttons.</p>
-            </center>
-            <p>&nbsp</p>
-        </div>
+<div class="main">
+    <div class="flavor-text">
+        <center>
+            <h3 id="flavor-text">Full Stack Development Course Extra Resources</h3>
+            <img src="images/girl-coder.svg" height="200rem" width="200rem">
+            <p id="flavor-text" ng-if="me.role === 'user'">Below are several categories with various links to videos, sites, and portfolio building projects.</p>
+            <p id="flavor-text" ng-if="me.role === 'admin'">Add, edit, or delete items to the various Extra Resources categories using the corresponding fields and buttons.</p>
+        </center>
+        <p>&nbsp</p>
     </div>
+</div>
 <!--End Text Intro Student-->
 
 <!-- /////////////admin view///////////// -->
@@ -77,11 +77,11 @@
         <form class='my-form' ng-submit="save()">
             <div class="form-group">
                 <select class="form-control" ng-model="resources.categoryid">
-                <option value=''>Select Category</option>
-                <option value='1'>Videos</option>
-                <option value='2'>Portfolio Building Projects</option>
-                <option value='3' ng-model='resources.categoryname'>Misc.</option>
-            </select>
+                    <option value=''>Select Category</option>
+                    <option value='1'>Videos</option>
+                    <option value='2'>Portfolio Building Projects</option>
+                    <option value='3' ng-model='resources.categoryname'>Misc.</option>
+                </select>
                 <input class='form-control' type="number" ng-model="resources.orderid" placeholder="Priority">
                 <input class="form-control" type="text" ng-model="resources.title" placeholder="Title">
                 <input class="form-control" type="text" ng-model="resources.description" placeholder="Description">
@@ -147,20 +147,28 @@
 </div>
 
 <!-- ///////////user view/////////// -->
+
 <div class="main">
-    <div class="list" ng-if="me.role === 'user'" ng-repeat="r in sorted_resources = (resources | orderBy:'categoryid')" ng-click="show()">
-        <div ng-hide="r.name === sorted_resources[$index - 1].name">
-            <h1>{{ r.name }}</h1>
+    <div class="contanier">
+       
+        <div class="list" ng-if="me.role === 'user'" ng-repeat="r in sorted_resources = (resources | orderBy:'categoryid')" ng-click="show()">
+            <div>
+                <hr class="style1"> </div>
+            <div ng-hide="r.name === sorted_resources[$index - 1].name">
+                <h1>{{ r.name }}</h1>
+            </div>
+
+            <div ng-hide="hidden" ng-repeat="i in resources | filter: { name : r.name }">
+                <h3>
+                    <a ng-href="{{ i.url }}">{{ i.title }}</a>
+                </h3>
+                <p>{{ i.description }}</p>
+            </div>
+
         </div>
-        <div ng-hide="hidden" ng-repeat="i in resources | filter: { name : r.name }">
-            <h3>
-                <a ng-href="{{ i.url }}">{{ i.title }}</a>
-            </h3>
-            <p>{{ i.description }}</p>
-        </div>
+
     </div>
 </div>
-
 <!-- //////////end user view////////// -->
 
 <!--//////////////////////////////////////////////// start:footer -->
@@ -201,9 +209,9 @@
             <div class="row">
                 <div class="col text-center text-md-left">
                     <span class="px-2 br text-gray text-nowrap">
-                            <span  id="grey-text-footer">©2017 Covalence. All Rights Reserved</span>
-                    <a href="/privacy-policy/" class="px-2 text-info br text-nowrap">Privacy Policy</a>
-                    <a href="/terms-of-service/" class="px-2 text-info text-nowrap">Terms of Service</a>
+                        <span id="grey-text-footer">©2017 Covalence. All Rights Reserved</span>
+                        <a href="/privacy-policy/" class="px-2 text-info br text-nowrap">Privacy Policy</a>
+                        <a href="/terms-of-service/" class="px-2 text-info text-nowrap">Terms of Service</a>
                 </div>
             </div>
         </div>
