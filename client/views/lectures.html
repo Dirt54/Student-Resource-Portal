@@ -135,11 +135,35 @@
   
     <!-- /////////user view///////// -->
 
+
+    <!-- /////////user view///////// -->
+    <div class="main">
+    <div class="list" ng-if="me.role === 'user'" ng-repeat="l in sorted_lectures = (lectures | orderBy: 'week')" ng-click="show()">
+        <div ng-hide="l.week === sorted_lectures[$index - 1].week">
+            <h1>Week {{l.week }}</h1>
+        </div>
+        <div ng-hide="hidden" ng-repeat="i in lectures | filter: { week : l.week }">
+
+            <p>Day: {{ i.dayid }} </p>
+            <a>{{ i.title }}
+                <a ng-href="{{ i.url }}" target="blank">&nbsp{{ i.description }}</a>
+        </div>
+    </div>
+
+
+    <!-- <div class="main">
+        <div class="container">
+        <div  ng-if="me.role === 'user'" ng-repeat="l in sorted_lectures = (lectures | orderBy: 'week')">
+            <div ng-hide="l.week === sorted_lectures[$index - 1].week">
+                <div id="list-example" class="list-group">
+                <a class="list-group-item list-group-item-action" href="#list-item-{{ l.week }}">Week {{ l.week }}</a>
+
   
   <div class="container">
             <div class="list" ng-if="me.role === 'user'" ng-repeat="l in sorted_lectures = (lectures | orderBy: 'week')" ng-click="show()">
                 <div ng-hide="l.week === sorted_lectures[$index - 1].week">
                     <h1>Week {{l.week }}</h1>
+
                 </div>
                 <div ng-hide="hidden" ng-repeat="i in lectures | filter: { week : l.week }">
         
