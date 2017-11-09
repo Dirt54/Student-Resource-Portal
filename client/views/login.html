@@ -1,6 +1,6 @@
 <!-- /////////////start: nav bar -->
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+ <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href='/'>
                 <img src="images/covalence-text-logo.svg" height="105" width="210">
             </a>
@@ -8,7 +8,7 @@
             aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-        <!-- <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
             <ul class="navbar-nav pr-xl-5">
     
                 <li class="nav-item dropdown">
@@ -48,19 +48,71 @@
                 <li class="nav-item mx-md-1 mx-xl-3">
                     <button type="button" class=" btn btn-danger btn-lg" ng-controller="logoutController" ng-click="logout()">
                         <span class="glyphicon glyphicon-log-out"></span> Log out
-                      </button> -->
+                      </button>
                 
                 </li>
             </ul>
         </div>
     
-    </nav>
-     <!-- ///////////////end:nav bar //////////////////////////////// -->
-        
-          
+    </nav>  -->
+<!-- ///////////////end:nav bar //////////////////////////////// -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+    <a href="/" class="navbar-brand">
+        <img src="images/covalence-text-logo.svg" alt="Covalence Logo" class="d-inline-block align-top"> </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar"
+        aria-expanded="true" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse justify-content-end collapse show" id="mainNavbar" style="">
+        <ul class="navbar-nav pr-xl-5">
+            <li class="nav-item mx-md-1 mx-xl-3 dropdown">
+                <li class="nav-item mx-md-1 mx-xl-3 dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="locationsDropdown" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">Fullstack</a>
+                    <div class="dropdown-menu" aria-labelledby="locationsDropdown">
+                        <a ng-if="me.classStatus === 'active'" class="dropdown-item py-2" href="/lectures">Lectures</a>
+                        <a ng-if="me.classStatus === 'active'" class="dropdown-item py-2"  href="/labs">Labs</a>
+                        <a class="dropdown-item py-2" href="/syllabus">Syllabus</a>
+                        <a ng-if="me.classStatus === 'active'" class="dropdown-item py-2" href="/resources">Resources</a>
+                        <a ng-if="me.role === 'admin'" class="dropdown-item py-2" href="/users">Users</a>
+                    </div>
+                </li>
+            </li>
+            <li class="nav-item mx-md-1 mx-xl-3 dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="locationsDropdown" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">React Native</a>
+                <div class="dropdown-menu" aria-labelledby="locationsDropdown">
+                    <a ng-if="me.role === 'admin'" class="dropdown-item" href="#">Lectures</a>
+                    <a ng-if="me.role === 'admin'" class="dropdown-item" href="#">Labs</a>
+                    <a class="dropdown-item" href="/reactsyllabus">Syllabus</a>
+                    <a ng-if="me.role === 'admin'" class="dropdown-item" href="#">Resources</a>
+                </div>
+            </li>
+            <li class="nav-item mx-md-1 mx-xl-3 dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="locationsDropdown" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">Front End Fundamentals</a>
+                <div class="dropdown-menu" aria-labelledby="locationsDropdown">
+                    <a ng-if="me.role === 'admin'" class="dropdown-item" href="#">Lectures</a>
+                    <a ng-if="me.role === 'admin'" class="dropdown-item" href="#">Labs</a>
+                    <a class="dropdown-item" href="/frontendsyllabus">Syllabus</a>
+                    <a ng-if="me.role === 'admin'" class="dropdown-item" href="#">Resources</a>
+                </div>
+            </li>
+            <li class="nav-item mx-md-1 mx-xl-3 mr-3">
+                <a class="nav-link" href="/blog/">BLOG</a>
+            </li>
+            <li class="nav-item mx-md-1 mx-xl-3">
+                <button type="button" class=" btn btn-danger btn-lg" ng-controller="logoutController" ng-click="logout()">
+                    <span class="glyphicon glyphicon-log-out"></span> Log out
+                  </button>
+            </li>
+        </ul>
+    </div>
+</nav>
 <!-- ///////////////////The start of the login and sign up -->
 <div id="logincontainer">
-   
+
 
     <form id="login-form">
 
@@ -174,7 +226,7 @@
         <div class="logo">
             <div class="row">
                 <div class="col-lg-12 col-lg-offset-6">
-                <img class="logo-mark" src="https://covalence.io/static/img/logos/covalence-mark.svg" alt="Covalence Logo Mark">
+                    <img class="logo-mark" src="https://covalence.io/static/img/logos/covalence-mark.svg" alt="Covalence Logo Mark">
                 </div>
             </div>
         </div>
@@ -182,16 +234,16 @@
             <div class="row">
                 <div class="col-md-4 align-self-end text-center text-md-left mb-2">
                     <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/covalence.io/" class="d-inline mx-1">
-                    <img class="social-icon" src="https://covalence.io/static/img/social/instagram.svg" alt="Instagram Logo"> </a>
+                        <img class="social-icon" src="https://covalence.io/static/img/social/instagram.svg" alt="Instagram Logo"> </a>
                     <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/covalence_io/" class="d-inline mx-1">
-                    <img class="social-icon" src="https://covalence.io/static/img/social/twitter.svg" alt="Twitter Logo"> </a>
+                        <img class="social-icon" src="https://covalence.io/static/img/social/twitter.svg" alt="Twitter Logo"> </a>
                     <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/covalence.io/" class="d-inline mx-1">
-                    <img class="social-icon" src="https://covalence.io/static/img/social/facebook.svg" alt="Facebook Logo"> </a>
+                        <img class="social-icon" src="https://covalence.io/static/img/social/facebook.svg" alt="Facebook Logo"> </a>
                     <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/covalence---coding-bootcamp/" class="d-inline mx-1">
-                    <img class="social-icon" src="https://covalence.io/static/img/social/linkedin.svg" alt="Linkedin Logo"> </a>
+                        <img class="social-icon" src="https://covalence.io/static/img/social/linkedin.svg" alt="Linkedin Logo"> </a>
                     <a target="_blank" rel="noopener noreferrer" href="https://www.coursereport.com/schools/covalence" class="d-inline mx-1">
-                    <img class="social-icon" src="https://covalence.io/static/img/social/coursereport.svg" alt="Course Report Logo">
-                </a>
+                        <img class="social-icon" src="https://covalence.io/static/img/social/coursereport.svg" alt="Course Report Logo">
+                    </a>
                 </div>
                 <div class="contact col-md-6 align-self-end text-center text-md-right my-2">
                     <span class="text-warning px-2">General Admissions Contact:</span>
@@ -203,9 +255,9 @@
             <div class="row">
                 <div class="col text-center text-md-left">
                     <span class="px-2 br text-gray text-nowrap">
-                            <span  id="grey-text-footer">©2017 Covalence. All Rights Reserved</span>
-                    <a href="/privacy-policy/" class="px-2 text-info br text-nowrap">Privacy Policy</a>
-                    <a href="/terms-of-service/" class="px-2 text-info text-nowrap">Terms of Service</a>
+                        <span id="grey-text-footer">©2017 Covalence. All Rights Reserved</span>
+                        <a href="/privacy-policy/" class="px-2 text-info br text-nowrap">Privacy Policy</a>
+                        <a href="/terms-of-service/" class="px-2 text-info text-nowrap">Terms of Service</a>
                 </div>
             </div>
         </div>
