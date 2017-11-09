@@ -10,9 +10,9 @@ var api = require('./api');
 var cookieParser = require('cookie-parser');
 var configurePassport = require('./config/passport')
 
-// var prerender = require('prerender-node');
-// prerender.set('prerenderToken', process.env.PRERENDER_KEY);
-// app.use(prerender);
+var prerender = require('prerender-node');
+prerender.set('prerenderToken', process.env.PRERENDER_KEY);
+app.use(prerender);
 
 app.use(express.static(clientPath));
 app.use(bodyParser.json());
