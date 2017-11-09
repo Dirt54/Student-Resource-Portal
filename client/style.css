@@ -194,6 +194,7 @@ a.ng-binding {
 div.flavor-text{
     background-color: #17a2b8!important;
     background: #59bcca;
+    width: 100%;
 }
 #flavor-text {
         margin-left: 3rem;
