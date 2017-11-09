@@ -1,4 +1,9 @@
+#list-example {
+    width: 17rem;
+}
+
 /* ----------------------------start of nav bar  */
+
 .navbar-brand img {
     height: 3.50em;
 }
