@@ -266,28 +266,6 @@ div.main {
   
  /* End Syllabus Pages */
 
- /* Form Styling for Lectures, Labs, and Resources */
- #weekNum{
-    width: 4rem;
-  }
-  #dayNum{
-    width: 4rem;
-  }
-  #smallTitle{
-    width: 10rem;
-  }
-  #shortDescription{
-    width: 23rem;
-  }
-  #url{
-    width: 25rem;
-  }
-  #descriptionBox {
-      width: 25rem;
-  }
-  #tablePadding {
-      padding-bottom: 2.5rem;
-  }
 
   /* .update-lecture-form {
       width: 50%;
@@ -308,7 +286,7 @@ hr.style1{
     bottom:0;
     width:100%;
     height:60px;   /* Height of the footer */
-    background:#373f47;
+    /* background-color: #373f47!important; */
     box-sizing: border-box;
     text-align:center;
     /* Set the fixed height of the footer here */
@@ -316,7 +294,9 @@ hr.style1{
     --font-family-sans-serif: "Lato","-apple-system","system-ui","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif;
     --font-family-monospace: "SFMono-Regular","Menlo","Monaco","Consolas","Liberation Mono","Courier New",monospace;
  }
- 
+ .bg-dark {
+    background-color: #373f47!important;
+}
 .logo-mark {
     height: 100px;
     width: 4em;
