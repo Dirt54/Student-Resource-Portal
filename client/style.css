@@ -76,12 +76,12 @@ font-size: 1.25rem;
     display: block;
     position: relative;
 }
-.navbar .dropdown-menu{
+/* .navbar .dropdown-menu{ */
     /* border-top: none;
     border-right: none;
     border-bottom: none; */
 
-}
+/* } */
 .navbar-collapse {
     font-size: 65%;
     font-weight: 500;
