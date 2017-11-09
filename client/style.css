@@ -281,6 +281,10 @@ div.syllabus {
   } */
 /* End Form Styling for Lectures, Labs, and Resources */
 
+hr.style1{
+	border-top: 1px solid #8c8b8b;
+}
+
 /* start of footer --------------- */
 
 #footer {
