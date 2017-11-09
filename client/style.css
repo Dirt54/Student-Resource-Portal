@@ -3,47 +3,31 @@
 }
 
 /* ----------------------------start of nav bar  */
-
 .navbar-brand img {
-    height: 3.50em;
+    max-width: none;
+    max-height: none;
+}
+.navbar-brand img {
+    height: 3.5em;
+    margin-left: 2rem;
+}
+.d-inline-block {
+    display: inline-block!important;
+}
+.nav-bar .navbar-brand{
+font-size: 1.25rem;
 }
 .navbar{
 
     box-shadow:0 2px 2px 1px rgba(25,25,25,.2);
-    --font-family-sans-serif: "Lato",-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-    --font-family-monospace: "SFMono-Regular",Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
-}
-.nav-item{
-    font-size: 17px;
-    position: relative;
-}
-.nav-link {
-    display: block;
-    padding: .5rem 1rem;
-}
-/* .navbar-collapse {
-    font-size: 85%;
-    font-weight: 700;
-} */
-
-.navbar {
-    position: relative;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    padding: 1.25rem 1rem;
+    --font-family-sans-serif: "Lato","-apple-system,system-ui,BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif;
+    --font-family-monospace: "SFMono-Regular","Menlo,Monaco,Consolas","Liberation Mono","Courier New","monospace";
 }
 .bg-wite{
     background-color:#fff;
 }
 
-.navbar.navbar-expand-lg.navbar-light.bg-white.fixed-top {
+.fixed-top {
     position: fixed;
     top: 0;
     right: 0;
@@ -53,25 +37,48 @@
 .bg-wite{
     background-color:#fff;
 }
-.navbar-expand-lg .navbar-nav{
-    position: absolute;
+.navbar{
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 1rem 1rem;
 }
-.navbar-nav .dropdown-menu.show {
-    position: relative;
-    float: none;
+.navbar-expand-lg.navbar-nav .nav-link {
+    padding-right: .5rem;
+    padding-left: .5rem;
 }
 /* @media (max-width: 991px) */
-.navbar-expand-lg .navbar-nav .dropdown-menu {
+.navbar-expand-lg.navbar-nav .dropdown-menu.show {
     position: absolute;
+}
+.navbar-nav .dropdown-menu {
+    position: static;
+    float: none;
 }
 .dropdown-menu.show {
     display: block;
+    position: relative;
 }
-.navbar .dropdown-menu.show{
+.navbar .dropdown-menu{
     /* border-top: none;
-    border-right: none; */
-    /* border-bottom: none; */
+    border-right: none;
+    border-bottom: none; */
+
 }
+.navbar-collapse {
+    font-size: 65%;
+    font-weight: 500;
+}
+.nav-item {
+    font-size: 1.50rem;
+}
+
 
 .navbar-collapse.collapsing.nav-item.navbar-collapse.show.nav-item {
     padding-left: 1em;
@@ -85,7 +92,9 @@
 .dropdown-item.py-2 {
     padding-top: .5rem!important;
 }
-
+.dropdown-menu.front-end{
+    min-width: 28rem;
+}
 .dropdown-menu {
     position: relative;
     top: 100%;
@@ -96,7 +105,7 @@
     min-width: 10rem;
     padding: .5rem 0;
     margin: .125rem 0 0;
-    font-size: 1em;
+    font-size: 1.5rem;
     color: #222;
     text-align: left;
     list-style: none;
@@ -105,7 +114,7 @@
     border: 1px solid rgba(34,34,34,.15);
     border-radius: .25rem;
 }
-.dropdown-item{
+.dropdown-item.py-2{
     position: relative;
     display: block;
     width: 100%;
@@ -118,25 +127,6 @@
     background: 0 0;
     border: 0;
 }
-
-.nav-item .btn {
-    width: 8em;
-    font-weight: 700;
-    letter-spacing: .12em;
-    cursor: pointer;
-    
-}
-.btn{
-    border: 1px solid transparent;
-    
-    font-size: 1.25rem;
-    line-height: 1.5;
-    border-radius: .25rem;
-    position: center;
-    text-align: center;
-
-
-}
 html {
     position: relative;
     min-height: 100%;
@@ -145,9 +135,10 @@ html {
 body {
     height: 100%;
     margin-bottom: 60px;
-    font-family: Lato,-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-family: "Lato","-apple-system,system-ui,BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif;
  }
  
+
 
 
 /* ---------------------------------end of nav bar  */
