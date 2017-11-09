@@ -9,6 +9,11 @@
   overflow-y: scroll;
 } */
 /* ----------------------------start of nav bar  */
+
+.lectureText {
+    font-size: 2.1rem;
+}
+
 .navbar-brand img {
     max-width: none;
     max-height: none;
@@ -181,7 +186,7 @@ body {
         font-size: 5rem;
     }
       
-h1.ng-binding {
+/* h1.ng-binding {
     font-size: 5rem;
 }
 p.ng-binding {
@@ -189,7 +194,7 @@ p.ng-binding {
 }
 a.ng-binding {
   font-size: 4rem;
-}   
+}    */
 /* End Lecture, Lab, and Resource Pages*/
 
 /* Flavor text */
