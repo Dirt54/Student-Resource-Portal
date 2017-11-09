@@ -1,59 +1,57 @@
 <!--Begin Nav Bar-->
 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
-    <a class="navbar-brand" href='/welcome'>
-        <img src="images/covalence-text-logo.svg" height="105" width="210">
-    </a>
+    <a href="/" class="navbar-brand">
+        <img src="images/covalence-text-logo.svg" alt="Covalence Logo" class="d-inline-block align-top"> </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar"
-        aria-expanded="false" aria-label="Toggle navigation">
+        aria-expanded="true" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="navbar-collapse justify-content-end collapse" id="mainNavbar">
+    <div class="navbar-collapse justify-content-end collapse show" id="mainNavbar" >
         <ul class="navbar-nav pr-xl-5">
-
             <li class="nav-item mx-md-1 mx-xl-3 dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" role="button" aria-haspopup="true"
-                    aria-expanded="false">Fullstack</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a ng-if="me.classStatus === 'active'" class="dropdown-item" href="/lectures">Lectures</a>
-                    <a ng-if="me.classStatus === 'active'" class="dropdown-item" href="/labs">Labs</a>
-                    <a class="dropdown-item" href="/syllabus">Syllabus</a>
-                    <a ng-if="me.classStatus === 'active'" class="dropdown-item" href="/resources">Resources</a>
-                    <a ng-if="me.role === 'admin'" class="dropdown-item" href="/users">Users</a>
-                </div>
+                <li class="nav-item mx-md-1 mx-xl-3 dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="locationsDropdown" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">Fullstack</a>
+                    <div class="dropdown-menu" aria-labelledby="locationsDropdown">
+                        <a ng-if="me.classStatus === 'active'" class="dropdown-item py-2" href="/lectures">Lectures</a>
+                        <a ng-if="me.classStatus === 'active'" class="dropdown-item py-2"  href="/labs">Labs</a>
+                        <a class="dropdown-item py-2" href="/syllabus">Syllabus</a>
+                        <a ng-if="me.classStatus === 'active'" class="dropdown-item py-2" href="/resources">Resources</a>
+                        <a ng-if="me.role === 'admin'" class="dropdown-item py-2" href="/users">Users</a>
+                    </div>
+                </li>
             </li>
             <li class="nav-item mx-md-1 mx-xl-3 dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                <a class="nav-link dropdown-toggle" href="#" id="locationsDropdown" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false">React Native</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a ng-if="me.role === 'admin'" class="dropdown-item" href="#">Lectures</a>
-                    <a ng-if="me.role === 'admin'" class="dropdown-item" href="#">Labs</a>
-                    <a class="dropdown-item" href="/reactsyllabus">Syllabus</a>
-                    <a ng-if="me.role === 'admin'" class="dropdown-item" href="#">Resources</a>
+                <div class="dropdown-menu" aria-labelledby="locationsDropdown">
+                    <a ng-if="me.role === 'admin'" class="dropdown-item py-2" href="#">Lectures</a>
+                    <a ng-if="me.role === 'admin'" class="dropdown-item py-2" href="#">Labs</a>
+                    <a class="dropdown-item py-2" href="/reactsyllabus">Syllabus</a>
+                    <a ng-if="me.role === 'admin'" class="dropdown-item py-2" href="#">Resources</a>
                 </div>
             </li>
             <li class="nav-item mx-md-1 mx-xl-3 dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                <a class="nav-link dropdown-toggle" href="#" id="locationsDropdown" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false">Front End Fundamentals</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a ng-if="me.role === 'admin'" class="dropdown-item" href="#">Lectures</a>
-                    <a ng-if="me.role === 'admin'" class="dropdown-item" href="#">Labs</a>
-                    <a class="dropdown-item" href="/frontendsyllabus">Syllabus</a>
-                    <a ng-if="me.role === 'admin'" class="dropdown-item" href="#">Resources</a>
+                <div class="dropdown-menu front-end" aria-labelledby="locationsDropdown">
+                    <a ng-if="me.role === 'admin'" class="dropdown-item py-2" href="#">Lectures</a>
+                    <a ng-if="me.role === 'admin'" class="dropdown-item py-2" href="#">Labs</a>
+                    <a class="dropdown-item py-2" href="/frontendsyllabus">Syllabus</a>
+                    <a ng-if="me.role === 'admin'" class="dropdown-item py-2" href="#">Resources</a>
                 </div>
             </li>
-            <li>
-                <a class="nav-item nav-link" href='https://covalence.io/blog/'>Blog</a>
+            <li class="nav-item mx-md-1 mx-xl-3 mr-3">
+                <a class="nav-link" href="https://covalence.io/blog/" target="_blank">Blog</a>
             </li>
             <li class="nav-item mx-md-1 mx-xl-3">
                 <button type="button" class=" btn btn-danger btn-lg" ng-controller="logoutController" ng-click="logout()">
                     <span class="glyphicon glyphicon-log-out"></span> Log out
-                </button>
-
+                  </button>
             </li>
         </ul>
     </div>
-
-</nav>
+</nav>  
 <!-- ///////////////end:nav bar //////////////////////////////// -->
 
 <!-- ///////////////main content  active users//////////////////////////////// -->
@@ -61,10 +59,11 @@
     <div class="flavor-text">
         <center>
             <h3 id="flavor-text">Welcome to the Colvalence Student Resources Portal</h3>
-            <img src="images/subhero-train.svg" height="200rem" width="200rem">
-            <p id="flavor-text">While attending your Covalence course you can access lectures, labs, and more pertaining to your particular Cohort
+            <img src="images/subhero-train.svg" height="200rem" width="300rem">
+            <p id="flavor-text"ng-if="me.role === 'user'">While attending your Covalence course you can access lectures, labs, and more pertaining to your particular Cohort
                 here. As well as assisting students to achieve success while in class, we hope to grow this site to support
                 graduates with resources to further develop their skills and reference what they've learned.</p>
+            <p id="flavor-text"ng-if="me.role === 'admin'">Welcome, Admins! Here you can navigate to through the various sections to add, edit, or delete content to the Student Resource Portal. Click on a tab to navigate to a section.</p>   
         </center>
         <p>&nbsp</p>
     </div>
@@ -76,7 +75,6 @@
     </div>
     <p>&nbsp</p>
 </div>
-
 <!-- ///////////////main content active users //////////////////////////////// -->
 
 <!-- ///////////////main content  non-active users//////////////////////////////// -->
@@ -84,19 +82,16 @@
     <div class="flavor-text">
         <center>
             <h3 id="flavor-text">Welcome to the Colvalence Student Resources Portal</h3>
-            <img src="images/collaboration-in-progress.jpg" height="200rem" width="200rem">
+            <img src="images/collaboration-in-progress.jpg"height=“200rem” width=“300rem”>
             <p id="flavor-text">We're sorry to inform you that your account is yet to be activated. You will recieve an email once it is. In
                 the meantime feel free to browse the syllabus for any of our classes.</p>
         </center>
     </div>
 </div>
-
 <!-- ///////////////main content non-active users //////////////////////////////// -->
 
 <!-- ///////////////strt :of footer //////////////////////////////// -->
-
 <div id="footer">
-
     <footer class="bg-dark py-5">
         <div class="logo">
             <div class="row">
@@ -109,15 +104,15 @@
             <div class="row">
                 <div class="col-md-4 align-self-end text-center text-md-left mb-2">
                     <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/covalence.io/" class="d-inline mx-1">
-                        <img class="social-icon" src="https://covalence.io/static/img/social/instagram.svg" alt="Instagram Logo"> </a>
+                        <img class="social-icon" src="https://covalence.io/static/img/social/instagram.svg"  alt="Instagram Logo"> </a>
                     <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/covalence_io/" class="d-inline mx-1">
-                        <img class="social-icon" src="https://covalence.io/static/img/social/twitter.svg" alt="Twitter Logo"> </a>
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/covalence.io/" class="d-inline mx-1">
-                        <img class="social-icon" src="https://covalence.io/static/img/social/facebook.svg" alt="Facebook Logo"> </a>
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/covalence---coding-bootcamp/" class="d-inline mx-1">
-                        <img class="social-icon" src="https://covalence.io/static/img/social/linkedin.svg" alt="Linkedin Logo"> </a>
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.coursereport.com/schools/covalence" class="d-inline mx-1">
-                        <img class="social-icon" src="https://covalence.io/static/img/social/coursereport.svg" alt="Course Report Logo">
+                        <img class="social-icon" src="https://covalence.io/static/img/social/twitter.svg"  alt="Twitter Logo"> </a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/covalence.io/"  class="d-inline mx-1">
+                        <img class="social-icon" src="https://covalence.io/static/img/social/facebook.svg"  alt="Facebook Logo"> </a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/covalence---coding-bootcamp/"  class="d-inline mx-1">
+                        <img class="social-icon" src="https://covalence.io/static/img/social/linkedin.svg"  alt="Linkedin Logo"> </a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.coursereport.com/schools/covalence"  class="d-inline mx-1">
+                        <img class="social-icon" src="https://covalence.io/static/img/social/coursereport.svg"  alt="Course Report Logo">
                     </a>
                 </div>
                 <div class="contact col-md-6 align-self-end text-center text-md-right my-2">
@@ -137,7 +132,5 @@
             </div>
         </div>
     </footer>
-
-
 </div>
 <!-- /////////////// thr end:footer //////////////////////////////// -->

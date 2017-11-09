@@ -1,12 +1,38 @@
+/* #list-example {
+    width: 20rem;
+}
+
+
+#scrollbox1 {
+  position: relative;
+  height: 500px;
+  overflow-y: scroll;
+} */
 /* ----------------------------start of nav bar  */
+
+.lectureText {
+    font-size: 2.1rem;
+}
+
 .navbar-brand img {
-    height: 2.25em;
+    max-width: none;
+    max-height: none;
+}
+.navbar-brand img {
+    height: 3.5em;
+    margin-left: 2rem;
+}
+.d-inline-block {
+    display: inline-block!important;
+}
+.nav-bar .navbar-brand{
+font-size: 1.25rem;
 }
 .navbar{
 
     box-shadow:0 2px 2px 1px rgba(25,25,25,.2);
-    --font-family-sans-serif: "Lato",-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-    --font-family-monospace: "SFMono-Regular",Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+    --font-family-sans-serif: "Lato","-apple-system,system-ui,BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif;
+    --font-family-monospace: "SFMono-Regular","Menlo,Monaco,Consolas","Liberation Mono","Courier New","monospace";
 }
 .bg-wite{
     background-color:#fff;
@@ -22,8 +48,7 @@
 .bg-wite{
     background-color:#fff;
 }
-.navbar.navbar-expand-lg.navbar-light.bg-light {
-    position: relative;
+.navbar{
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
@@ -33,29 +58,39 @@
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    padding: .5rem 1rem;
-    padding-top: 0.5rem;
-    padding-right: 1rem;
-    padding-bottom: 0.5rem;
-    padding-left: 1rem;
+    padding: 1rem 1rem;
+}
+.navbar-expand-lg.navbar-nav .nav-link {
+    padding-right: .5rem;
+    padding-left: .5rem;
 }
 /* @media (max-width: 991px) */
 .navbar-expand-lg.navbar-nav .dropdown-menu.show {
     position: absolute;
 }
-.dropdown-menu.show {
-    display: block;
-}
-.navbar .dropdown-menu{
-    border-top: none;
-    border-right: none;
-    border-bottom: none;
-}
-
 .navbar-nav .dropdown-menu {
     position: static;
     float: none;
 }
+.dropdown-menu.show {
+    display: block;
+    position: relative;
+}
+/* .navbar .dropdown-menu{ */
+    /* border-top: none;
+    border-right: none;
+    border-bottom: none; */
+
+/* } */
+.navbar-collapse {
+    font-size: 65%;
+    font-weight: 500;
+}
+.nav-item {
+    font-size: 1.50rem;
+}
+
+
 .navbar-collapse.collapsing.nav-item.navbar-collapse.show.nav-item {
     padding-left: 1em;
 }
@@ -68,9 +103,11 @@
 .dropdown-item.py-2 {
     padding-top: .5rem!important;
 }
-
+.dropdown-menu.front-end{
+    min-width: 28rem;
+}
 .dropdown-menu {
-    position: absolute;
+    position: relative;
     top: 100%;
     left: 0;
     z-index: 1000;
@@ -79,7 +116,7 @@
     min-width: 10rem;
     padding: .5rem 0;
     margin: .125rem 0 0;
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: #222;
     text-align: left;
     list-style: none;
@@ -89,6 +126,7 @@
     border-radius: .25rem;
 }
 .dropdown-item.py-2{
+    position: relative;
     display: block;
     width: 100%;
     padding: .25rem 1.5rem;
@@ -104,21 +142,22 @@ html {
     position: relative;
     min-height: 100%;
     scroll-behavior: smooth;
+    
 }
 body {
     height: 100%;
     margin-bottom: 60px;
-    font-family: Lato,-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+   
+    font-family: "Lato","-apple-system,system-ui,BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif;
  }
  
-.nav-item {
-    font-size: 17px;
-}
+
+
 
 /* ---------------------------------end of nav bar  */
  /* the start of login form  */
 #logincontainer {
-    margin-top:200px;
+    margin-top: 200px;
     position: relative;
 }
 
@@ -143,11 +182,11 @@ body {
         margin-top:5 auto;
         margin-bottom:5 auto;
         max-width: 150rem;
-        font-family: Lato,-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+        font-family: "Lato","-apple-system","system-ui","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif;
         font-size: 5rem;
     }
       
-h1.ng-binding {
+/* h1.ng-binding {
     font-size: 5rem;
 }
 p.ng-binding {
@@ -155,13 +194,14 @@ p.ng-binding {
 }
 a.ng-binding {
   font-size: 4rem;
-}   
+}    */
 /* End Lecture, Lab, and Resource Pages*/
 
 /* Flavor text */
 div.flavor-text{
     background-color: #17a2b8!important;
     background: #59bcca;
+    width: 100%;
 }
 #flavor-text {
         margin-left: 3rem;
@@ -169,46 +209,50 @@ div.flavor-text{
         margin-top:5 auto;
         margin-bottom:5 auto;
         max-width: 150rem;
-        font-family: Lato,-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-        font-size: 3rem;
+        font-family: "Lato","-apple-system","system-ui","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif;
+        font-size: 2rem;
         color: #fff;
         
   }
   h3#flavor-text{
-      font-size:5rem;
+      font-size:4rem;
       color: #fff;
   }
 /* End Flavor Text */
 
 /* Google Calendar*/
-div.calendar-container{
+/* div.calendar-container{
     background: #f7fafc;
-}
+} */
 /* End Google Calendar*/
 
  /* Syllabus Page */
 
 div.main {
 
-    margin-top: 125px;
+    margin-top: 75px;
      /*match the smooth scroll bufer */
 }
-div.syllabus {
+#syllabus{
         margin-left: 3rem;
         margin-right: 3rem;
         margin-bottom:5 auto;
         max-width: 120rem;
+        font-family: "Lato","-apple-system","system-ui","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif;
   }
   .flavor-text #top-text{
     color: #fff;
     width:100%; 
-  }
+    font-family: "Lato","-apple-system","system-ui","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif;
+}
   div.flavor-text #top-div{
     margin-top:150px;
-  }
+    font-family: "Lato","-apple-system","system-ui","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif;
+}
   li {
     padding: 5px 0;
   }
+  
  /* End Syllabus Pages */
 
  /* Form Styling for Lectures, Labs, and Resources */
@@ -242,6 +286,10 @@ div.syllabus {
   } */
 /* End Form Styling for Lectures, Labs, and Resources */
 
+hr.style1{
+	border-top: 1px solid #8c8b8b;
+}
+
 /* start of footer --------------- */
 
 #footer {
@@ -254,8 +302,8 @@ div.syllabus {
     text-align:center;
     /* Set the fixed height of the footer here */
     line-height: 40px; /* Vertically center the text there */
-    --font-family-sans-serif: "Lato",-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-    --font-family-monospace: "SFMono-Regular",Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+    --font-family-sans-serif: "Lato","-apple-system","system-ui","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif;
+    --font-family-monospace: "SFMono-Regular","Menlo","Monaco","Consolas","Liberation Mono","Courier New",monospace;
  }
  
 .logo-mark {
@@ -273,13 +321,13 @@ div.col-lg-12.col-lg-offset-6 {
     width: 100%;
     text-align: center;
     margin-right:100px;
-    --font-family-sans-serif: "Lato",-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-    --font-family-monospace: "SFMono-Regular",Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+    --font-family-sans-serif: "Lato","-apple-system","system-ui","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif;
+    --font-family-monospace: "SFMono-Regular","Menlo","Monaco","Consolas","Liberation Mono","Courier New",monospace;
 }
 .container .pt-5 {
 text-align: center;
---font-family-sans-serif: "Lato",-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
---font-family-monospace: "SFMono-Regular",Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+--font-family-sans-serif: "Lato","-apple-system","system-ui","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif;
+--font-family-monospace: "SFMono-Regular","Menlo","Monaco","Consolas","Liberation Mono","Courier New",monospace;
 }
 
 footer .social-icon {
@@ -292,3 +340,10 @@ color:  #6d6e71;
 }
 /* --------------------end of footer */ 
 
+th {
+    background-color: gainsboro;
+}
+
+div.main h1{
+    font-family: Verdana, Geneva, sans-serif;
+}
