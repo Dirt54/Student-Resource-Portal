@@ -205,27 +205,27 @@ div.flavor-text{
         margin-bottom:5 auto;
         max-width: 150rem;
         font-family: Lato,-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-        font-size: 3rem;
+        font-size: 2rem;
         color: #fff;
         
   }
   h3#flavor-text{
-      font-size:5rem;
+      font-size:4rem;
       color: #fff;
   }
 /* End Flavor Text */
 
 /* Google Calendar*/
-div.calendar-container{
+/* div.calendar-container{
     background: #f7fafc;
-}
+} */
 /* End Google Calendar*/
 
  /* Syllabus Page */
 
 div.main {
 
-    margin-top: 125px;
+    margin-top: 75px;
      /*match the smooth scroll bufer */
 }
 div.syllabus {
@@ -233,17 +233,21 @@ div.syllabus {
         margin-right: 3rem;
         margin-bottom:5 auto;
         max-width: 120rem;
+        font-family: Lato,-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   }
   .flavor-text #top-text{
     color: #fff;
     width:100%; 
+    font-family: Lato,-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   }
   div.flavor-text #top-div{
     margin-top:150px;
+    font-family: Lato,-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   }
   li {
     padding: 5px 0;
   }
+  
  /* End Syllabus Pages */
 
  /* Form Styling for Lectures, Labs, and Resources */
