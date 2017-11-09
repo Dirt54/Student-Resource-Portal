@@ -21,7 +21,15 @@
 #titleRow {
     width: 17rem;
 }
-
+#resourcesName {
+    font-size: 6.6rem;
+}
+#resourcesTitle {
+    font-size: 3.5rem;
+}
+#resourcesDescription {
+    font-size: 1.7rem;
+}
 /* luke's row styling */
 
 
