@@ -318,3 +318,10 @@ color:  #6d6e71;
 }
 /* --------------------end of footer */ 
 
+th {
+    background-color: gainsboro;
+}
+
+div.main h1{
+    font-family: Verdana, Geneva, sans-serif;
+}
