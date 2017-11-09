@@ -1,7 +1,7 @@
 <!-- /////////////start: nav bar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
     <a class="navbar-brand" href='/welcome'>
-        <img src="images/covalence-text-logo.svg" height="105" width="210">
+        <img src="images/covalence-text-logo.svg" >
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar"
         aria-expanded="false" aria-label="Toggle navigation">
@@ -34,7 +34,7 @@
             <li class="nav-item mx-md-1 mx-xl-3 dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false">Front End Fundamentals</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <div class="dropdown-menu front-end" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="#">Lectures</a>
                     <a class="dropdown-item" href="#">Labs</a>
                     <a class="dropdown-item" href="#">Syllabus</a>
@@ -62,8 +62,8 @@
             <center>
                 <h3 id="flavor-text">Full Stack Development Course Extra Resources</h3>
                 <img src="images/girl-coder.svg" height="200rem" width="200rem">
-                <p id="flavor-text" ng-if="me.role === 'admin'">Below are several categories with various links to videos, sites, and portfolio building projects.</p>
-                <p id="flavor-text" ng-if="me.role === 'user'">Add, edit, or delete items to the various Extra Resources categories using the corresponding fields and buttons.</p>
+                <p id="flavor-text" ng-if="me.role === 'user'">Below are several categories with various links to videos, sites, and portfolio building projects.</p>
+                <p id="flavor-text" ng-if="me.role === 'admin'">Add, edit, or delete items to the various Extra Resources categories using the corresponding fields and buttons.</p>
             </center>
             <p>&nbsp</p>
         </div>
@@ -91,7 +91,7 @@
         </form>
     </div>
 
-    <div ng-if="me.role === 'admin'">
+    <div class="main" ng-if="me.role === 'admin'">
         <form class='update-resource-form'>
             <div class='form-group' ng-repeat="r in sorted_resources = (resources | orderBy: 'categoryid')">
                 <div ng-hide="r.name === sorted_resources[$index - 1].name">
@@ -124,7 +124,7 @@
                     </tbody>
                     <thead>
                         <tr>
-                            <th>Description:</th>
+                            <th colspan="3">Description:</th>
                         </tr>
                     </thead>
                     <tbody>
