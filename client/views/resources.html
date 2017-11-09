@@ -91,7 +91,7 @@
         </form>
     </div>
 
-    <div ng-if="me.role === 'admin'">
+    <div class="main" ng-if="me.role === 'admin'">
         <form class='update-resource-form'>
             <div class='form-group' ng-repeat="r in sorted_resources = (resources | orderBy: 'categoryid')">
                 <div ng-hide="r.name === sorted_resources[$index - 1].name">
@@ -124,7 +124,7 @@
                     </tbody>
                     <thead>
                         <tr>
-                            <th>Description:</th>
+                            <th colspan="3">Description:</th>
                         </tr>
                     </thead>
                     <tbody>
