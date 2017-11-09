@@ -14,6 +14,17 @@
     font-size: 2.1rem;
 }
 
+ /* luke's row styling */
+#dayRow {
+    width: 10rem;
+}
+#titleRow {
+    width: 15rem;
+}
+
+/* luke's row styling */
+
+
 .navbar-brand img {
     max-width: none;
     max-height: none;
