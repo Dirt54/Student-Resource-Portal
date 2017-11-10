@@ -149,7 +149,9 @@
             <div>
                 <hr class="style1"> </div>
             <div ng-hide="r.name === sorted_resources[$index - 1].name">
-                <h1 id="resourcesName">{{ r.name }}</h1>
+                <center>
+                    <h1 id="resourcesName">{{ r.name }}</h1>
+                </center>
             </div>
 
             <div ng-hide="hidden" ng-repeat="i in resources | filter: { name : r.name }">

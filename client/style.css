@@ -253,10 +253,6 @@ div.main {
      /*match the smooth scroll bufer */
 }
 #syllabus{
-        margin-left: 3rem;
-        margin-right: 3rem;
-        margin-bottom:5 auto;
-        max-width: 120rem;
         font-family: "Lato","-apple-system","system-ui","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif;
   }
   .flavor-text #top-text{
