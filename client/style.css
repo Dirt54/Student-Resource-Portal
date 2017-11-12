@@ -42,6 +42,13 @@
     height: 50%;
     width: 50%;
 }
+#tablePadding {
+    padding-top: 50px;
+}
+
+/* #fontz {
+    font: "Lato","-apple-system,system-ui,BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue", "Arial", "sans-serif";
+} */
 /* luke's row styling */
 
 

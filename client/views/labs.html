@@ -88,9 +88,9 @@
 
     <div class="main" ng-if="me.role === 'admin'">
         <form class='update-lab-form'>
-            <div id="tablePadding" class='form-group' ng-repeat="l in sorted_labs = (labs | orderBy: 'week')">
+            <div class='form-group' ng-repeat="l in sorted_labs = (labs | orderBy: 'week')">
                 <div ng-hide="l.week === sorted_labs[$index - 1].week">
-                    <h1>Week {{ l.week }}</h1>
+                    <h1 id="tablePadding">Week {{ l.week }}</h1>
 
                 </div>
                 <table class="table table-hover">
@@ -134,9 +134,9 @@
     
         <div class="main" ng-if="me.role === 'user'">
             <form class='update-lab-form'>
-                <div id="tablePadding" class='form-group' ng-repeat="l in sorted_labs = (labs | orderBy: 'week')">
+                <div class='form-group' ng-repeat="l in sorted_labs = (labs | orderBy: 'week')">
                     <div ng-hide="l.week === sorted_labs[$index - 1].week">
-                        <h1>Week {{ l.week }}</h1>
+                        <h1 id="tablePadding">Week {{ l.week }}</h1>
     
                     </div>
                     <table class="table table-hover">

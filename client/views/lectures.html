@@ -85,9 +85,9 @@
 
     <div class="main" ng-if="me.role === 'admin'">
         <form class='update-lecture-form mx-auto'>
-            <div id="tablePadding" class='form-group' ng-repeat="l in sorted_lectures = (lectures | orderBy: 'week')">
+            <div  class='form-group' ng-repeat="l in sorted_lectures = (lectures | orderBy: 'week')">
                 <div ng-hide="l.week === sorted_lectures[$index - 1].week">
-                    <h1>Week {{ l.week }}</h1>
+                    <h1 id="tablePadding">Week {{ l.week }}</h1>
                 </div>
 
                 <table class='table table-hover'>
@@ -130,14 +130,14 @@
 <!-- /////////user view///////// -->
 <div class="container">
     <div class="main" ng-if="me.role === 'user'">
-        <form class='update-lecture-form mx-auto'>
-            <div id="tablePadding" class='form-group' ng-repeat="l in sorted_lectures = (lectures | orderBy: 'week')">
+        <form  class='update-lecture-form mx-auto'>
+            <div  class='form-group' ng-repeat="l in sorted_lectures = (lectures | orderBy: 'week')">
                 <div ng-hide="l.week === sorted_lectures[$index - 1].week">
-                    <h1>Week {{ l.week }}</h1>
+                    <h1 id="tablePadding">Week {{ l.week }}</h1>
                 </div>
 
                 
-                <table class='table table-hover'>
+                <table  class='table table-hover'>
                     
                     <thead>
                         <tr>
@@ -148,7 +148,7 @@
                     </thead>
 
 
-                    <tbody>
+                    <tbody >
                         
                         <tr scope="row">
                             <td>

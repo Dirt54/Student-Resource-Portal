@@ -92,7 +92,7 @@
         <form class='update-resource-form'>
             <div class='form-group' ng-repeat="r in sorted_resources = (resources | orderBy: 'categoryid')">
                 <div ng-hide="r.name === sorted_resources[$index - 1].name">
-                    <h1>{{ r.name }}</h1>
+                    <h1 id="tablePadding">{{ r.name }}</h1>
                 </div>
 
                 <table class='table table-hover'>
