@@ -34,10 +34,10 @@
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false">Front End Fundamentals</a>
                 <div class="dropdown-menu front-end" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Lectures</a>
-                    <a class="dropdown-item" href="#">Labs</a>
+                    <a ng-if="me.role === 'admin'"  href="#">Lectures</a>
+                    <a ng-if="me.role === 'admin'" href="#">Labs</a>
                     <a class="dropdown-item" href="/frontendsyllabus">Syllabus</a>
-                    <a class="dropdown-item" href="#">Resources</a>
+                    <a ng-if="me.role === 'admin'"  href="#">Resources</a>
                 </div>
             </li>
             <li>
