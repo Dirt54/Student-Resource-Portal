@@ -59,7 +59,7 @@
         <center>
             <h3 id="flavor-text">Full Stack Development Course Lectures</h3>
             <img src="images/full-stack-badge-noborder.svg" height="200rem" width="300rem">
-            <p id="flavor-text" ng-if="me.role === 'user'">Click on the corresponding week to find the lectures and other materials by each day.</p>
+            <p id="flavor-text" ng-if="me.role === 'user'">Browse each week to find the corresponding lectures and other materials by each day.</p>
             <p id="flavor-text" ng-if="me.role === 'admin'">Add, edit, or delete items to Lectures by week and day using the corresponding fields and buttons.</p>
         </center>
         <p>&nbsp</p>
@@ -126,7 +126,6 @@
 </div>
 <!-- /////////end of admin view////////// -->
 
-
 <!-- /////////user view///////// -->
 <div class="container">
     <div class="main" ng-if="me.role === 'user'">
@@ -168,43 +167,6 @@
     </div>
 </div>
 <!-- /////////End user view///////// -->
-
-<!-- <div class="container">
-        <div ng-if="me.role === 'user'" ng-repeat="l in sorted_lectures = (lectures | orderBy: 'week')">
-            <div ng-hide="l.week === sorted_lectures[$index - 1].week">
-                
-
-
-                    <h1 id="list-item-{{ l.week }}">Week: {{ l.week }}</h1>
-
-                    <div ng-repeat="i in lectures | filter: { week : l.week }">
-                        <table class="table table-hover">
-
-                            <thead>
-                                <tr>
-                                    <th scope="col">Day:</th>
-                                    <th scope="col">Title:</th>
-                                    <th scope="col">Description:</th>
-
-                                </tr>
-                            </thead>
-
-
-                            <tbody>
-                             
-                            </tbody>
-
-
-
-                        </table>
-                    </div>
-                
-            </div>
-        </div>
-    </div>
-</div>
-
-<!End Body Contents-->
 
 <!--//////////////////////////////////////////////// start:footer -->
 <div id="footer">

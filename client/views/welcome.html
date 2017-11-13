@@ -78,11 +78,13 @@
 <!-- ///////////////main content active users //////////////////////////////// -->
 
 <!-- ///////////////main content  non-active users//////////////////////////////// -->
-<div class="main" ng-if="me.classStatus === 'nonactive'">
+<div class="main" id="nonactivediv" ng-if="me.classStatus === 'nonactive'">
     <div class="flavor-text">
         <center>
             <h3 id="flavor-text">Welcome to the Covalence Student Resources Portal</h3>
+            <p>&nbsp</p>
             <img class="nonactivepic" src="images/collaboration-in-progress.jpg">
+            <p>&nbsp</p>
             <p id="flavor-text">We're sorry to inform you that your account is yet to be activated. You will recieve an email once it is. In
                 the meantime feel free to browse the syllabus for any of our classes.</p>
         </center>

@@ -39,8 +39,11 @@
     color: #fff;
 }
 .nonactivepic {
-    height: 50%;
-    width: 50%;
+    height: 40%;
+    width: 40%;
+}
+#nonactivediv{
+margin-top: 120px;
 }
 #tablePadding {
     padding-top: 50px;
