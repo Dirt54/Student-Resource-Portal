@@ -68,7 +68,7 @@
 <!--End Text Intro Student-->
 
 <!-- ////////admin view///////// -->
-<div class="container">
+<!-- <div class="container">
     <div class="lectures main" ng-if="me.role=== 'admin'">
         <h1>Add New Lecture:</h1>
         <form class='my-form mx-auto' ng-submit="save()">
@@ -81,7 +81,8 @@
                 <input class="btn btn-success" type="submit" value="Add Lecture">
             </div>
         </form>
-    </div>
+    </div> -->
+<!-- example -->
 
     <div class="main" ng-if="me.role === 'admin'">
         <form class='update-lecture-form mx-auto'>
@@ -89,6 +90,9 @@
                 <div ng-hide="l.week === sorted_lectures[$index - 1].week">
                     <h1 id="tablePadding">Week {{ l.week }}</h1>
                 </div>
+            </form>
+        </div>
+    </div>
 
                 <table class='table table-hover'>
                     <thead>
@@ -100,29 +104,49 @@
                         </tr>
                     </thead>
 
-                    <tbody>
-                        <tr scope="row">
-                            <td>
-                                <input class='form-control' id="dayNum" type="number" ng-model="l.dayid">
-                            </td>
-                            <td>
-                                <input class='form-control' id="smallTitle" type="text" ng-model="l.title">
-                            </td>
-                            <td>
-                                <input class='form-control' id="shortDescription" type="text" ng-model="l.description">
-                            </td>
-                            <td>
-                                <input class='form-control' id="url" type="text" ng-model="l.url">
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+</div>
 
-                <button class="btn btn-info" ng-click="update()">Update</button>
-                <button class="btn btn-danger" ng-click="delete()">Delete</button>
+
+<div class="main" ng-if="me.role === 'admin'">
+    <form class='update-lecture-form mx-auto'>
+        <div id="tablePadding" class='form-group' ng-repeat="l in sorted_lectures = (lectures | orderBy: 'week')">
+            <div ng-hide="l.week === sorted_lectures[$index - 1].week">
+                <h1>Week {{ l.week }}</h1>
             </div>
-        </form>
-    </div>
+
+            <table class='table table-hover'>
+                <thead>
+                    <tr>
+                        <th scope="col">Day:</th>
+                        <th scope="col">Title:</th>
+                        <th scope="col">Description:</th>
+                        <th scope="col">Url:</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr scope="row">
+                        <td>
+                            <input class='form-control' id="dayNum" type="number" ng-model="l.dayid">
+                        </td>
+                        <td>
+                            <input class='form-control' id="smallTitle" type="text" ng-model="l.title">
+                        </td>
+                        <td>
+                            <input class='form-control' id="shortDescription" type="text" ng-model="l.description">
+                        </td>
+                        <td>
+                            <input class='form-control' id="url" type="text" ng-model="l.url">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <button class="btn btn-info" ng-click="update()">Update</button>
+            <button class="btn btn-danger" ng-click="delete()">Delete</button>
+        </div>
+    </form>
+</div>
 </div>
 <!-- /////////end of admin view////////// -->
 
