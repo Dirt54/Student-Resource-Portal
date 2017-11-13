@@ -147,11 +147,12 @@
 
         <div class="list" ng-if="me.role === 'user'" ng-repeat="r in sorted_resources = (resources | orderBy:'categoryid')" ng-click="show()">
             <div>
-                <hr class="style1"> </div>
+                
             <div ng-hide="r.name === sorted_resources[$index - 1].name">
                 <center>
                     <h1 id="resourcesName">{{ r.name }}</h1>
                 </center>
+                <hr class="style1"> </div>
             </div>
 
             <div ng-hide="hidden" ng-repeat="i in resources | filter: { name : r.name }">
