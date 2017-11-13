@@ -50,7 +50,7 @@ angular.module('portal.controllers', [])
             title: 'Covalence Student Resource Login',
             image: 'http://' + $location.host() + '/images/favicon-20171103083357746.ico',
             url: $location.url(),
-            description: 'Please Login'
+            description: 'Login page for the Covalence Student Resource Portal'
         });
 
 
@@ -74,10 +74,10 @@ angular.module('portal.controllers', [])
 
 
         SEOService.setSEO({
-            title: 'Welcome',
+            title: 'Covalence Student Resource Welcome Page',
             image: 'http://' + $location.host() + '/images/favicon-20171103083357746.ico',
             url: $location.url(),
-            description: 'Welcome page'
+            description: 'Welcome to the Covalence Student Resource Portal.'
         });
     }])
 
@@ -85,6 +85,8 @@ angular.module('portal.controllers', [])
     .controller('LecturesController', ['$scope', 'Lecture', 'LoggedUser', '$location', '$route', 'SEOService', function ($scope, Lecture, LoggedUser, $location, $route, SEOService) {
         $scope.hidden = true;
         $scope.me = LoggedUser.get();
+
+        // document.getElementById('scrollbox1').scrollspy({ target: document.getElementById('list-example') });
 
         $scope.save = function () {
             var l = new Lecture($scope.lectures);
@@ -130,10 +132,10 @@ angular.module('portal.controllers', [])
         }
 
         SEOService.setSEO({
-            title: 'Lectures',
+            title: 'Covalence Student Resource Lectures',
             image: 'http://' + $location.host() + '/images/favicon-20171103083357746.ico',
             url: $location.url(),
-            description: 'Course Lectures'
+            description: 'Access lectures from your Covalence courses.'
         });
 
     }])
@@ -179,10 +181,10 @@ angular.module('portal.controllers', [])
         }
 
         SEOService.setSEO({
-            title: 'Users',
+            title: 'Covalence Student Resource Portal Users',
             image: 'http://' + $location.host() + '/images/favicon-20171103083357746.ico',
             url: $location.url(),
-            description: 'Users page'
+            description: 'User management page for Covalence instructors and admins.'
         });
 
     }])
@@ -233,10 +235,10 @@ angular.module('portal.controllers', [])
         }
 
         SEOService.setSEO({
-            title: 'Resources',
+            title: 'Covalence Student Portal: Resources',
             image: 'http://' + $location.host() + '/images/favicon-20171103083357746.ico',
             url: $location.url(),
-            description: 'Extra Resources'
+            description: 'Extra resources to aid students while they attend Covalence courses.'
         });
 
 
@@ -303,10 +305,10 @@ angular.module('portal.controllers', [])
         $scope.me = LoggedUser.get();
 
         SEOService.setSEO({
-            title: 'Syllabus',
+            title: 'Covalence Full Stack Course Syllabus',
             image: 'http://' + $location.host() + '/images/favicon-20171103083357746.ico',
             url: $location.url(),
-            description: 'Course syllabus'
+            description: "Course syllabus for Covalence's Full Stack Development program."
         });
     }])
 
@@ -314,10 +316,10 @@ angular.module('portal.controllers', [])
         $scope.me = LoggedUser.get();
 
         SEOService.setSEO({
-            title: 'Syllabus',
+            title: 'Covalence Front End Syllabus',
             image: 'http://' + $location.host() + '/images/favicon-20171103083357746.ico',
             url: $location.url(),
-            description: 'Course syllabus'
+            description: "Course syllabus for Covalence's Front End Fundamentals program."
         });
     }])
 
@@ -326,9 +328,9 @@ angular.module('portal.controllers', [])
 
 
         SEOService.setSEO({
-            title: 'Syllabus',
+            title: 'Covalence React Native Course Syllabus',
             image: 'http://' + $location.host() + '/images/favicon-20171103083357746.ico',
             url: $location.url(),
-            description: 'Course syllabus'
+            description: "Course syllabus for Covalence's React Native program."
         });
     }]);

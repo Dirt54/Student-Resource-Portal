@@ -34,7 +34,7 @@
             <li class="nav-item mx-md-1 mx-xl-3 dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false">Front End Fundamentals</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <div class="dropdown-menu front-end" aria-labelledby="navbarDropdown">
                     <a ng-if="me.role === 'admin'" class="dropdown-item" href="#">Lectures</a>
                     <a ng-if="me.role === 'admin'" class="dropdown-item" href="#">Labs</a>
                     <a class="dropdown-item" href="/frontendsyllabus">Syllabus</a>
@@ -42,7 +42,7 @@
                 </div>
             </li>
             <li>
-                <a class="nav-item nav-link" href='https://covalence.io/blog/'>Blog</a>
+                <a class="nav-item nav-link" href='https://covalence.io/blog/' target="_blank">Blog</a>
             </li>
             <li class="nav-item mx-md-1 mx-xl-3">
                 <button type="button" class=" btn btn-danger btn-lg" ng-controller="logoutController" ng-click="logout()">
@@ -55,109 +55,125 @@
 
 </nav>
 <!-- ///////////////end:nav bar //////////////////////////////// -->
-      
+
 <!--Begin Text Intro-->
-    <div class="main">
-        <div class="flavor-text">
-            <center>
-                <h3 id="flavor-text">Full Stack Development Course Labs</h3>
-                <img src="images/coder-dude.svg" height="200rem" width="200rem">
-                <p id="flavor-text" ng-if="me.role === 'user'">Click on the corresponding week to find the labs and project readme's by each day.</p>
-                <p id="flavor-text" ng-if="me.role === 'admin'">Add, edit, or delete labs by week and day using the corresponding fields and buttons.</p>
-            </center>
-            <p>&nbsp</p>
-        </div>
+<div class="main">
+    <div class="flavor-text">
+        <center>
+            <h3 id="flavor-text">Full Stack Development Course Labs</h3>
+            <img src="images/coder-dude.svg" height="200rem" width="300rem">
+            <p id="flavor-text" ng-if="me.role === 'user'">Click on the corresponding week to find the labs and project readme's by each day.</p>
+            <p id="flavor-text" ng-if="me.role === 'admin'">Add, edit, or delete labs by week and day using the corresponding fields and buttons.</p>
+        </center>
+        <p>&nbsp</p>
     </div>
+</div>
 <!--End Text Intro-->
 
-
 <!-- /////////admin view//////////// -->
-
 <div class="container">
-<div class="main" ng-if="me.role === 'admin'">
-    <h1>Add New Lab:</h1>
-    <form class='my-form' ng-submit="save()">
-        <div class="form-group">
-            <input class="form-control" type="number" ng-model="labs.week" placeholder="Week">
-            <input class="form-control" type="number" ng-model="labs.dayid" placeholder="Day">
-            <input class="form-control" type="text" ng-model="labs.title" placeholder="Title">
-            <input class="form-control" type="text" ng-model="labs.description" placeholder="Description">
-            <input class="form-control" type="text" ng-model="labs.readmeURL" placeholder="readmeURL">
-            <input class="btn btn-success" type="submit" value="Add Lab">
-        </div>
-    </form>
-</div>
-
-<div class="main" ng-if="me.role === 'admin'">
-    <form class='update-lab-form'>
-        <div id="tablePadding" class='form-group' ng-repeat="l in sorted_labs = (labs | orderBy: 'week')">
-            <div ng-hide="l.week === sorted_labs[$index - 1].week">
-                <h1>Week {{ l.week }}</h1>
-
+    <div class="main" ng-if="me.role === 'admin'">
+        <h1>Add New Lab:</h1>
+        <form class='my-form' ng-submit="save()">
+            <div class="form-group">
+                <input class="form-control" type="number" ng-model="labs.week" placeholder="Week">
+                <input class="form-control" type="number" ng-model="labs.dayid" placeholder="Day">
+                <input class="form-control" type="text" ng-model="labs.title" placeholder="Title">
+                <input class="form-control" type="text" ng-model="labs.description" placeholder="Description">
+                <input class="form-control" type="text" ng-model="labs.readmeURL" placeholder="readmeURL">
+                <input class="btn btn-success" type="submit" value="Add Lab">
             </div>
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                <th scope="col">Day:</th>
-                <th scope="col">Title:</th>
-                <th scope="col">Description:</th>
-                <th scope="col">Url:</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr scope="row">
-                        <td>
-                <input class='form-control' id="dayNum" type="number" ng-model="l.dayid">
-                        </td>
-                        <td>
-                <input class='form-control' id="smallTitle" type="text" ng-model="l.title">
-                        </td>
-                        <td>
-                <input class='form-control' id="shortDescription" type="text" ng-model="l.description">
-                        </td>
-                        <td>
-                <input class='form-control' id="url" type="text" ng-model="l.readmeURL">
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <button class="btn btn-info" ng-click="update()">Update</button>
-            <button class="btn btn-danger" ng-click="delete()">Delete</button>
-            </br>
-        </div>
-    </form>
-</div>
+        </form>
+    </div>
+
+    <div class="main" ng-if="me.role === 'admin'">
+        <form class='update-lab-form'>
+            <div class='form-group' ng-repeat="l in sorted_labs = (labs | orderBy: 'week')">
+                <div ng-hide="l.week === sorted_labs[$index - 1].week">
+                    <h1 id="tablePadding">Week {{ l.week }}</h1>
+
+                </div>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th id="instructorRow" scope="col">Day:</th>
+                            <th id="instructorRow" scope="col">Title:</th>
+                            <th id="instructorRow" scope="col">Description:</th>
+                            <th id="instructorRow" scope="col">Url:</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr scope="row">
+                            <td>
+                                <input class='form-control' id="dayNum" type="number" ng-model="l.dayid">
+                            </td>
+                            <td>
+                                <input class='form-control' id="smallTitle" type="text" ng-model="l.title">
+                            </td>
+                            <td>
+                                <input class='form-control' id="shortDescription" type="text" ng-model="l.description">
+                            </td>
+                            <td>
+                                <input class='form-control' id="url" type="text" ng-model="l.readmeURL">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button class="btn btn-info" ng-click="update()">Update</button>
+                <button class="btn btn-danger" ng-click="delete()">Delete</button>
+                </br>
+            </div>
+        </form>
+    </div>
 </div>
 <!-- ////////////end admin view//////////// -->
 
 <!-- //////////user view/////////// -->
-
-<div class="main">
-    <div class="list" ng-if="me.role === 'user'" ng-repeat="l in sorted_labs = (labs | orderBy: 'week')" ng-click="show()">
-        <div ng-hide="l.week === sorted_labs[$index - 1].week">
-            <h1>Week {{ l.week }}</h1>
-        </div>
-        <div ng-hide="hidden" ng-repeat="i in labs | filter: { week : l.week }">
-            <a>Day {{ i.dayid }}</a>
-            <p>{{ i.title }}
-                <a ng-href="{{ i.readmeURL }}" target="blank">&nbsp{{ i.description }}</a>
-            </p>
+    <div class="container">
+    
+    
+        <div class="main" ng-if="me.role === 'user'">
+            <form class='update-lab-form'>
+                <div class='form-group' ng-repeat="l in sorted_labs = (labs | orderBy: 'week')">
+                    <div ng-hide="l.week === sorted_labs[$index - 1].week">
+                        <h1 id="tablePadding">Week {{ l.week }}</h1>
+    
+                    </div>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th class="topBar" id="dayRow" scope="col">Day:</th>
+                                <th class="topBar" id="titleRow" scope="col">Title:</th>
+                                <th class="topBar" scope="col">Description:</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr scope="row">
+                                <td>
+                                  <p class="lectureText">{{ l.dayid }}</p>
+                                </td>
+                                <td>
+                                    <p class="lectureText">{{ l.title }}</p>
+                                </td>
+                                <td>
+                                    <a class="lectureText" ng-href="{{ l.readmeURL }}" target="blank">&nbsp{{ l.description }}</a>
+                                </td>
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+                   
+                </div>
+            </form>
         </div>
     </div>
-</div>
-
 <!-- //////////end user view///////////// -->
 
-
-
 <!--//////////////////////////////////////////////// start:footer -->
-
-
 <div id="footer">
-
     <footer class="bg-dark py-5">
         <div class="logo">
-            <div class="row">
+            <div>
                 <div class="col-lg-12 col-lg-offset-6">
                     <img class="logo-mark" src="https://covalence.io/static/img/logos/covalence-mark.svg" alt="Covalence Logo Mark">
                 </div>
@@ -188,15 +204,12 @@
             <div class="row">
                 <div class="col text-center text-md-left">
                     <span class="px-2 br text-gray text-nowrap">
-                        <span  id="grey-text-footer">©2017 Covalence. All Rights Reserved</span>
-                    <a href="/privacy-policy/" class="px-2 text-info br text-nowrap">Privacy Policy</a>
-                    <a href="/terms-of-service/" class="px-2 text-info text-nowrap">Terms of Service</a>
+                        <span id="grey-text-footer">©2017 Covalence. All Rights Reserved</span>
+                        <a href="/privacy-policy/" class="px-2 text-info br text-nowrap">Privacy Policy</a>
+                        <a href="/terms-of-service/" class="px-2 text-info text-nowrap">Terms of Service</a>
                 </div>
             </div>
         </div>
     </footer>
-
-
 </div>
-
 <!-- /////////////////////end: footer //////////////// -->
