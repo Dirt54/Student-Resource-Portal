@@ -9,7 +9,7 @@
             </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
             <ul class="navbar-nav pr-xl-5">
-                <li class="nav-item dropdown">
+                <!-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">Fullstack</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -19,8 +19,8 @@
                                 <a class="dropdown-item" href="/resources">Resources</a>
                                 <a class="dropdown-item" href="/users">Users</a>
                               </div>
-                </li>
-                <li class="nav-item dropdown">
+                </li> -->
+                <!-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">ReactJS</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -29,8 +29,8 @@
                                 <a class="dropdown-item" href="#">Syllabus</a>
                                 <a class="dropdown-item" href="#">Resources</a>
                               </div>
-                </li>
-                <li class="nav-item dropdown">
+                </li> -->
+                <!-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">Front End Fundamentals</a>
                         <div class="dropdown-menu front-end" aria-labelledby="navbarDropdown">
@@ -39,22 +39,56 @@
                                 <a class="dropdown-item" href="#">Syllabus</a>
                                 <a class="dropdown-item" href="#">Resources</a>
                               </div>
-                </li>
+                </li> -->
                 <li>
                      <a class="nav-item nav-link" href="https://covalence.io/blog/" target="_blank">Blog</a>
                 </li>
-                <li class="nav-item mx-md-1 mx-xl-3">
+                <!-- <li class="nav-item mx-md-1 mx-xl-3">
                     <button type="button" class=" btn btn-danger btn-lg" ng-controller="logoutController" ng-click="logout()">
                         <span class="glyphicon glyphicon-log-out"></span> Log out
                       </button>
-                </li>
+                </li> -->
             </ul>
         </div> 
     </nav>
 <!-- ///////////////end:nav bar //////////////////////////////// -->
+<div id="logincontainer" class="card text-center ">
+    <div class="card-header">
+      <ul class="nav nav-pills card-header-pills">
+        <li class="nav-item">
+          <h2 class="nav-link " href="#">Welcome</h2>
+        </li>
+      
+      </ul>
+    </div>
+    <div class="card-block">
+        <form class="login" >
+            <div class="form-group">
+                <label>
+                    <span class="fa fa-envelope" aria-hidden="true" style="position:unset"></span>
+                </label>
+                <input type="email" placeholder="email" ng-model="email" id="email"></input>
+            </div>
+    
+            <div class="form-group">
+                <label>
+                    <span class="fa fa-unlock-alt" aria-hidden="true" style="position:unset"></span>
+                </label>
+                <input type="password" name="password" ng-model="password" placeholder="password" required>
+            </div>
+    
+            <button class="btn btn-lg btn-primary" ng-click="login()"> Log In</button>
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Sign Up</button>
+        </form> 
+    </div>
+  </div>
+
+
+
+
 
 <!-- ///////////////////The start of the login and sign up -->
-<div id="logincontainer">
+<!-- <div id="logincontainer">
     <form id="login-form">
         <div class="form-group">
             <label>
@@ -72,7 +106,7 @@
 
         <button class="btn btn-lg btn-primary" ng-click="login()"> Log In</button>
         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Sign Up</button>
-    </form>
+    </form> -->
 </div>
 
 

@@ -180,17 +180,28 @@ body {
 /* ---------------------------------end of nav bar  */
  /* the start of login form  */
 #logincontainer {
-    margin-top: 200px;
+    margin-top: 150px;
     position: relative;
+    max-width: 450px;
+    margin-left:400px;
+
 }
 
-#login-form{
+.login{
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    position: relative;
+
+} 
+
+/* #login-form{
     position: absolute;
     left: 0;
     top: 50%;
     width: 100%;
     text-align: center;
-}
+} */
 
  /* the end of login an sign up form  */
 

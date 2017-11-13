@@ -68,7 +68,7 @@
 <!--End Text Intro Student-->
 
 <!-- ////////admin view///////// -->
-<div class="container">
+<!-- <div class="container">
     <div class="lectures main" ng-if="me.role=== 'admin'">
         <h1>Add New Lecture:</h1>
         <form class='my-form mx-auto' ng-submit="save()">
@@ -81,48 +81,70 @@
                 <input class="btn btn-success" type="submit" value="Add Lecture">
             </div>
         </form>
-    </div>
+    </div> -->
+<!-- example -->
 
-    <div class="main" ng-if="me.role === 'admin'">
-        <form class='update-lecture-form mx-auto'>
-            <div id="tablePadding" class='form-group' ng-repeat="l in sorted_lectures = (lectures | orderBy: 'week')">
-                <div ng-hide="l.week === sorted_lectures[$index - 1].week">
-                    <h1>Week {{ l.week }}</h1>
+<div class="container">
+    <div ng-if="me.role=== 'admin'" class="card">
+        <h2 class="card-header">Add New Lecture: </h2>
+        <div class="card-block">
+            <form class='my-form mx-auto' ng-submit="save()">
+                <div class="form-group">
+                    <input class="form-control" type="number" ng-model="lectures.week" placeholder="Week">
+                    <input class="form-control" type="number" ng-model="lectures.dayid" placeholder="Day">
+                    <input class="form-control" type="text" ng-model="lectures.title" placeholder="Title">
+                    <input class="form-control" type="text" ng-model="lectures.description" placeholder="Description">
+                    <input class="form-control" type="text" ng-model="lectures.url" placeholder="URL">
+                    <input class="btn btn-success" type="submit" value="Add Lecture">
                 </div>
-
-                <table class='table table-hover'>
-                    <thead>
-                        <tr>
-                            <th scope="col">Day:</th>
-                            <th scope="col">Title:</th>
-                            <th scope="col">Description:</th>
-                            <th scope="col">Url:</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr scope="row">
-                            <td>
-                                <input class='form-control' id="dayNum" type="number" ng-model="l.dayid">
-                            </td>
-                            <td>
-                                <input class='form-control' id="smallTitle" type="text" ng-model="l.title">
-                            </td>
-                            <td>
-                                <input class='form-control' id="shortDescription" type="text" ng-model="l.description">
-                            </td>
-                            <td>
-                                <input class='form-control' id="url" type="text" ng-model="l.url">
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <button class="btn btn-info" ng-click="update()">Update</button>
-                <button class="btn btn-danger" ng-click="delete()">Delete</button>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
+
+
+</div>
+
+
+<div class="main" ng-if="me.role === 'admin'">
+    <form class='update-lecture-form mx-auto'>
+        <div id="tablePadding" class='form-group' ng-repeat="l in sorted_lectures = (lectures | orderBy: 'week')">
+            <div ng-hide="l.week === sorted_lectures[$index - 1].week">
+                <h1>Week {{ l.week }}</h1>
+            </div>
+
+            <table class='table table-hover'>
+                <thead>
+                    <tr>
+                        <th scope="col">Day:</th>
+                        <th scope="col">Title:</th>
+                        <th scope="col">Description:</th>
+                        <th scope="col">Url:</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr scope="row">
+                        <td>
+                            <input class='form-control' id="dayNum" type="number" ng-model="l.dayid">
+                        </td>
+                        <td>
+                            <input class='form-control' id="smallTitle" type="text" ng-model="l.title">
+                        </td>
+                        <td>
+                            <input class='form-control' id="shortDescription" type="text" ng-model="l.description">
+                        </td>
+                        <td>
+                            <input class='form-control' id="url" type="text" ng-model="l.url">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <button class="btn btn-info" ng-click="update()">Update</button>
+            <button class="btn btn-danger" ng-click="delete()">Delete</button>
+        </div>
+    </form>
+</div>
 </div>
 <!-- /////////end of admin view////////// -->
 
