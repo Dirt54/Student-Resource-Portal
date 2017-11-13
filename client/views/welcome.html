@@ -58,7 +58,7 @@
 <div class="main" ng-if="me.classStatus === 'active'">
     <div class="flavor-text">
         <center>
-            <h3 id="flavor-text">Welcome to the Colvalence Student Resources Portal</h3>
+            <h3 id="flavor-text">Welcome to the Covalence Student Resources Portal</h3>
             <img src="images/subhero-train.svg" height="200rem" width="300rem">
             <p id="flavor-text"ng-if="me.role === 'user'">While attending your Covalence course you can access lectures, labs, and more pertaining to your particular Cohort
                 here. As well as assisting students to achieve success while in class, we hope to grow this site to support
@@ -78,11 +78,13 @@
 <!-- ///////////////main content active users //////////////////////////////// -->
 
 <!-- ///////////////main content  non-active users//////////////////////////////// -->
-<div class="main" ng-if="me.classStatus === 'nonactive'">
+<div class="main" id="nonactivediv" ng-if="me.classStatus === 'nonactive'">
     <div class="flavor-text">
         <center>
-            <h3 id="flavor-text">Welcome to the Colvalence Student Resources Portal</h3>
-            <img src="images/collaboration-in-progress.jpg"height=“200rem” width=“300rem”>
+            <h3 id="flavor-text">Welcome to the Covalence Student Resources Portal</h3>
+            <p>&nbsp</p>
+            <img class="nonactivepic" src="images/collaboration-in-progress.jpg">
+            <p>&nbsp</p>
             <p id="flavor-text">We're sorry to inform you that your account is yet to be activated. You will recieve an email once it is. In
                 the meantime feel free to browse the syllabus for any of our classes.</p>
         </center>
@@ -94,7 +96,7 @@
 <div id="footer">
     <footer class="bg-dark py-5">
         <div class="logo">
-            <div class="row">
+            <div>
                 <div class="col-lg-12 col-lg-offset-6">
                     <img class="logo-mark" src="https://covalence.io/static/img/logos/covalence-mark.svg" alt="Covalence Logo Mark">
                 </div>

@@ -88,18 +88,18 @@
 
     <div class="main" ng-if="me.role === 'admin'">
         <form class='update-lab-form'>
-            <div id="tablePadding" class='form-group' ng-repeat="l in sorted_labs = (labs | orderBy: 'week')">
+            <div class='form-group' ng-repeat="l in sorted_labs = (labs | orderBy: 'week')">
                 <div ng-hide="l.week === sorted_labs[$index - 1].week">
-                    <h1>Week {{ l.week }}</h1>
+                    <h1 id="tablePadding">Week {{ l.week }}</h1>
 
                 </div>
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th scope="col">Day:</th>
-                            <th scope="col">Title:</th>
-                            <th scope="col">Description:</th>
-                            <th scope="col">Url:</th>
+                            <th id="instructorRow" scope="col">Day:</th>
+                            <th id="instructorRow" scope="col">Title:</th>
+                            <th id="instructorRow" scope="col">Description:</th>
+                            <th id="instructorRow" scope="col">Url:</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -134,9 +134,9 @@
     
         <div class="main" ng-if="me.role === 'user'">
             <form class='update-lab-form'>
-                <div id="tablePadding" class='form-group' ng-repeat="l in sorted_labs = (labs | orderBy: 'week')">
+                <div class='form-group' ng-repeat="l in sorted_labs = (labs | orderBy: 'week')">
                     <div ng-hide="l.week === sorted_labs[$index - 1].week">
-                        <h1>Week {{ l.week }}</h1>
+                        <h1 id="tablePadding">Week {{ l.week }}</h1>
     
                     </div>
                     <table class="table table-hover">
@@ -173,7 +173,7 @@
 <div id="footer">
     <footer class="bg-dark py-5">
         <div class="logo">
-            <div class="row">
+            <div>
                 <div class="col-lg-12 col-lg-offset-6">
                     <img class="logo-mark" src="https://covalence.io/static/img/logos/covalence-mark.svg" alt="Covalence Logo Mark">
                 </div>

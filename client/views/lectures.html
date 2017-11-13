@@ -68,7 +68,7 @@
 <!--End Text Intro Student-->
 
 <!-- ////////admin view///////// -->
-<!-- <div class="container">
+<div class="container">
     <div class="lectures main" ng-if="me.role=== 'admin'">
         <h1>Add New Lecture:</h1>
         <form class='my-form mx-auto' ng-submit="save()">
@@ -81,31 +81,31 @@
                 <input class="btn btn-success" type="submit" value="Add Lecture">
             </div>
         </form>
-    </div> -->
-
+    </div>
+    
 
 <div class="container">
-    <div class="lectures main" ng-if="me.role=== 'admin'">
-        <div class="card">
-            <h2 class="card-header">Add New Lecture: </h2>
-            <div class="card-block">
-                <form class='my-form mx-auto' ng-submit="save()">
-                    <div class="form-group">
-                        <input class="form-control" type="number" ng-model="lectures.week" placeholder="Week">
-                        <input class="form-control" type="number" ng-model="lectures.dayid" placeholder="Day">
-                        <input class="form-control" type="text" ng-model="lectures.title" placeholder="Title">
-                        <input class="form-control" type="text" ng-model="lectures.description" placeholder="Description">
-                        <input class="form-control" type="text" ng-model="lectures.url" placeholder="URL">
-                        <input class="btn btn-success" type="submit" value="Add Lecture">
-                    </div>
-                </form>
-            </div>
+    <div class="lectures main" ng-if="me.role=== 'admin'"></div>
+    <div  class="card">
+        <h2 class="card-header">Add New Lecture: </h2>
+        <div class="card-block">
+            <form class='my-form mx-auto' ng-submit="save()">
+                <div class="form-group">
+                    <input class="form-control" type="number" ng-model="lectures.week" placeholder="Week">
+                    <input class="form-control" type="number" ng-model="lectures.dayid" placeholder="Day">
+                    <input class="form-control" type="text" ng-model="lectures.title" placeholder="Title">
+                    <input class="form-control" type="text" ng-model="lectures.description" placeholder="Description">
+                    <input class="form-control" type="text" ng-model="lectures.url" placeholder="URL">
+                    <input class="btn btn-success" type="submit" value="Add Lecture">
+                </div>
+            </form>
         </div>
     </div>
 
-</div>
 
-<div class="container">
+</div> 
+
+
     <div class="main" ng-if="me.role === 'admin'">
         <form class='update-lecture-form mx-auto'>
             <div id="tablePadding" class='form-group' ng-repeat="l in sorted_lectures = (lectures | orderBy: 'week')">
@@ -147,7 +147,6 @@
         </form>
     </div>
 </div>
-
 <!-- /////////end of admin view////////// -->
 
 

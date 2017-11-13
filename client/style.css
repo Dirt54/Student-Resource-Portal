@@ -34,6 +34,24 @@
     background-color: #e58155;
     color: #fff;
 }
+#instructorRow {
+    background-color: #3d70a3;
+    color: #fff;
+}
+.nonactivepic {
+    height: 40%;
+    width: 40%;
+}
+#nonactivediv{
+margin-top: 120px;
+}
+#tablePadding {
+    padding-top: 50px;
+}
+
+/* #fontz {
+    font: "Lato","-apple-system,system-ui,BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue", "Arial", "sans-serif";
+} */
 /* luke's row styling */
 
 
@@ -165,6 +183,7 @@ html {
     position: relative;
     min-height: 100%;
     scroll-behavior: smooth;
+    font-family: "Lato","-apple-system,system-ui,BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif;
     
 }
 body {
@@ -180,28 +199,18 @@ body {
 /* ---------------------------------end of nav bar  */
  /* the start of login form  */
 #logincontainer {
-    margin-top: 150px;
+    margin-top: 200px;
     position: relative;
-    max-width: 450px;
-    margin-left:400px;
-
 }
 
-.login{
-    text-align: center;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    position: relative;
-
-} 
-
-/* #login-form{
+#login-form{
     position: absolute;
     left: 0;
     top: 50%;
     width: 100%;
     text-align: center;
-} */
+}
+
 
  /* the end of login an sign up form  */
 
@@ -355,5 +364,5 @@ th {
 }
 
 div.main h1{
-    font-family: Verdana, Geneva, sans-serif;
+    font-family: "Lato","-apple-system","system-ui","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif;
 }
